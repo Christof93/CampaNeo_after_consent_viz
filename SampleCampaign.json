@@ -1,0 +1,121 @@
+{"Campaigns":[
+	{"Name":"Roads of Innsbruck",
+	"Duration":"10",
+	"StartDate":"10/10/2020",
+	"EndDate":"20/10/2020",
+	"CollectedData":[
+		{"type":"GPS",
+			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST"
+			"z":12.4,
+			"y":134.7,
+			"x":883.8}
+		,{"type": "Speed",
+			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST"
+			"value":58,
+		}
+  ],
+	"Consent":"Given",
+	"Purpose":"Road block detection",
+	"CampaignCreator":[
+		{"Name":"Tyrolean Government",
+		"City":"Innsbruck",
+		"Country":"Austria",
+		"PersonContact":"John Doe",
+		"PhoneNumber":"988829292992",
+		"email":"john.doe@gmail.com"}
+	],
+	"CampaignController":[
+		{"Name":"Volkswagen",
+		"City":"Hannover",
+		"Country":"Germany",
+		"PersonContact":"Jane Doe",
+		"PhoneNumber":"988829292992",
+		"email":"jane.doe@gmail.com"}
+  ]},
+	{"Name":"Roads of Innsbruck",
+	"Duration":"15",
+	"StartDate":"05/10/2020",
+	"EndDate":"20/10/2020",
+	"CollectedData":[
+		{"type":"GPS",
+			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST"
+			"z":12.4,
+			"y":134.7,
+			"x":883.8}
+		,{"type": "Speed",
+			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST"
+			"value":96,
+		}
+	],
+	"Consent":"Given",
+	"Purpose":"Road block detection",
+	"CampaignCreator":[
+		{"Name":"Tyrolean Government",
+		"City":"Innsbruck",
+		"Country":"Austria",
+		"PersonContact":"John Doe",
+		"PhoneNumber":"988829292992",
+		"email":"john.doe@gmail.com"},
+
+		{"Name":"LexisNexis",
+		"City":"Munich",
+		"Country":"Germany",
+		"PersonContact":"Peter Doe",
+		"PhoneNumber":"988829292992",
+		"email":"peter.doe@gmail.com"}
+	],
+	"CampaignController":[
+		{"Name":"Volksawagen",
+		"City":"Hannover",
+		"Country":"Germany",
+		"PersonContact":"Jane Doe",
+		"PhoneNumber":"988829292992",
+		"email":"jane.doe@gmail.com"}
+  ]},
+	{"Name":"Roads of Innsbruck",
+	"Duration":"10",
+	"StartDate":"10/10/2020",
+	"EndDate":"20/10/2020",
+	"CollectedData":[
+		{"type":"GPS",
+			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST"
+			"z":12.4,
+			"y":134.7,
+			"x":883.8}
+		,{"type": "Speed",
+			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST"
+			"value":96,}
+	],
+	"Consent":"Given",
+	"Purpose":"Road block detection",
+	"CampaignCreator":[
+		{"Name":"Tyrolean Government",
+		"City":"Innsbruck",
+		"Country":"Austria",
+		"PersonContact":"John Doe",
+		"PhoneNumber":"988829292992",
+		"email":"john.doe@gmail.com"},
+
+		{"Name":"LexisNexis",
+		"City":"Munich",
+		"Country":"Germany",
+		"PersonContact":"Peter Doe",
+		"PhoneNumber":"988829292992",
+		"email":"peter.doe@gmail.com"},
+
+		{"Name":"TOG",
+		"City":"London",
+		"Country":"United Kingdom",
+		"PersonContact":"Peter John Doe",
+		"PhoneNumber":"988829292992",
+		"email":"peterj.doe@gmail.com"}
+	],
+	"CampaignController":[
+		{"Name":"Volkswagen",
+		"City":"Hannover",
+		"Country":"Germany",
+		"PersonContact":"Jane Doe",
+		"PhoneNumber":"988829292992",
+		"email":"jane.doe@gmail.com"}
+	]}
+}]
