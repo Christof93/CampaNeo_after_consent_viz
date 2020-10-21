@@ -38,12 +38,12 @@
 	"EndDate":"20/10/2020",
 	"CollectedData":[
 		{"type":"GPS",
-			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST"
+			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
 			"z":12.4,
 			"y":134.7,
 			"x":883.8}
 		,{"type": "Speed",
-			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST"
+			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
 			"value":96,
 		}
 	],
