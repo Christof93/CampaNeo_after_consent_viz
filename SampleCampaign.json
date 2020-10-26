@@ -1,6 +1,6 @@
 {"Campaigns":[
 	{"Name":"Roads of Innsbruck",
-	"Duration":"10",
+	"Duration":10,
 	"StartDate":"10/10/2020",
 	"EndDate":"20/10/2020",
 	"CollectedData":[
@@ -11,7 +11,7 @@
 			"x":883.8}
 		,{"type": "Speed",
 			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
-			"value":58,
+			"value":58
 		}
   ],
 	"Consent":"Given",
@@ -33,7 +33,7 @@
 		"email":"jane.doe@gmail.com"}
   ]},
 	{"Name":"Roads of Innsbruck",
-	"Duration":"15",
+	"Duration":15,
 	"StartDate":"05/10/2020",
 	"EndDate":"20/10/2020",
 	"CollectedData":[
@@ -44,7 +44,7 @@
 			"x":883.8}
 		,{"type": "Speed",
 			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
-			"value":96,
+			"value":96
 		}
 	],
 	"Consent":"Given",
@@ -73,7 +73,7 @@
 		"email":"jane.doe@gmail.com"}
   ]},
 	{"Name":"Roads of Innsbruck",
-	"Duration":"10",
+	"Duration":10,
 	"StartDate":"10/10/2020",
 	"EndDate":"20/10/2020",
 	"CollectedData":[
@@ -81,10 +81,10 @@
 			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
 			"z":12.4,
 			"y":134.7,
-			"x":883.8}
-		,{"type": "Speed",
-			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
-			"value":96,}
+			"x":883.8},
+		{"type": "Speed",
+		"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
+		"value":96}
 	],
 	"Consent":"Given",
 	"Purpose":"Road block detection",
@@ -118,4 +118,4 @@
 		"PhoneNumber":"988829292992",
 		"email":"jane.doe@gmail.com"}
 	]}
-}
+]}
