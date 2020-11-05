@@ -1,0 +1,27 @@
+{
+  "name": "campaneo_after_consent_viz",
+  "version": "1.0.0",
+  "description": "Collection of ideas for a user interface to visualize data distribution and usage. The data is given to specific campaign owners who ask for consent from the user. Then the user gets a transparent view of his data. Who uses it? What data is used? When was it retrieved?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christof93/CampaNeo_after_consent_viz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Christof93/CampaNeo_after_consent_viz/issues"
+  },
+  "homepage": "https://github.com/Christof93/CampaNeo_after_consent_viz#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "eslint": "^7.12.1"
+  },
+  "dependencies": {
+    "typescript": "^4.0.5"
+  }
+}

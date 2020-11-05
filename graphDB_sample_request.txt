@@ -1,0 +1,4 @@
+https://graphdb.sti2.at/repositories/ConsentKG/statements?subj=%3Chttp%3A%2F%2Fwww.semanticweb.org%2Faneliakurteva%2Fontologies%2F2020%2F4%2Funtitled-ontology-21%23Campaign%3E
+
+count the triples in ConsentKG
+https://graphdb.sti2.at/repositories/ConsentKG?query=select%20(COUNT(*)%20as%20%3Fcnt)%20where%20%7B%20%20%09%20%3Fs%20%3Fp%20%3Fo.%20%7D
