@@ -1,9 +1,14 @@
 /*global d3, $*/
 /*eslint no-undef: "error"*/
 
-$.getJSON( "../SampleCampaign.json",  data => {
+import './style.css'
+
+fetch("SampleCampaign.json")
+  .then(res => res.json())
+  .then(data => {
   console.log("load data.")
   console.log(data);
+
   var network = () => {
     const width = 500;
     const height = 300;
