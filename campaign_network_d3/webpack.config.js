@@ -50,7 +50,8 @@ module.exports = (env, argv) => {
       hot: true,
       port: 3000,
       overlay: true,
-      stats: 'minimal'
+      stats: 'minimal',
+      host: '0.0.0.0'
     }
   }
 }
