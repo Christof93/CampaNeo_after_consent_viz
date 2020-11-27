@@ -1,4 +1,5 @@
 import './style.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 import * as d3 from 'd3'
 

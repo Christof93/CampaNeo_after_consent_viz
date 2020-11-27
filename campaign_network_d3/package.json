@@ -35,6 +35,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "d3": "^6.2.0"
   }
 }
