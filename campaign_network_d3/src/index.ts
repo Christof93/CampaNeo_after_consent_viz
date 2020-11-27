@@ -14,10 +14,10 @@ fetch('SampleCampaign.json')
       const height = 300
 
       const dist_interpolation = d3.interpolateNumber(160, 80)
-      const nodes: any[] = data.Campaigns[2].CampaignCreator.map((item: any, i: number) => {
+      const nodes: any[] = data.Campaigns[2].CampaignCreator
+      nodes.forEach((item, i) => {
         item.x = 50 + ((width - 100) / (nodes.length + 1)) * (i + 1)
         item.y = i <= nodes.length / 2 ? dist_interpolation((i + 1) / (nodes.length / 2)) : dist_interpolation((nodes.length - i) / (nodes.length / 2))
-        return item
       })
       const campaign_node = {Name: data.Campaigns[2].Name, id: 'campaign', x: 250, y: 250}
       console.log(campaign_node.Name)
@@ -43,7 +43,6 @@ fetch('SampleCampaign.json')
         .attr('stroke-width', 1)
         .attr('stroke', '#999')
         .attr('stroke-opacity', 0.6)
-
 
       const node = svg.append('g')
         .attr('stroke', '#fff')
