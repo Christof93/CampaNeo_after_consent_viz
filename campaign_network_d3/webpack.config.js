@@ -8,7 +8,11 @@ module.exports = (env, argv) => {
   return {
     mode: argv.mode || 'development',
     entry: {
-      main: path.resolve(__dirname, 'main')
+      main: path.resolve(__dirname, path.join('src', 'index.ts')),
+    },
+    devtool: 'inline-source-map',
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
       filename: '[name].bundle.js',
@@ -20,7 +24,7 @@ module.exports = (env, argv) => {
       new MiniCssExtractPlugin(),
       new HtmlPlugin({
         filename: 'index.html',
-        template: 'index.html'
+        template: path.resolve(__dirname, path.join('src', 'index.html')),
       }),
       new CopyPlugin({
         patterns: [
@@ -33,6 +37,11 @@ module.exports = (env, argv) => {
         {
           test: /\.css$/i,
           use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        },
+        {
+          test: /\.tsx?$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
         },
       ],
     },
