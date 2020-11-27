@@ -26,6 +26,9 @@ fetch('SampleCampaign.json')
 
       console.log(links)
       console.log(nodes)
+      
+      d3.select('#network-graph').select('svg').remove();
+
       const svg = d3.select('#network-graph')
         .append('svg')
         .attr('viewBox', [0, 0, width, height].join(','))
