@@ -1,6 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
-const HtmlPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require("copy-webpack-plugin")
 
@@ -22,7 +22,7 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new MiniCssExtractPlugin(),
-      new HtmlPlugin({
+      new HtmlWebpackPlugin({
         filename: 'index.html',
         template: path.resolve(__dirname, path.join('src', 'index.html')),
       }),

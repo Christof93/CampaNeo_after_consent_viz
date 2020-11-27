@@ -26,10 +26,10 @@ fetch('SampleCampaign.json')
 
       console.log(links)
       console.log(nodes)
-      
-      d3.select('#network-graph').select('svg').remove();
 
-      const svg = d3.select('#network-graph')
+      const container = d3.select('#network-graph')
+
+      const svg = container
         .append('svg')
         .attr('viewBox', [0, 0, width, height].join(','))
 
@@ -57,8 +57,8 @@ fetch('SampleCampaign.json')
 
       node.append('circle')
         .attr('r', 5)
-        .attr('cx',d => d.x)
-        .attr('cy',d => d.y)
+        .attr('cx', d => d.x)
+        .attr('cy', d => d.y)
         .attr('fill', 'blue')
 
       node.append('text')
