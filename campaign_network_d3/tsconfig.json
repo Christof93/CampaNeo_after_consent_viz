@@ -3,10 +3,11 @@
     "outDir": "./dist/",
     "strict": true,
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "commonjs",
     "target": "es5",
     "allowJs": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "moduleResolution": "node"
   },
-  "include": ["src/**/*"]
+  "include": ["src/index.ts", "src/server.ts"]
 }

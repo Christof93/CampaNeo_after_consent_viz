@@ -5,9 +5,11 @@
   "main": "src/index.ts",
   "scripts": {
     "lint": "eslint src/**/*.ts",
+    "format": "eslint src/**/*.ts --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack && webpack-dev-server --config webpack.config.js",
-    "build": "webpack --config webpack.config.js"
+    "dev": "webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
+    "server": "tsc && node dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
   },
   "homepage": "https://github.com/Christof93/CampaNeo_after_consent_viz#readme",
   "devDependencies": {
+    "@comunica/actor-init-sparql": "^1.18.0",
     "@types/d3": "^6.2.0",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",

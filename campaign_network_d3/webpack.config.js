@@ -18,7 +18,6 @@ module.exports = (env, argv) => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
       sourceMapFilename: '[name].js.map',
-      publicPath: '/dist/'
     },
     plugins: [
       new MiniCssExtractPlugin(),
@@ -51,7 +50,7 @@ module.exports = (env, argv) => {
       port: 3000,
       overlay: true,
       stats: 'minimal',
-      host: '0.0.0.0'
+      host: '0.0.0.0',
     }
   }
 }

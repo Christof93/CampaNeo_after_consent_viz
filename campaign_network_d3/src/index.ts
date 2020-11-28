@@ -89,8 +89,8 @@ fetch('SampleCampaign.json')
       can.style.height = h + 'px'
 
       // Set context
-      const ctx = can?.getContext('2d')!
-      ctx?.scale(ratio,ratio)
+      const ctx = can?.getContext('2d')
+      ctx?.scale(ratio, ratio)
       ctx?.clearRect(0, 0, w, h)
 
       // Since context does all of the drawing, no need to return canvas itself
