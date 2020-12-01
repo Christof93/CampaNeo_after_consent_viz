@@ -1,0 +1,44 @@
+{
+  "name": "campaneo_after_consent_viz",
+  "version": "1.0.0",
+  "description": "Collection of ideas for a user interface to visualize data distribution and usage. The data is given to specific campaign owners who ask for consent from the user. Then the user gets a transparent view of his data. Who uses it? What data is used? When was it retrieved?",
+  "main": "src/index.ts",
+  "scripts": {
+    "lint": "eslint src/**/*.ts",
+    "format": "eslint src/**/*.ts --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
+    "server": "tsc && node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christof93/CampaNeo_after_consent_viz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Christof93/CampaNeo_after_consent_viz/issues"
+  },
+  "homepage": "https://github.com/Christof93/CampaNeo_after_consent_viz#readme",
+  "devDependencies": {
+    "@comunica/actor-init-sparql": "^1.18.0",
+    "@types/d3": "^6.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "copy-webpack-plugin": "^6.3.2",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.12.1",
+    "html-webpack-plugin": "^4.5.0",
+    "mini-css-extract-plugin": "^1.3.1",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.0.5",
+    "webpack": "^5.8.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "d3": "^6.2.0"
+  }
+}
