@@ -27,7 +27,8 @@ module.exports = (env, argv) => {
       }),
       new CopyPlugin({
         patterns: [
-          { from: "../SampleCampaign.json" },
+          { from: '../SampleCampaign.json' },
+          { from: '../icons' },
         ],
       }),
     ],
@@ -54,4 +55,3 @@ module.exports = (env, argv) => {
     }
   }
 }
-

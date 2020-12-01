@@ -2,6 +2,7 @@ import './style.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
 import * as d3 from 'd3'
+import { appendSVGFragment } from './import_svg'
 
 fetch('SampleCampaign.json')
   .then(res => res.json())
@@ -12,7 +13,7 @@ fetch('SampleCampaign.json')
     const network = () => {
       const width = 500
       const height = 300
-
+      // interpolation
       const dist_interpolation = d3.interpolateNumber(160, 80)
       const nodes: any[] = data.Campaigns[2].CampaignCreator
       nodes.forEach((item, i) => {
@@ -23,7 +24,8 @@ fetch('SampleCampaign.json')
       console.log(campaign_node.Name)
       const links = nodes.map((item, i) => ({id: i, source: campaign_node, target: item}))
       nodes.push(campaign_node)
-
+      //const car_button = d3.select('#car_button').node()!
+      //console.log(car_button instanceof Element)
       console.log(links)
       console.log(nodes)
 
@@ -32,6 +34,13 @@ fetch('SampleCampaign.json')
       const svg = container
         .append('svg')
         .attr('viewBox', [0, 0, width, height].join(','))
+
+      appendSVGFragment('car_button.svg',svg.node() as Element)
+        .then(()=> {
+            svg.select('#car_button').attr('transform','translate(-680,-250)')
+            console.log(svg.select('#car_button'))
+
+          })
 
       svg.append('g')
         .attr('stroke', '#fff')
@@ -73,6 +82,7 @@ fetch('SampleCampaign.json')
       return svg.node()
     }
     network()
+
 
     function createProperResCanvas(w: number, h: number, ratio: number) {
       if (!ratio) { ratio = Math.round(window.devicePixelRatio) || 1 }
