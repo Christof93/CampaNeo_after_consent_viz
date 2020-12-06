@@ -9,3 +9,6 @@ div#network-graph {
   height: 200px;
   */
 }
+div#network-container {
+  background-color:#032F5E;
+}
