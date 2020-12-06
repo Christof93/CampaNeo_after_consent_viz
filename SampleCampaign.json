@@ -1,5 +1,5 @@
 {"Campaigns":[
-	{"Name":"Roads of Innsbruck",
+	{"Name":"Highway Tirol",
 	"Duration":10,
 	"StartDate":"10/10/2020",
 	"EndDate":"20/10/2020",
@@ -32,7 +32,7 @@
 		"PhoneNumber":"988829292992",
 		"email":"jane.doe@gmail.com"}
   ]},
-	{"Name":"Roads of Innsbruck",
+	{"Name":"Drive Smart",
 	"Duration":15,
 	"StartDate":"05/10/2020",
 	"EndDate":"20/10/2020",
@@ -72,7 +72,7 @@
 		"PhoneNumber":"988829292992",
 		"email":"jane.doe@gmail.com"}
   ]},
-	{"Name":"Roads of Innsbruck",
+	{"Name":"Green Future",
 	"Duration":10,
 	"StartDate":"10/10/2020",
 	"EndDate":"20/10/2020",
