@@ -4,14 +4,14 @@
 	"StartDate":"10/10/2020",
 	"EndDate":"20/10/2020",
 	"CollectedData":[
-		{"type":"GPS",
-			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
-			"z":12.4,
-			"y":134.7,
-			"x":883.8}
-		,{"type": "Speed",
-			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
-			"value":58
+		{"type":"Fuel",
+			"retrievedAt":1200
+		},
+		{"type": "GPS",
+			"retrievedAt":4000
+		},
+		{"type": "GPS",
+			"retrievedAt":7500
 		}
   ],
 	"Consent":"Given",
@@ -37,14 +37,17 @@
 	"StartDate":"05/10/2020",
 	"EndDate":"20/10/2020",
 	"CollectedData":[
-		{"type":"GPS",
-			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
-			"z":12.4,
-			"y":134.7,
-			"x":883.8}
-		,{"type": "Speed",
-			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
-			"value":96
+		{"type":"Speed",
+			"retrievedAt":1300
+		},
+		{"type": "Speed",
+			"retrievedAt":3400
+		},
+		{"type": "Fuel",
+			"retrievedAt":6500
+		},
+		{"type": "Fuel",
+			"retrievedAt":8000
 		}
 	],
 	"Consent":"Given",
@@ -78,13 +81,20 @@
 	"EndDate":"20/10/2020",
 	"CollectedData":[
 		{"type":"GPS",
-			"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
-			"z":12.4,
-			"y":134.7,
-			"x":883.8},
+			"retrievedAt":1800
+		},
 		{"type": "Speed",
-		"retrievedAt":"Tue Oct 20 2020 23:41:36 CEST",
-		"value":96}
+			"retrievedAt":2100
+		},
+		{"type": "Fuel",
+			"retrievedAt":7000
+		},
+		{"type":"GPS",
+			"retrievedAt":7800
+		},
+		{"type": "Fuel",
+			"retrievedAt":8600
+		}
 	],
 	"Consent":"Given",
 	"Purpose":"Road block detection",
