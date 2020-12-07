@@ -12,3 +12,7 @@ div#network-graph {
 div#network-container {
   background-color:#032F5E;
 }
+
+canvas#particle-overlay-canvas {
+  position: absolute;
+}
