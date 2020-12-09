@@ -4,10 +4,22 @@ import 'bootstrap/dist/css/bootstrap.css'
 import * as d3 from 'd3'
 import { getSVG } from './import_svg'
 import * as canvas_particles from './particle_overlay'
+import * as interactive from './interactivity'
 
-const legend_colors:any = {"Fuel":"#23F0D5","Speed":"#FBFB9C","GPS":"#D597FF"}
-export {legend_colors}
-
+const legend_colors:any = {
+  'Fuel':{'dark':'#23F0D5','light':'#007CBE'},
+  'Speed':{'dark':'#FBFB9C','light':'#F6AE2D'},
+  'GPS':{'dark':'#D597FF','light':'#F26419'}
+}
+const colors:any = {
+  'light_mode':'dark',
+  'background':{'dark':'#032F5E','light':'#F5FBFF'},
+  'campaign_banner':{'dark':'#B3D2EC','light':''},
+  'center_in':{'dark':'black','light':'black'},
+  'center_out':{'dark':'#CBF9F9','light':'#97D8C4'}
+}
+export {colors, legend_colors}
+interactive.add_dev_control_panel()
 fetch('SampleCampaign.json')
   .then(res => res.json())
   .then(data => {
@@ -30,19 +42,19 @@ fetch('SampleCampaign.json')
       const user_node = {Name: "", id: 'user', x: 250, y: 250}
       //-- set up links such that all nodes are connected with center node
       const links = nodes.map((node, i) => {
-                      let link = {id: i, source: {...user_node}, target: node}
-                      var x = user_node.x
-                      var y = user_node.y
-                      link.source.x = dist_interpolation_x(i,
-                                                           nodes.length,
-                                                           x-65,
-                                                           x+65)
-                      link.source.y = dist_interpolation_y(i,
-                                                           nodes.length,
-                                                           y-25,
-                                                           y-40)
-                      return link
-                    })
+        let link = {id: i, source: {...user_node}, target: node}
+        var x = user_node.x
+        var y = user_node.y
+        link.source.x = dist_interpolation_x(i,
+                                             nodes.length,
+                                             x-65,
+                                             x+65)
+        link.source.y = dist_interpolation_y(i,
+                                             nodes.length,
+                                             y-25,
+                                             y-40)
+        return link
+      })
       // -- setup the particles
       var particles:any[] = compute_particles(links, scale_factor)
       //nodes.push(user_node)
@@ -110,7 +122,7 @@ fetch('SampleCampaign.json')
         .attr('height', 25)
         .attr('x', d => d.x-57)
         .attr('y', d => d.y-31)
-        .attr('fill', '#B3D2EC')
+        .attr('fill', colors.campaign_banner.dark)
         .attr('stroke-width', 0)
       //-- campaign text
       // TODO: Make sizes dependent on word length and center
@@ -186,14 +198,13 @@ const add_legend_tag_symbol = (outer_svg:any):void => {
       svg_node_element.append(sub_svg)
       outer_svg.select('#place_tag_symbol')
         .attr('transform','translate(15,190) scale(0.4)')
-        .attr('fill','#D597FF')
+        .attr('fill', legend_colors.GPS.dark)
         .append('text')
           .text('GPS')
-          .attr('dx', 88)
-          .attr('dy', 45)
+          .attr('dx', 100)
+          .attr('dy', 44)
           .attr('font-family', 'sans-serif')
-          .attr('font-size', '35px')
-          .attr('fill', '#D597FF')
+          .attr('font-size', '30px')
           .attr('stroke-width', 0)
       })
   }
@@ -207,14 +218,13 @@ const add_legend_tag_symbol = (outer_svg:any):void => {
         svg_node_element.append(sub_svg)
         outer_svg.select('#speed_symbol')
           .attr('transform','translate(15,225) scale(0.05)')
-          .attr('fill','#FBFB9C')
+          .attr('fill', legend_colors.Speed.dark)
           .append('text')
             .text('Speed')
-            .attr('dx', 700)
+            .attr('dx', 800)
             .attr('dy', 375)
             .attr('font-family', 'sans-serif')
-            .attr('font-size', '300px')
-            .attr('fill', '#FBFB9C')
+            .attr('font-size', '250px')
             .attr('stroke-width', 0)
         })
     }
@@ -228,14 +238,13 @@ const add_legend_tag_symbol = (outer_svg:any):void => {
         svg_node_element.append(sub_svg)
         outer_svg.select('#fuel_symbol')
           .attr('transform','translate(15,260) scale(0.05)')
-          .attr('fill','#23F0D5')
+          .attr('fill', legend_colors.Fuel.dark)
           .append('text')
             .text('Fuel')
-            .attr('dx', 700)
+            .attr('dx', 800)
             .attr('dy', 375)
             .attr('font-family', 'sans-serif')
-            .attr('font-size', '300px')
-            .attr('fill', '#23F0D5')
+            .attr('font-size', '250px')
             .attr('stroke-width', 0)
         })
     }

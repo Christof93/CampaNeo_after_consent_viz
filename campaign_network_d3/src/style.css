@@ -16,3 +16,17 @@ div#network-container {
 canvas#particle-overlay-canvas {
   position: absolute;
 }
+#control-panel {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  min-width: 300px;
+  min-height:180px;
+  top: 10px;
+  left: 10px;
+  border-radius: 15px;
+}
+#control-panel > button {
+  width: 100px;
+  height: 30px;
+  border-radius: 7px;
+}
