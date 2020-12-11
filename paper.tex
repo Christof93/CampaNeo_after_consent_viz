@@ -1,0 +1,64 @@
+\documentclass{article}
+
+\linespread{1.1}
+
+\raggedbottom
+
+\usepackage{float}
+
+\usepackage{lmodern}
+\usepackage[english]{babel}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+
+\usepackage{multicol}
+
+\usepackage{listings}
+
+\usepackage{graphicx}
+\graphicspath{{assets/}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{nameref}
+
+\addto\extrasenglish{
+  \def\sectionautorefname{Section}
+}
+
+\usepackage[
+  style   = numeric,
+  sorting = none,
+]{biblatex}
+\bibliography{paper}
+
+\title{CampaNeo Consent Visualisation}
+\author{Christof Bless, Lukas Dötlinger, Michael Kaltschmid \& Markus Reiter}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Introduction}
+\label{sec:introduction}
+
+\section{Prototyping}
+\label{sec:conclusion}
+
+\section{Architecture}
+\label{sec:conclusion}
+
+\section{Results}
+\label{sec:conclusion}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+\newpage
+\printbibliography
+
+\end{document}

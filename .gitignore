@@ -1,3 +1,17 @@
 node_modules
 dist
 credentials.ts
+
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.pdf
+*.fls
+*.log
+*.fdb_latexmk
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.xdv
