@@ -1,8 +1,7 @@
-import { legend_colors } from './index.ts'
+import { legend_colors, colors } from './index.ts'
 // -- loosely implemented after this http://bl.ocks.org/gvenezia/e0e6d17dbf12dd6a7ea819ffe02c7aa1
 export function createProperResCanvas(w: number, h: number, ratio: number) {
   if (!ratio) { ratio = Math.round(window.devicePixelRatio) || 1 }
-
   // Set canvas
   const can = document.querySelector('#particle-overlay-canvas')! as HTMLCanvasElement
   const parent_container = can.parentElement as HTMLElement
@@ -13,12 +12,10 @@ export function createProperResCanvas(w: number, h: number, ratio: number) {
   can.height = Math.min(32767, h * ratio)
   can.style.width = (parent_container.clientWidth || w) + 'px'
   can.style.height = (parent_container.clientHeight || h) + 'px'
-
   // Set context
   const ctx = can.getContext('2d')
   //ctx?.scale(ratio,ratio)
   ctx?.clearRect(0, 0, w, h)
-
   // Since context does all of the drawing, no need to return canvas itself
   return ctx
 }
@@ -54,8 +51,8 @@ export async function draw_canvas_particles(particles:any,
     )
     canvas_ctx.lineWidth = 2
     canvas_ctx.shadowBlur = 12
-    canvas_ctx.shadowColor = legend_colors[particle.type]
-    canvas_ctx.fillStyle = legend_colors[particle.type]
+    canvas_ctx.shadowColor = legend_colors[particle.type][colors.light_mode]
+    canvas_ctx.fillStyle = legend_colors[particle.type][colors.light_mode]
     canvas_ctx.fill()
   }
 }

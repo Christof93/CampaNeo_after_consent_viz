@@ -29,7 +29,7 @@ fetch('SampleCampaign.json')
     const network = () => {
       const width = 500
       const height = 300
-      const timespan = 15000
+      const timespan = 12000
       const scale_factor = 4
       var current_time = 0
       //-- constructing nodes array from data
