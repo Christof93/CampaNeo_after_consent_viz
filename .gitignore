@@ -15,3 +15,5 @@ credentials.ts
 *.synctex.gz
 *.synctex(busy)
 *.xdv
+
+.vscode
