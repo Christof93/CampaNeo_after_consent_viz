@@ -23,6 +23,7 @@
 \usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{nameref}
+\usepackage{subfiles}
 
 \addto\extrasenglish{
   \def\sectionautorefname{Section}
@@ -45,18 +46,23 @@
 
 \section{Introduction}
 \label{sec:introduction}
+\subfile{res/introduction}
 
 \section{Prototyping}
-\label{sec:conclusion}
+\label{sec:prototyping}
+\subfile{res/prototyping}
 
 \section{Architecture}
-\label{sec:conclusion}
+\label{sec:architecture}
+\subfile{res/architecture}
 
 \section{Results}
-\label{sec:conclusion}
+\label{sec:results}
+\subfile{res/results}
 
 \section{Conclusion}
 \label{sec:conclusion}
+\subfile{res/conclusion}
 
 \newpage
 \printbibliography
