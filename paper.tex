@@ -1,5 +1,4 @@
-\documentclass{article}
-
+\documentclass[notitlepage,11pt]{article}
 \linespread{1.1}
 
 \raggedbottom
@@ -35,34 +34,38 @@
 ]{biblatex}
 \bibliography{paper}
 
+\begin{document}
 \title{CampaNeo Consent Visualisation}
 \author{Christof Bless, Lukas Dötlinger, Michael Kaltschmid \& Markus Reiter}
-
-\begin{document}
-
 \maketitle
-
+% TODO rewrite abstract
 \begin{abstract}
 The GDPR has made companies rethink their data collection strategies, has set in place specific requirements for data sharing and has put a focus on the individual’s rights. New innovative solutions for data modelling are sought after. One such is the knowledge graph, which enables interoperability of knowledge by machines. But how are knowledge graphs beneficial to the end-user? Could they be as useful to individuals as they are to  machines? While having a knowledge graph that models GDPR knowledge might be enough for a machine to understand the law, this is not the case with individuals, who look for visual cues. A machine can interpret knowledge graphs with millions of entities in seconds, but it is not possible for individuals to do so. Presenting one with so much unnecessary knowledge will result in information overload, frustration and lack of awareness.
 By considering the individual’s needs, this paper presents a personalized and dynamic knowledge graph visualization that focuses on raising one’s awareness regarding the implications of giving consent for data sharing as defined by GDPR.
 \end{abstract}
 
-\newpage
-
 \section{Introduction}
 \label{sec:introduction}
 \subfile{res/introduction}
 
-\section{Prototyping}
+\section{Related Work}
+\label{sec:related_work}
+\subfile{res/related}
+
+\section{Research Question}
+\label{sec:research_question}
+\subfile{res/research_question}
+
+\section{Prototype}
 \label{sec:prototyping}
 \subfile{res/prototyping}
 
-\section{Architecture}
-\label{sec:architecture}
+\section{Implementation}
+\label{sec:implementation}
 \subfile{res/architecture}
 
-\section{Results}
-\label{sec:results}
+\section{Evaluation}
+\label{sec:evaluation}
 \subfile{res/results}
 
 \section{Conclusion}
@@ -71,5 +74,4 @@ By considering the individual’s needs, this paper presents a personalized and 
 
 \newpage
 \printbibliography
-
 \end{document}
