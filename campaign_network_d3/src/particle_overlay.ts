@@ -37,7 +37,8 @@ export async function draw_canvas_particles(particles:any,
       particle.position = get_coordinates_at_distance(
                                                     new_distance,
                                                     particle.link.source,
-                                                    particle.link.path_angle)
+                                                    particle.link.path_angle,
+                                                    particle.link.orientation)
       particle.dist = new_distance
     }
     // Draw the particles
@@ -58,9 +59,8 @@ export async function draw_canvas_particles(particles:any,
 }
 
 function get_coordinates_at_distance(dist:number, path_start:any ,
-                                     path_angle:number) {
-
-  const new_x = path_start.x - (Math.cos(path_angle) * dist)
-  const new_y = path_start.y - (Math.sin(path_angle) * dist)
+                                     path_angle:number, orientation:number) {
+  const new_x = path_start.x + (Math.cos(path_angle) * dist)
+  const new_y = path_start.y + (Math.sin(path_angle) * dist)
   return {x:new_x, y:new_y}
 }

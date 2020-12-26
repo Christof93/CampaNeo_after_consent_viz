@@ -31,28 +31,34 @@ fetch('SampleCampaign.json')
       const height = 300
       const timespan = 12000
       const scale_factor = 4
+      const radius = 130
       var current_time = 0
       //-- constructing nodes array from data
       const nodes:any[] = data.Campaigns
-      nodes.forEach((item, i) => {
-        item.x = dist_interpolation_x(i, nodes.length, 0, width)
-        item.y = dist_interpolation_y(i, nodes.length, 180, 80)
-      })
       //-- add a node as center node center
-      const user_node = {Name: "", id: 'user', x: 250, y: 250}
+      const user_node = {Name: "", id: 'user', x: 250, y: 150}
+      nodes.forEach((item, i) => {
+        let angle = (Math.PI*2/nodes.length) * i + 0.1
+        item.x = distributed_on_circumference_x(user_node,
+                                                radius,
+                                                angle)
+
+        item.y = distributed_on_circumference_y(user_node,
+                                                radius,
+                                                angle)
+      })
+
       //-- set up links such that all nodes are connected with center node
       const links = nodes.map((node, i) => {
-        let link = {id: i, source: {...user_node}, target: node}
-        var x = user_node.x
-        var y = user_node.y
-        link.source.x = dist_interpolation_x(i,
-                                             nodes.length,
-                                             x-65,
-                                             x+65)
-        link.source.y = dist_interpolation_y(i,
-                                             nodes.length,
-                                             y-25,
-                                             y-40)
+        let link = {id: i, source: {...user_node}, target: node, angle:0}
+        link.angle = (Math.PI*2/nodes.length) * i + 0.1
+        link.source.x = distributed_on_circumference_x(user_node,
+                                                       33,
+                                                       link.angle)
+
+        link.source.y = distributed_on_circumference_y(user_node,
+                                                       33,
+                                                       link.angle)
         return link
       })
       // -- setup the particles
@@ -151,6 +157,7 @@ const compute_particles = (links:any[], scale_factor:number):any[] => {
       Math.pow(x_start-x_end,2) +
       Math.pow(y_start-y_end,2)
     )
+    const link_angle = link.angle
     for (let data of link.target.CollectedData) {
       var particle = data
       particle.time = data.retrievedAt
@@ -161,32 +168,22 @@ const compute_particles = (links:any[], scale_factor:number):any[] => {
       particle.link = {}
       particle.link.source = {x:x_start,y:y_start}
       particle.link.path_length = link_length
-      particle.link.path_angle = Math.acos(
-                                  (x_start-x_end)/
-                                  link_length
-                                )
-
+      particle.link.path_angle = link_angle
       particles.push(particle)
     }
   }
   return particles
 }
-
-// functions to compute the interpolation for nodes
-const dist_interpolation_y = (position:number, array_length:number,
-  interpol_start:number, interpol_end:number):number => {
-  var interpolation = d3.interpolateNumber(interpol_start,interpol_end)
-  if (position <= array_length / 2) {
-    return interpolation((position + 1) / (array_length / 2))
-  }
-  else {
-    return interpolation((array_length - position) / (array_length / 2))
-  }
+ // functions to compute position of nodes on circle circumference
+const distributed_on_circumference_x = (center_node:any, radius:number,
+  angle:number):number => {
+  let x_circ = radius * Math.cos(angle) + center_node.x
+  return x_circ
 }
-const dist_interpolation_x = (position:number, array_length:number,
-  interpol_start:number, interpol_end:number):number => {
-  var interpolation = d3.interpolateNumber(interpol_start,interpol_end)
-  return interpolation((position + 1)/ (array_length + 1))
+const distributed_on_circumference_y = (center_node:any, radius:number,
+  angle:number):any => {
+  let y_circ = radius * Math.sin(angle) + center_node.y
+  return y_circ
 }
 
 const add_legend_tag_symbol = (outer_svg:any):void => {
@@ -257,6 +254,6 @@ const add_car_button = (outer_svg:any):void => {
                                     .querySelector('#car_button') as Element
       svg_node_element.append(sub_svg)
       outer_svg.select('#car_button')
-        .attr('transform','translate(-265,-10) scale(0.55)');
+        .attr('transform','translate(-123,-42) scale(0.4)');
       })
 }
