@@ -1,5 +1,7 @@
 import { legend_colors, colors } from './index.ts'
 // -- loosely implemented after this http://bl.ocks.org/gvenezia/e0e6d17dbf12dd6a7ea819ffe02c7aa1
+const expired:any[] = []
+
 export function createProperResCanvas(w: number, h: number, ratio: number) {
   if (!ratio) { ratio = Math.round(window.devicePixelRatio) || 1 }
   // Set canvas
@@ -26,36 +28,53 @@ export async function draw_canvas_particles(particles:any,
   canvas_ctx.clearRect(0, 0, canvas_ctx.canvas.width, canvas_ctx.canvas.height)
   canvas_ctx.fillStyle = '#23F0D5'
   canvas_ctx.lineWidth = '50px'
-  for (const particle of particles) {
+  for (const i in particles) {
+    const particle = particles[i]
     const distance_from_start = particle.dist
     const new_distance = distance_from_start + (timedelta * particle.speed)
     // make room to stack particles at the end
-    if (new_distance > particle.link.path_length) {
-      particle.link.path_length -= 15
+    if (new_distance >= particle.link.path_length && !particle.arrived) {
+      particle.arrived = true
+      // move all arrived particles at the same link to the right
+      for (const arrived_particle of particles.filter((p:any)=>
+        p.arrived && p.link.id==particle.link.id)
+      ) {
+        arrived_particle.position.x +=25
+        draw_single_particle(arrived_particle, canvas_ctx)
+      }
     }
-    else {
+    //draw on path
+    else if (!particle.arrived) {
       particle.position = get_coordinates_at_distance(
                                                     new_distance,
                                                     particle.link.source,
                                                     particle.link.path_angle,
                                                     particle.link.orientation)
       particle.dist = new_distance
+      // Draw the particles
+      draw_single_particle(particle, canvas_ctx)
     }
-    // Draw the particles
-    canvas_ctx.beginPath()
-    canvas_ctx.arc( // creates a circle in canvas
-      particle.position.x,
-      particle.position.y,
-      particle.particle_size, // radius of circle
-      0, // circle starting position
-      2 * Math.PI  // circle ending position
-    )
-    canvas_ctx.lineWidth = 2
-    canvas_ctx.shadowBlur = 12
-    canvas_ctx.shadowColor = legend_colors[particle.type][colors.light_mode]
-    canvas_ctx.fillStyle = legend_colors[particle.type][colors.light_mode]
-    canvas_ctx.fill()
+    // draw as a stack to the side
+    else {
+      draw_single_particle(particle, canvas_ctx)
+    }
   }
+}
+
+function draw_single_particle(particle:any, canvas_ctx:any) {
+  canvas_ctx.beginPath()
+  canvas_ctx.arc( // creates a circle in canvas
+    particle.position.x,
+    particle.position.y,
+    particle.particle_size, // radius of circle
+    0, // circle starting position
+    2 * Math.PI  // circle ending position
+  )
+  canvas_ctx.lineWidth = 2
+  canvas_ctx.shadowBlur = 12
+  canvas_ctx.shadowColor = legend_colors[particle.type][colors.light_mode]
+  canvas_ctx.fillStyle = legend_colors[particle.type][colors.light_mode]
+  canvas_ctx.fill()
 }
 
 function get_coordinates_at_distance(dist:number, path_start:any ,

@@ -28,17 +28,19 @@ fetch('SampleCampaign.json')
 
     const network = () => {
       const width = 500
-      const height = 300
-      const timespan = 12000
+      const height = 350
+      const timespan = 30000
       const scale_factor = 4
-      const radius = 130
+      const radius = 100
       var current_time = 0
       //-- constructing nodes array from data
       const nodes:any[] = data.Campaigns
+      const circle_fraction = Math.PI*2/nodes.length
+      const fraction_offset = nodes.length%2==0?2:3
       //-- add a node as center node center
       const user_node = {Name: "", id: 'user', x: 250, y: 150}
       nodes.forEach((item, i) => {
-        let angle = (Math.PI*2/nodes.length) * i + 0.1
+        let angle = circle_fraction * i + circle_fraction/fraction_offset
         item.x = distributed_on_circumference_x(user_node,
                                                 radius,
                                                 angle)
@@ -46,12 +48,15 @@ fetch('SampleCampaign.json')
         item.y = distributed_on_circumference_y(user_node,
                                                 radius,
                                                 angle)
+        // determine whether node below or above center
+        item.orientation = Math.PI>angle?1:-1
+
       })
 
       //-- set up links such that all nodes are connected with center node
       const links = nodes.map((node, i) => {
-        let link = {id: i, source: {...user_node}, target: node, angle:0}
-        link.angle = (Math.PI*2/nodes.length) * i + 0.1
+        let link = {id:i, source:{...user_node}, target:node, angle:0}
+        link.angle = circle_fraction * i + circle_fraction/fraction_offset
         link.source.x = distributed_on_circumference_x(user_node,
                                                        33,
                                                        link.angle)
@@ -59,6 +64,7 @@ fetch('SampleCampaign.json')
         link.source.y = distributed_on_circumference_y(user_node,
                                                        33,
                                                        link.angle)
+
         return link
       })
       // -- setup the particles
@@ -83,6 +89,7 @@ fetch('SampleCampaign.json')
 
       // -- function to update particles
       const tick = (elapsed_time:number) => {
+        // start drawing particles at the right time
         const flying_particles = particles.filter(p => p.time < elapsed_time)
         const time_delta = elapsed_time-current_time
         canvas_particles.draw_canvas_particles(flying_particles,canvas_context, time_delta)
@@ -124,17 +131,17 @@ fetch('SampleCampaign.json')
       node.append('rect')
         .attr("rx", 12)
         .attr("ry", 12)
-        .attr('width', 110)
-        .attr('height', 25)
-        .attr('x', d => d.x-57)
-        .attr('y', d => d.y-31)
+        .attr('width', 100)
+        .attr('height', 23)
+        .attr('x', d => d.x - 50)
+        .attr('y', d => d.orientation>0?d.y+13:d.y-31)
         .attr('fill', colors.campaign_banner.dark)
         .attr('stroke-width', 0)
       //-- campaign text
       // TODO: Make sizes dependent on word length and center
       node.append('text')
-        .attr('dx', d => d.x -42)
-        .attr('dy', d => d.y -13)
+        .attr('dx', d => d.x -40)
+        .attr('dy', d => d.orientation>0?d.y+29:d.y-15)
         .attr('font-family', 'sans-serif')
         .attr('font-size', '12.5px')
         .attr('fill', 'black')
@@ -159,13 +166,15 @@ const compute_particles = (links:any[], scale_factor:number):any[] => {
     )
     const link_angle = link.angle
     for (let data of link.target.CollectedData) {
-      var particle = data
+      let particle = data
+      particle.arrived = false
       particle.time = data.retrievedAt
       particle.dist = 0.1
-      particle.speed = 0.3
+      particle.speed = 0.1
       particle.particle_size = 11
       particle.position = {x:x_start, y:y_start}
       particle.link = {}
+      particle.link.id = link.id
       particle.link.source = {x:x_start,y:y_start}
       particle.link.path_length = link_length
       particle.link.path_angle = link_angle
@@ -194,7 +203,7 @@ const add_legend_tag_symbol = (outer_svg:any):void => {
                                     .querySelector('#place_tag_symbol') as Element
       svg_node_element.append(sub_svg)
       outer_svg.select('#place_tag_symbol')
-        .attr('transform','translate(15,190) scale(0.4)')
+        .attr('transform','translate(340, 315) scale(0.32)')
         .attr('fill', legend_colors.GPS.dark)
         .append('text')
           .text('GPS')
@@ -214,7 +223,7 @@ const add_legend_tag_symbol = (outer_svg:any):void => {
                                       .querySelector('#speed_symbol') as Element
         svg_node_element.append(sub_svg)
         outer_svg.select('#speed_symbol')
-          .attr('transform','translate(15,225) scale(0.05)')
+          .attr('transform','translate(230,315) scale(0.041)')
           .attr('fill', legend_colors.Speed.dark)
           .append('text')
             .text('Speed')
@@ -234,7 +243,7 @@ const add_legend_tag_symbol = (outer_svg:any):void => {
                                       .querySelector('#fuel_symbol') as Element
         svg_node_element.append(sub_svg)
         outer_svg.select('#fuel_symbol')
-          .attr('transform','translate(15,260) scale(0.05)')
+          .attr('transform','translate(125,315) scale(0.041)')
           .attr('fill', legend_colors.Fuel.dark)
           .append('text')
             .text('Fuel')
