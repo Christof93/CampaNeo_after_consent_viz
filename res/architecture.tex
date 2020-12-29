@@ -1,18 +1,20 @@
 \begin{document}
-  The goal of this project in terms of implementation was to build a web application, that is easily
-  embeddable into a mobile application. For this reason we decided on going for a lean
-  front end without too many unnecessary dependencies to keep it responsive. Among the key dependencies that
-  are necessary is D3.js, a JavaScript library for manipulating documents based on data \cite{d3}. D3
-  fits the requirements of simple interoperability between data and visualisation by manipulating the DOM
-  perfectly.
+  The goal of this project in terms of implementation was to
+  build a web application, that is easily embeddable into a mobile application.
+  For this reason we decided on going for a lean front end without too many
+  unnecessary dependencies to keep it responsive. Among the key dependencies that
+  are necessary is D3.js, a JavaScript library for manipulating documents based
+  on data \cite{d3}. D3 fits the requirements of simple interoperability between
+  data and visualisation by manipulating the DOM perfectly.
 
-  Naturally a front end for the purpose of this application is not of much use without data
-  and therefore a database is required. Given that the visualisation is build around a semantic knowledge
-  graph, a graph database is a necessity. A great fit in this regard is RDF4j. RDF4j, a native triple
-  store, offers the ability to query the knowledge graph using SPARQL. The database has also support
-  for all mainstream RDF file formats \cite{rdf4j}.
+  Naturally a front end for the purpose of this application is not of much use
+  without data and therefore a database is required. Given that the
+  visualisation is build around a semantic knowledge graph, a graph database is
+  a necessity. A great fit in this regard is RDF4j. RDF4j, a native triple
+  store, offers the ability to query the knowledge graph using SPARQL. The
+  database has also support for all mainstream RDF file formats \cite{rdf4j}.
 
-  A simple use case would be a user starting the application, which initializes the D3 frontend web
-  application, which in turn queries data from the database to visualize the consent page as shown in
-  \autoref{fig:prototype}.
+  A simple use case would be a user starting the application, which initializes
+  the D3 frontend web application, which in turn queries data from the database
+  to visualize the consent page as shown in \autoref{fig:prototype}.
 \end{document}
