@@ -1,0 +1,89 @@
+\documentclass[notitlepage,11pt]{article}
+\linespread{1.1}
+
+\raggedbottom
+
+\usepackage{float}
+
+\usepackage{lmodern}
+\usepackage[english]{babel}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+
+\usepackage{multicol}
+
+\usepackage{listings}
+
+\usepackage{graphicx}
+\graphicspath{{assets/}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{nameref}
+\usepackage{subfiles}
+
+\addto\extrasenglish{
+  \def\sectionautorefname{Section}
+}
+
+\usepackage[
+  style   = numeric,
+  sorting = none,
+]{biblatex}
+\bibliography{paper}
+
+\begin{document}
+\title{Consent Visualisation}
+\author{Christof Bless, Lukas Dötlinger, Michael Kaltschmid \& Markus Reiter}
+\maketitle
+% TODO rewrite abstract
+\begin{abstract}
+  Data privacy scandals in the recent past have left many people around the world
+  insecure about the implications of data sharing in every day life.  At the
+  same time advances in machine learning and data science have given us the
+  possibility to enhance the safety and the quality of life of many people.  To
+  collect data from individuals nowadays companies have to rely on mutual
+  consent and trust. New regulations such as the GDPR make sure that consumers
+  are not exploited or taken advantage of.  From a legal standpoint it is
+  necessary to inform customers to a full extent about what information is
+  collected from them.  In this paper we present a new visualisation approach
+  to keep people informed about the activities linked to their data sharing
+  agreements. We introduce a user-centred application with a transparent
+  visualisation aiming to give users a better understanding of the data sharing
+  processes in the background of their consent agreements.  (Does this lead to
+  more legal awareness and trust? evaluation results summary)
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+\subfile{res/introduction}
+
+\section{Related Work}
+\label{sec:related_work}
+\subfile{res/related}
+
+\section{Research Question}
+\label{sec:research_question}
+\subfile{res/research_question}
+
+\section{Prototype}
+\label{sec:prototyping}
+\subfile{res/prototyping}
+
+\section{Implementation}
+\label{sec:implementation}
+\subfile{res/architecture}
+
+\section{Evaluation}
+\label{sec:evaluation}
+\subfile{res/results}
+
+\section{Conclusion}
+\label{sec:conclusion}
+\subfile{res/conclusion}
+
+\newpage
+\printbibliography
+\end{document}
