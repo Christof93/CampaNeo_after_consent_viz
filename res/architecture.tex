@@ -65,6 +65,17 @@
   time series visualisation and produces the corresponding visualisation
   using \texttt{D3.js} accordingly.
 
+  Depending on the query, we get a lot of data in return, as the database
+  will return a value for each data-package, that was sent. The so called
+  "Visualisation Module" groups those together, creating a single visible
+  node for each category of data. These categories are predefined in the
+  ontology and represent thing like coordinates, longitude and latitude, or
+  fuel consumption. The module then creates connections between the data packages
+  and the third party companies receiving them.
+
+  After the visualization is created for the received data, the “Visualisation Module”
+  updates the currently displayed graph.
+
   % TODO: Explain the “Visualisation Module” in more detail. Maybe add a second
   %       diagram showing the inner workings of the module.
 
