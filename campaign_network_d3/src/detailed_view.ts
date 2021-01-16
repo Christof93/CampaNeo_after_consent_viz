@@ -6,8 +6,8 @@ export const build_detailed_view = (node:any):any => {
   d3.select('svg').append('g')
     .attr('class','detail-overlay hidden')
     .append('rect')
-    .attr("rx", 12)
-    .attr("ry", 12)
+    .attr('rx', 12)
+    .attr('ry', 12)
     .attr('width', 480)
     .attr('height', 330)
     .attr('x', 10)
@@ -20,25 +20,25 @@ export const build_detailed_view = (node:any):any => {
 export const show = (node_info:any):void => {
 
   const timeline = d3.select('g.detail-overlay')
-    .attr("class","detail-overlay visible")
-    .selectAll(".datapoint")
+    .attr('class','detail-overlay visible')
+    .selectAll('.datapoint')
     .data(node_info.CollectedData)
-    .enter().append("g")
-    .attr("class","datapoint")
+    .enter().append('g')
+    .attr('class','datapoint')
 
   console.log(timeline.data)
-  timeline.append("rect")
+  timeline.append('rect')
     .attr('class', 'timeline-rect')
     .attr('width', 460)
     .attr('height', 35)
-    .attr("rx", 12)
-    .attr("ry", 12)
+    .attr('rx', 12)
+    .attr('ry', 12)
     .attr('x', 20)
     .attr('y', (d:any,i:number) => 30 + i*40)
     .attr('fill', 'white')
     .attr('stroke-width', 0)
 
-  timeline.append("text")
+  timeline.append('text')
     .attr('dx', 40)
     .attr('dy', (d:any,i:number) => 50 + i*40 )
     .attr('font-family', 'sans-serif')
@@ -49,6 +49,6 @@ export const show = (node_info:any):void => {
 
 }
 export const hide = ():void => {
-  d3.select('g.detail-overlay').attr("class","detail-overlay hidden")
+  d3.select('g.detail-overlay').attr('class','detail-overlay hidden')
   d3.selectAll('g.datapoint').remove()
 }

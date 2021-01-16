@@ -23,8 +23,8 @@ export function createProperResCanvas(w: number, h: number, ratio: number) {
 }
 
 export async function draw_canvas_particles(particles:any,
-                                            canvas_ctx:any,
-                                            timedelta:number) {
+  canvas_ctx:any,
+  timedelta:number) {
   canvas_ctx.clearRect(0, 0, canvas_ctx.canvas.width, canvas_ctx.canvas.height)
   canvas_ctx.fillStyle = '#23F0D5'
   canvas_ctx.lineWidth = '50px'
@@ -46,10 +46,10 @@ export async function draw_canvas_particles(particles:any,
     //draw on path
     else if (!particle.arrived) {
       particle.position = get_coordinates_at_distance(
-                                                    new_distance,
-                                                    particle.link.source,
-                                                    particle.link.path_angle,
-                                                    particle.link.orientation)
+        new_distance,
+        particle.link.source,
+        particle.link.path_angle,
+        particle.link.orientation)
       particle.dist = new_distance
       // Draw the particles
       draw_single_particle(particle, canvas_ctx)
@@ -78,7 +78,7 @@ function draw_single_particle(particle:any, canvas_ctx:any) {
 }
 
 function get_coordinates_at_distance(dist:number, path_start:any ,
-                                     path_angle:number, orientation:number) {
+  path_angle:number, orientation:number) {
   const new_x = path_start.x + (Math.cos(path_angle) * dist)
   const new_y = path_start.y + (Math.sin(path_angle) * dist)
   return {x:new_x, y:new_y}
