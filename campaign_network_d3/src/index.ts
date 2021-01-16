@@ -61,17 +61,21 @@ const build_network = async (data:any) => {
 
     return link
   })
+  const container = d3.select('#network-graph')
+  const svg = container
+  .append('svg')
+  .attr('viewBox', [0, 0, width, height].join(','))
+
+  const network_graph = document.querySelector('#network-graph')! as HTMLDivElement
+  const network_graph_width = network_graph.clientWidth
+  const network_graph_height = network_graph.clientHeight
   // -- setup the particles
-  let particles:any[] = compute_particles(links, scale_factor)
+  let particles:any[] = compute_particles(links, scale_factor, network_graph_width, network_graph_height)
   //nodes.push(user_node)
   console.log(links)
   console.log(nodes)
   console.log(particles)
   //-- setup the svg
-  const container = d3.select('#network-graph')
-  const svg = container
-    .append('svg')
-    .attr('viewBox', [0, 0, width, height].join(','))
 
   const canvas_context = canvas_particles
     .createProperResCanvas(width, height,scale_factor)
@@ -81,22 +85,41 @@ const build_network = async (data:any) => {
   await add_legend_speed_symbol(svg)
   await add_car_button(svg)
 
+  let isResizing = false
   // -- function to update particles
   const tick = (elapsed_time:number) => {
-    // start drawing particles at the right time
-    const flying_particles = particles.filter(p => p.time < elapsed_time)
-    const time_delta = elapsed_time-current_time
-    canvas_particles.draw_canvas_particles(flying_particles,canvas_context, time_delta)
-    //console.log(elapsed_time)
-    current_time = elapsed_time
+    if (!isResizing) {
+      // start drawing particles at the right time
+      const flying_particles = particles.filter(p => p.time < elapsed_time)
+      const time_delta = elapsed_time-current_time
+      canvas_particles.draw_canvas_particles(flying_particles,canvas_context, time_delta)
+      //console.log(elapsed_time)
+      current_time = elapsed_time
+    }
   }
+
   // bind tick to timer
   const timer = d3.timer(tick,50)
   // execute in a loop
   const loop = d3.interval(() => {
-    particles = compute_particles(links, scale_factor)
-    timer.restart(tick,50)
+    if (!isResizing) {
+      particles = compute_particles(links, scale_factor, network_graph_width, network_graph_height)
+      timer.restart(tick,50)
+    }
   }, timespan)
+
+  let timeout : number
+
+  d3.select(window).on('resize', function(x) {
+    isResizing = true
+    clearTimeout(timeout)
+
+    timeout = <any>setTimeout(function() {
+      isResizing = false
+      particles = compute_particles(links, scale_factor, network_graph_width, network_graph_height)
+    }, 500)
+  })
+
   // ----------- drawing the svg with bound data ---------------
   //-- links
   svg.append('g')
@@ -174,14 +197,18 @@ const build_network = async (data:any) => {
   return svg.node()
 }
 
-const compute_particles = (links: any[], scale_factor: number): any[] => {
+const compute_particles = (links: any[], scale_factor: number, offset_x: number, offset_y: number): any[] => {
   const particles: any[] = []
   for (const link of links) {
+
+    const network_graph = document.querySelector('#network-graph')! as HTMLDivElement
     // go from svg coordinates to higher res canvas coordinates
-    const x_start = link.source.x * scale_factor
-    const y_start = link.source.y * scale_factor
-    const x_end = link.target.x * scale_factor
-    const y_end = link.target.y * scale_factor
+    const diff_x = (offset_x - network_graph.clientWidth)
+    const diff_y = (offset_y - network_graph.clientHeight)
+    const x_start = link.source.x * scale_factor - diff_x
+    const y_start = link.source.y * scale_factor- diff_y
+    const x_end = link.target.x * scale_factor - diff_x
+    const y_end = link.target.y * scale_factor - diff_y
     const link_length = Math.sqrt(
       Math.pow(x_start-x_end,2) +
       Math.pow(y_start-y_end,2)
