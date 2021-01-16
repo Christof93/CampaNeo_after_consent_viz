@@ -1,4 +1,4 @@
-import { legend_colors, colors } from './index.ts'
+import { legend_colors, colors } from './index'
 // -- loosely implemented after this http://bl.ocks.org/gvenezia/e0e6d17dbf12dd6a7ea819ffe02c7aa1
 const expired:any[] = []
 

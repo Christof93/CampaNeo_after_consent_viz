@@ -1,4 +1,4 @@
-import { colors, legend_colors } from './index.ts'
+import { colors, legend_colors } from './index'
 import * as detail_overlay from './detailed_view'
 
 import * as d3 from 'd3'
