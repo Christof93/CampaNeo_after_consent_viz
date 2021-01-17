@@ -1,4 +1,4 @@
-import { colors, legend_colors } from './colors'
+import { COLORS, LEGEND_COLORS, ColorMode } from './colors'
 import * as detail_overlay from './detailed_view'
 
 import * as d3 from 'd3'
@@ -8,17 +8,15 @@ export const add_dev_control_panel = () => {
     .on('click',change_light_mode)
 }
 const change_light_mode = ():void => {
-  console.log(colors)
-  colors.light_mode = (colors.light_mode=='dark'?'light':'dark')
-  console.log(colors)
+  colorMode = (colorMode === 'dark' ? 'light' : 'dark')
+  console.log(`Color mode: ${colorMode}`)
   d3.select('#network-container')
-    .style('background-color',colors.background[colors.light_mode])
-  d3.select('#place_tag_symbol').attr('fill',legend_colors.GPS[colors.light_mode])
-  d3.select('#fuel_symbol').attr('fill',legend_colors.Fuel[colors.light_mode])
-  d3.select('#speed_symbol').attr('fill',legend_colors.Speed[colors.light_mode])
-  d3.select('#car_button > ellipse').attr('fill',colors.center_out[colors.light_mode])
-  d3.select('#car_button > g > path').attr('fill',colors.center_in[colors.light_mode])
-
+    .style('background-color',COLORS.background[colorMode])
+  d3.select('#place_tag_symbol').attr('fill',LEGEND_COLORS.gps[colorMode])
+  d3.select('#fuel_symbol').attr('fill',LEGEND_COLORS.fuel[colorMode])
+  d3.select('#speed_symbol').attr('fill',LEGEND_COLORS.speed[colorMode])
+  d3.select('#car_button > ellipse').attr('fill',COLORS.center_out[colorMode])
+  d3.select('#car_button > g > path').attr('fill',COLORS.center_in[colorMode])
 }
 
 export const mouseover_campaign_node = (event:any, node:any):void => {
@@ -42,7 +40,6 @@ export const click_campaign_node = (event:any, node:any):void => {
   setTimeout(() => {
     d3.select('div.jumbotron').on('click', click_outside)
   }, 10)
-
 }
 export const click_link = (event:any, node:any):void => {
   click_campaign_node(event, node)

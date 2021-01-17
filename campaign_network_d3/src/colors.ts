@@ -1,36 +1,46 @@
-const legend_colors: any = {
-  'Fuel': {
-    'dark': '#23F0D5',
-    'light': '#007CBE'
+export type ColorMode = 'light' | 'dark'
+
+declare global {
+  var colorMode: ColorMode
+}
+
+global.colorMode = 'dark'
+
+export interface Color {
+  light: string
+  dark: string
+}
+
+export const LEGEND_COLORS: {[key: string]: Color} = {
+  fuel: {
+    dark: '#23F0D5',
+    light: '#007CBE',
   },
-  'Speed': {
-    'dark': '#FBFB9C',
-    'light': '#F6AE2D'
+  speed: {
+    dark: '#FBFB9C',
+    light: '#F6AE2D',
   },
-  'GPS': {
-    'dark': '#D597FF',
-    'light': '#F26419'
+  gps: {
+    dark: '#D597FF',
+    light: '#F26419',
   }
 }
 
-const colors: any = {
-  'light_mode': 'dark',
-  'background': {
-    'dark': '#032F5E',
-    'light': '#F5FBFF'
+export const COLORS: { [key: string]: Color } = {
+  background: {
+    dark: '#032F5E',
+    light: '#F5FBFF',
   },
-  'campaign_banner': {
-    'dark': '#B3D2EC',
-    'light': ''
+  campaign_banner: {
+    dark: '#B3D2EC',
+    light: '',
   },
-  'center_in': {
-    'dark': 'black',
-    'light': 'black'
+  center_in: {
+    dark: 'black',
+    light: 'black',
   },
-  'center_out': {
-    'dark': '#CBF9F9',
-    'light': '#97D8C4'
+  center_out: {
+    dark: '#CBF9F9',
+    light: '#97D8C4',
   }
 }
-
-export {colors, legend_colors}

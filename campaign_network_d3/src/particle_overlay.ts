@@ -1,4 +1,4 @@
-import { legend_colors, colors } from './colors'
+import { LEGEND_COLORS, ColorMode } from './colors'
 // -- loosely implemented after this http://bl.ocks.org/gvenezia/e0e6d17dbf12dd6a7ea819ffe02c7aa1
 const expired:any[] = []
 
@@ -23,11 +23,12 @@ export function createProperResCanvas(w: number, h: number, ratio: number) {
 }
 
 export async function draw_canvas_particles(particles:any,
-  canvas_ctx:any,
-  timedelta:number) {
+  canvas_ctx: CanvasRenderingContext2D,
+  timedelta:number,
+  colorMode: ColorMode) {
   canvas_ctx.clearRect(0, 0, canvas_ctx.canvas.width, canvas_ctx.canvas.height)
   canvas_ctx.fillStyle = '#23F0D5'
-  canvas_ctx.lineWidth = '50px'
+  canvas_ctx.lineWidth = 50
   for (const i in particles) {
     const particle = particles[i]
     const distance_from_start = particle.dist
@@ -40,7 +41,7 @@ export async function draw_canvas_particles(particles:any,
         p.arrived && p.link.id==particle.link.id)
       ) {
         arrived_particle.position.x +=25
-        draw_single_particle(arrived_particle, canvas_ctx)
+        draw_single_particle(arrived_particle, canvas_ctx, colorMode)
       }
     }
     //draw on path
@@ -52,16 +53,16 @@ export async function draw_canvas_particles(particles:any,
         particle.link.orientation)
       particle.dist = new_distance
       // Draw the particles
-      draw_single_particle(particle, canvas_ctx)
+      draw_single_particle(particle, canvas_ctx, colorMode)
     }
     // draw as a stack to the side
     else {
-      draw_single_particle(particle, canvas_ctx)
+      draw_single_particle(particle, canvas_ctx, colorMode)
     }
   }
 }
 
-function draw_single_particle(particle:any, canvas_ctx:any) {
+function draw_single_particle(particle:any, canvas_ctx: CanvasRenderingContext2D, colorMode: ColorMode) {
   canvas_ctx.beginPath()
   canvas_ctx.arc( // creates a circle in canvas
     particle.position.x,
@@ -72,8 +73,8 @@ function draw_single_particle(particle:any, canvas_ctx:any) {
   )
   canvas_ctx.lineWidth = 2
   canvas_ctx.shadowBlur = 12
-  canvas_ctx.shadowColor = legend_colors[particle.type][colors.light_mode]
-  canvas_ctx.fillStyle = legend_colors[particle.type][colors.light_mode]
+  canvas_ctx.shadowColor = LEGEND_COLORS[particle.type.toLowerCase()][colorMode]
+  canvas_ctx.fillStyle = LEGEND_COLORS[particle.type.toLowerCase()][colorMode]
   canvas_ctx.fill()
 }
 

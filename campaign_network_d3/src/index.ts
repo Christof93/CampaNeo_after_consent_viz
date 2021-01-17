@@ -6,7 +6,7 @@ import { getSVG } from './import_svg'
 import * as canvas_particles from './particle_overlay'
 import * as interactive from './interactivity'
 import * as detail_overlay from './detailed_view'
-import {colors, legend_colors} from './colors'
+import {COLORS, LEGEND_COLORS, ColorMode} from './colors'
 
 interactive.add_dev_control_panel()
 fetch('SampleCampaign.json')
@@ -77,8 +77,8 @@ const build_network = async (data:any) => {
   console.log(particles)
   //-- setup the svg
 
-  const canvas_context = canvas_particles
-    .createProperResCanvas(width, height,scale_factor)
+  const canvas_context: CanvasRenderingContext2D = canvas_particles
+    .createProperResCanvas(width, height,scale_factor)!
   //-- retrieving and adding all the svg elements
   await add_legend_tag_symbol(svg)
   await add_legend_fuel_symbol(svg)
@@ -92,7 +92,7 @@ const build_network = async (data:any) => {
       // start drawing particles at the right time
       const flying_particles = particles.filter(p => p.time < elapsed_time)
       const time_delta = elapsed_time-current_time
-      canvas_particles.draw_canvas_particles(flying_particles,canvas_context, time_delta)
+      canvas_particles.draw_canvas_particles(flying_particles,canvas_context, time_delta, colorMode)
       //console.log(elapsed_time)
       current_time = elapsed_time
     }
@@ -171,7 +171,7 @@ const build_network = async (data:any) => {
     .attr('height', 23)
     .attr('x', d => d.x - 50)
     .attr('y', d => d.orientation>0?d.y+13:d.y-31)
-    .attr('fill', colors.campaign_banner.dark)
+    .attr('fill', COLORS.campaign_banner[colorMode])
     .attr('stroke-width', 0)
 
   //-- invisible hover field
@@ -253,7 +253,7 @@ const add_legend_tag_symbol = async (outer_svg: any) => {
       svg_node_element.append(sub_svg)
       outer_svg.select('#place_tag_symbol')
         .attr('transform','translate(340, 315) scale(0.32)')
-        .attr('fill', legend_colors.GPS.dark)
+        .attr('fill', LEGEND_COLORS.gps[colorMode])
         .append('text')
         .text('GPS')
         .attr('dx', 100)
@@ -273,7 +273,7 @@ const add_legend_speed_symbol = async (outer_svg: any) => {
       svg_node_element.append(sub_svg)
       outer_svg.select('#speed_symbol')
         .attr('transform','translate(230,315) scale(0.041)')
-        .attr('fill', legend_colors.Speed.dark)
+        .attr('fill', LEGEND_COLORS.speed[colorMode])
         .append('text')
         .text('Speed')
         .attr('dx', 800)
@@ -293,7 +293,7 @@ const add_legend_fuel_symbol = async(outer_svg: any) => {
       svg_node_element.append(sub_svg)
       outer_svg.select('#fuel_symbol')
         .attr('transform','translate(125,315) scale(0.041)')
-        .attr('fill', legend_colors.Fuel.dark)
+        .attr('fill', LEGEND_COLORS.fuel[colorMode])
         .append('text')
         .text('Fuel')
         .attr('dx', 800)
