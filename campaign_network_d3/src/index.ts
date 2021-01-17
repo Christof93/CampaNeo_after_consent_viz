@@ -246,72 +246,64 @@ const distributed_on_circumference_y = (center_node: any, radius: number,
 
 const add_legend_tag_symbol = async (outer_svg: any) => {
   const svg_node_element = outer_svg.node() as Element
-  return getSVG('placeholder.svg')
-    .then((documentFragment) => {
-      const sub_svg = documentFragment.documentElement
-        .querySelector('#place_tag_symbol') as Element
-      svg_node_element.append(sub_svg)
-      outer_svg.select('#place_tag_symbol')
-        .attr('transform','translate(340, 315) scale(0.32)')
-        .attr('fill', LEGEND_COLORS.gps[colorMode])
-        .append('text')
-        .text('GPS')
-        .attr('dx', 100)
-        .attr('dy', 44)
-        .attr('font-family', 'sans-serif')
-        .attr('font-size', '30px')
-        .attr('stroke-width', 0)
-    })
+  const documentFragment = await getSVG('placeholder.svg')
+  const sub_svg = documentFragment.documentElement
+    .querySelector('#place_tag_symbol') as Element
+  svg_node_element.append(sub_svg)
+  outer_svg.select('#place_tag_symbol')
+    .attr('transform','translate(340, 315) scale(0.32)')
+    .attr('fill', LEGEND_COLORS.gps[colorMode])
+    .append('text')
+    .text('GPS')
+    .attr('dx', 100)
+    .attr('dy', 44)
+    .attr('font-family', 'sans-serif')
+    .attr('font-size', '30px')
+    .attr('stroke-width', 0)
 }
 
 const add_legend_speed_symbol = async (outer_svg: any) => {
   const svg_node_element = outer_svg.node() as Element
-  return getSVG('speedometer.svg')
-    .then((documentFragment) => {
-      const sub_svg = documentFragment.documentElement
-        .querySelector('#speed_symbol') as Element
-      svg_node_element.append(sub_svg)
-      outer_svg.select('#speed_symbol')
-        .attr('transform','translate(230,315) scale(0.041)')
-        .attr('fill', LEGEND_COLORS.speed[colorMode])
-        .append('text')
-        .text('Speed')
-        .attr('dx', 800)
-        .attr('dy', 375)
-        .attr('font-family', 'sans-serif')
-        .attr('font-size', '250px')
-        .attr('stroke-width', 0)
-    })
+  const documentFragment = await getSVG('speedometer.svg')
+  const sub_svg = documentFragment.documentElement
+    .querySelector('#speed_symbol') as Element
+  svg_node_element.append(sub_svg)
+  outer_svg.select('#speed_symbol')
+    .attr('transform','translate(230,315) scale(0.041)')
+    .attr('fill', LEGEND_COLORS.speed[colorMode])
+    .append('text')
+    .text('Speed')
+    .attr('dx', 800)
+    .attr('dy', 375)
+    .attr('font-family', 'sans-serif')
+    .attr('font-size', '250px')
+    .attr('stroke-width', 0)
 }
 
 const add_legend_fuel_symbol = async(outer_svg: any) => {
   const svg_node_element = outer_svg.node() as Element
-  return getSVG('fuel.svg')
-    .then((documentFragment) => {
-      const sub_svg = documentFragment.documentElement
-        .querySelector('#fuel_symbol') as Element
-      svg_node_element.append(sub_svg)
-      outer_svg.select('#fuel_symbol')
-        .attr('transform','translate(125,315) scale(0.041)')
-        .attr('fill', LEGEND_COLORS.fuel[colorMode])
-        .append('text')
-        .text('Fuel')
-        .attr('dx', 800)
-        .attr('dy', 375)
-        .attr('font-family', 'sans-serif')
-        .attr('font-size', '250px')
-        .attr('stroke-width', 0)
-    })
+  const documentFragment = await getSVG('fuel.svg')
+  const sub_svg = documentFragment.documentElement
+    .querySelector('#fuel_symbol') as Element
+  svg_node_element.append(sub_svg)
+  outer_svg.select('#fuel_symbol')
+    .attr('transform','translate(125,315) scale(0.041)')
+    .attr('fill', LEGEND_COLORS.fuel[colorMode])
+    .append('text')
+    .text('Fuel')
+    .attr('dx', 800)
+    .attr('dy', 375)
+    .attr('font-family', 'sans-serif')
+    .attr('font-size', '250px')
+    .attr('stroke-width', 0)
 }
 
 const add_car_button = async (outer_svg: any) => {
   const svg_node_element = outer_svg.node() as Element
-  return getSVG('car_button.svg')
-    .then((documentFragment) => {
-      const sub_svg = documentFragment.documentElement
-        .querySelector('#car_button') as Element
-      svg_node_element.append(sub_svg)
-      outer_svg.select('#car_button')
-        .attr('transform','translate(-123,-42) scale(0.4)')
-    })
+  const documentFragment = await getSVG('car_button.svg')
+  const sub_svg = documentFragment.documentElement
+    .querySelector('#car_button') as Element
+  svg_node_element.append(sub_svg)
+  outer_svg.select('#car_button')
+    .attr('transform','translate(-123,-42) scale(0.4)')
 }
