@@ -170,15 +170,21 @@ const build_network = async (data:any) => {
           .duration(3000)
           .tween('pathTween', function(){return translate(elem)})
           .on('end', function() {
-            const newPos = this.cx.baseVal.value + (((dataCollectionLength - i) * 13))
-            d3.select(this).attr('cx', newPos)
+            const cx = line_link.target.Name === 'Drive Smart' ?
+              this.cx.baseVal.value - (((dataCollectionLength - i) * 13)) :
+              this.cx.baseVal.value + (((dataCollectionLength - i) * 13))
+            const cy = this.cy.baseVal.value + 2
+
+            d3.select(this).attr('cx', cx)
+            d3.select(this).attr('cy', cy)
           })
       }
     })
   }
 
   showParticleAnimation()
-  setTimeout(showParticleAnimation, timespan)
+
+  setInterval(showParticleAnimation, timespan)
 
   function translate(path: any){
     const length = path.node().getTotalLength()
