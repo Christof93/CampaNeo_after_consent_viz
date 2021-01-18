@@ -71,7 +71,7 @@ const build_network = async (data:any) => {
   //-- setup the svg
 
   //-- retrieving and adding all the svg elements
-  await add_legend_tag_symbol(svg)
+  await add_legend_gps_symbol(svg)
   await add_legend_fuel_symbol(svg)
   await add_legend_speed_symbol(svg)
   await add_car_button(svg)
@@ -207,9 +207,9 @@ const distributed_on_circumference_y = (center_node: any, radius: number,
   return y_circ
 }
 
-const add_legend_tag_symbol = async (outer_svg: any) => {
+const add_legend_gps_symbol = async (outer_svg: any) => {
   const svg_node_element = outer_svg.node() as Element
-  const documentFragment = await getSVG('placeholder.svg')
+  const documentFragment = await getSVG('gps.svg')
   const sub_svg = documentFragment.documentElement
     .querySelector('#place_tag_symbol') as Element
   svg_node_element.append(sub_svg)
@@ -227,7 +227,7 @@ const add_legend_tag_symbol = async (outer_svg: any) => {
 
 const add_legend_speed_symbol = async (outer_svg: any) => {
   const svg_node_element = outer_svg.node() as Element
-  const documentFragment = await getSVG('speedometer.svg')
+  const documentFragment = await getSVG('speed.svg')
   const sub_svg = documentFragment.documentElement
     .querySelector('#speed_symbol') as Element
   svg_node_element.append(sub_svg)

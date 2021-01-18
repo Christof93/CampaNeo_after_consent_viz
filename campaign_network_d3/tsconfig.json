@@ -9,5 +9,5 @@
     "sourceMap": true,
     "moduleResolution": "node"
   },
-  "include": ["src/index.ts", "src/server.ts"]
+  "include": ["src/index.ts", "src/server.ts", "src/*.d.ts"]
 }

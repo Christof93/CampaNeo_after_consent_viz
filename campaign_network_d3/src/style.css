@@ -1,16 +1,19 @@
-div#network-graph {
+#network-graph {
   padding-left: 0;
   padding-right: 0;
   margin-left: auto;
   margin-right: auto;
   display: block;
+  height: 100%;
+  min-height: 100%;
   /*
   width: 200px;
   height: 200px;
   */
 }
-div#network-container {
+#network-container {
   background-color:#032F5E;
+  min-height: 100%;
 }
 
 canvas#particle-overlay-canvas {
@@ -33,21 +36,56 @@ canvas#particle-overlay-canvas {
 }
 
 
-g.node, line {
+.node, line {
   pointer-events: all;
 }
-g.node:hover, line:hover {
- cursor: pointer;
+.node:hover, line:hover {
+  cursor: pointer;
 }
 
-g.detail-overlay.hidden {
+.detail-overlay.hidden {
   visibility: hidden;
   /*pointer-events: none;*/
 }
-g.detail-overlay.visible {
+
+.detail-overlay.visible {
   visibility: visible;
   /*pointer-events: all;*/
 }
-g.detail-overlay > rect {
-  opacity:0.85
+
+.detail-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  top: 0;
+  padding: 1em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow: scroll;
+  list-style: none;
+}
+
+.detail-overlay li {
+  border-radius: 8px;
+  padding: 1em;
+  font-size: 1.5em;
+}
+
+.detail-overlay .icon {
+  margin-right: 1em;
+}
+
+.detail-overlay .icon > svg {
+  height: 1em;
+  font-size: 1.5em;
+}
+
+.detail-overlay li + li {
+  margin-top: 0.5em;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
 }

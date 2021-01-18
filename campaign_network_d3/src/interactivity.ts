@@ -17,6 +17,7 @@ const change_light_mode = ():void => {
   d3.select('#speed_symbol').attr('fill',LEGEND_COLORS.speed[colorMode])
   d3.select('#car_button > ellipse').attr('fill',COLORS.center_out[colorMode])
   d3.select('#car_button > g > path').attr('fill',COLORS.center_in[colorMode])
+  d3.select('#network-container > ul').style('background-color', colorMode === 'dark'? 'rgba(0, 0, 0, 0.6)' : 'rgba(200, 200, 200, 0.6)')
 }
 
 export const mouseover_campaign_node = (event:any, node:any):void => {
@@ -38,7 +39,7 @@ export const click_campaign_node = (event:any, node:any):void => {
   d3.select('canvas').style('visibility','hidden')
   detail_overlay.show(node)
   setTimeout(() => {
-    d3.select('div.jumbotron').on('click', click_outside)
+    d3.select('#network-container').on('click', click_outside)
   }, 10)
 }
 export const click_link = (event:any, node:any):void => {
@@ -47,7 +48,7 @@ export const click_link = (event:any, node:any):void => {
 
 export const click_outside = (event:any, node:any) => {
   console.log('hide detailed view')
-  d3.select('div.jumbotron').on('click', null)
+  d3.select('#network-container').on('click', null)
   d3.select('canvas').style('visibility','visible')
   detail_overlay.hide()
 }
