@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import * as d3 from 'd3'
 import { getSVG } from './import_svg'
-import * as canvas_particles from './particle_overlay'
 import * as interactive from './interactivity'
 import * as detail_overlay from './detailed_view'
 import {COLORS, LEGEND_COLORS, ColorMode} from './colors'
@@ -23,10 +22,9 @@ fetch('SampleCampaign.json')
 const build_network = async (data:any) => {
   const width = 500
   const height = 350
-  const timespan = 30000
+  const timespan = 10000
   const scale_factor = 4
   const radius = 100
-  let current_time = 0
   //-- constructing nodes array from data
   const nodes:any[] = data.Campaigns
   const circle_fraction = Math.PI*2/nodes.length
@@ -66,63 +64,21 @@ const build_network = async (data:any) => {
   .append('svg')
   .attr('viewBox', [0, 0, width, height].join(','))
 
-  const network_graph = document.querySelector('#network-graph')! as HTMLDivElement
-  const network_graph_width = network_graph.clientWidth
-  const network_graph_height = network_graph.clientHeight
   // -- setup the particles
-  let particles:any[] = compute_particles(links, scale_factor, network_graph_width, network_graph_height)
   //nodes.push(user_node)
   console.log(links)
   console.log(nodes)
-  console.log(particles)
   //-- setup the svg
 
-  const canvas_context: CanvasRenderingContext2D = canvas_particles
-    .createProperResCanvas(width, height,scale_factor)!
   //-- retrieving and adding all the svg elements
   await add_legend_tag_symbol(svg)
   await add_legend_fuel_symbol(svg)
   await add_legend_speed_symbol(svg)
   await add_car_button(svg)
 
-  let isResizing = false
-  // -- function to update particles
-  const tick = (elapsed_time:number) => {
-    if (!isResizing) {
-      // start drawing particles at the right time
-      const flying_particles = particles.filter(p => p.time < elapsed_time)
-      const time_delta = elapsed_time-current_time
-      canvas_particles.draw_canvas_particles(flying_particles,canvas_context, time_delta, colorMode)
-      //console.log(elapsed_time)
-      current_time = elapsed_time
-    }
-  }
-
-  // bind tick to timer
-  const timer = d3.timer(tick,50)
-  // execute in a loop
-  const loop = d3.interval(() => {
-    if (!isResizing) {
-      particles = compute_particles(links, scale_factor, network_graph_width, network_graph_height)
-      timer.restart(tick,50)
-    }
-  }, timespan)
-
-  let timeout : number
-
-  d3.select(window).on('resize', function(x) {
-    isResizing = true
-    clearTimeout(timeout)
-
-    timeout = <any>setTimeout(function() {
-      isResizing = false
-      particles = compute_particles(links, scale_factor, network_graph_width, network_graph_height)
-    }, 500)
-  })
-
   // ----------- drawing the svg with bound data ---------------
   //-- links
-  svg.append('g')
+  const line_links = svg.append('g')
     .selectAll('line')
     .data(links)
     .join('line')
@@ -194,44 +150,51 @@ const build_network = async (data:any) => {
     .attr('stroke-width', 0)
     .text(d => d.Name)
 
+  function showParticleAnimation() {
+    d3.selectAll('circle').remove()
+
+    line_links.each(function(line_link, j) {
+      const elem = d3.select(this)
+      const dataCollection = line_link.target.CollectedData
+      const dataCollectionLength = dataCollection.length
+
+      for(let i = 0; i < dataCollectionLength; i++) {
+        const color = LEGEND_COLORS[dataCollection[i].type.toLowerCase()][colorMode]
+        svg.append('circle')
+          .attr('cx', 0)
+          .attr('cy', 0)
+          .attr('r', 3)
+          .attr('fill', color)
+          .transition()
+          .delay(i * 750)
+          .duration(3000)
+          .tween('pathTween', function(){return translate(elem)})
+          .on('end', function() {
+            const newPos = this.cx.baseVal.value + (((dataCollectionLength - i) * 13))
+            d3.select(this).attr('cx', newPos)
+          })
+      }
+    })
+  }
+
+  showParticleAnimation()
+  setTimeout(showParticleAnimation, timespan)
+
+  function translate(path: any){
+    const length = path.node().getTotalLength()
+    const interpolation = d3.interpolate(0, length)
+    return function(this: SVGCircleElement, t: number){
+      const point = path.node().getPointAtLength(interpolation(t))
+
+      d3.select(this)
+        .attr("cx", point.x)
+        .attr("cy", point.y)
+    }
+  }
+
   return svg.node()
 }
 
-const compute_particles = (links: any[], scale_factor: number, offset_x: number, offset_y: number): any[] => {
-  const particles: any[] = []
-  for (const link of links) {
-
-    const network_graph = document.querySelector('#network-graph')! as HTMLDivElement
-    // go from svg coordinates to higher res canvas coordinates
-    const diff_x = (offset_x - network_graph.clientWidth)
-    const diff_y = (offset_y - network_graph.clientHeight)
-    const x_start = link.source.x * scale_factor - diff_x
-    const y_start = link.source.y * scale_factor- diff_y
-    const x_end = link.target.x * scale_factor - diff_x
-    const y_end = link.target.y * scale_factor - diff_y
-    const link_length = Math.sqrt(
-      Math.pow(x_start-x_end,2) +
-      Math.pow(y_start-y_end,2)
-    )
-    const link_angle = link.angle
-    for (const data of link.target.CollectedData) {
-      const particle = data
-      particle.arrived = false
-      particle.time = data.retrievedAt
-      particle.dist = 0.1
-      particle.speed = 0.1
-      particle.particle_size = 11
-      particle.position = {x:x_start, y:y_start}
-      particle.link = {}
-      particle.link.id = link.id
-      particle.link.source = {x:x_start,y:y_start}
-      particle.link.path_length = link_length
-      particle.link.path_angle = link_angle
-      particles.push(particle)
-    }
-  }
-  return particles
-}
 // functions to compute position of nodes on circle circumference
 const distributed_on_circumference_x = (center_node: any, radius: number,
   angle: number): number => {
