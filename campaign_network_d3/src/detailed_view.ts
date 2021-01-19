@@ -1,13 +1,11 @@
 import * as d3 from 'd3'
-
 import { ICONS } from './icons'
-
 import { COLORS, LEGEND_COLORS } from './colors'
 import { getSVG } from './import_svg'
 
 export const build_detailed_view = (node:any):any => {
   console.log(node)
-  d3.select('#network-container').append('ul')
+  d3.select('#grid').append('ul')
     .attr('class', 'detail-overlay hidden')
     .style('background-color', colorMode === 'dark'? 'rgba(0, 0, 0, 0.6)' : 'rgba(200, 200, 200, 0.6)')
     .style('backdrop-filter', 'blur(10px)')

@@ -1,8 +1,7 @@
+import * as d3 from 'd3'
 import { COLORS, LEGEND_COLORS, ColorMode } from './colors'
 import * as detail_overlay from './detailed_view'
 
-import * as d3 from 'd3'
-const detailed_view_on = false
 export const add_dev_control_panel = () => {
   d3.select('#light-switch-button')
     .on('click',change_light_mode)
@@ -39,7 +38,7 @@ export const click_campaign_node = (event:any, node:any):void => {
   d3.select('canvas').style('visibility','hidden')
   detail_overlay.show(node)
   setTimeout(() => {
-    d3.select('#network-container').on('click', click_outside)
+    d3.select('#grid').on('click', click_outside)
   }, 10)
 }
 export const click_link = (event:any, node:any):void => {
@@ -48,7 +47,7 @@ export const click_link = (event:any, node:any):void => {
 
 export const click_outside = (event:any, node:any) => {
   console.log('hide detailed view')
-  d3.select('#network-container').on('click', null)
+  d3.select('#grid').on('click', null)
   d3.select('canvas').style('visibility','visible')
   detail_overlay.hide()
 }
