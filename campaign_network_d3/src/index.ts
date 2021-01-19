@@ -57,6 +57,13 @@ const build_network = async (data:any) => {
     .attr('preserveAspectRatio', 'xMidYMid meet')
     .attr('viewBox', [0, 0, width, height].join(','))
 
+  window.onresize = () => {
+    svg
+      .attr('width', outer.style('width'))
+      .attr('height', window.innerHeight + 'px')
+      .attr('preserveAspectRatio', 'xMidYMid meet')
+  }
+
   // -- setup the particles
   //nodes.push(user_node)
   console.log(links)
