@@ -23,46 +23,39 @@ const build_network = async (data:any) => {
   const width = 500
   const height = 350
   const timespan = 10000
-  const scale_factor = 4
   const radius = 100
   //-- constructing nodes array from data
   const nodes:any[] = data.Campaigns
-  const circle_fraction = Math.PI*2/nodes.length
-  const fraction_offset = nodes.length%2==0?2:3
+  const circle_fraction = Math.PI * 2 / nodes.length
+  const fraction_offset = (nodes.length % 2) == 0 ? 2 : 3
   //-- add a node as center node center
-  const user_node = {Name: '', id: 'user', x: 250, y: 150}
+  const user_node = { Name: '', id: 'user', x: 250, y: 150 }
+
   nodes.forEach((item, i) => {
-    const angle = circle_fraction * i + circle_fraction/fraction_offset
-    item.x = distributed_on_circumference_x(user_node,
-      radius,
-      angle)
-
-    item.y = distributed_on_circumference_y(user_node,
-      radius,
-      angle)
+    const angle = circle_fraction * i + circle_fraction / fraction_offset
+    item.x = distributed_on_circumference_x(user_node, radius, angle)
+    item.y = distributed_on_circumference_y(user_node, radius, angle)
     // determine whether node below or above center
-    item.orientation = Math.PI>angle?1:-1
-
+    item.orientation = Math.PI > angle ? 1 : -1
   })
 
   //-- set up links such that all nodes are connected with center node
   const links = nodes.map((node, i) => {
     const link = {id:i, source:{...user_node}, target:node, angle:0}
-    link.angle = circle_fraction * i + circle_fraction/fraction_offset
-    link.source.x = distributed_on_circumference_x(user_node,
-      33,
-      link.angle)
-
-    link.source.y = distributed_on_circumference_y(user_node,
-      33,
-      link.angle)
-
+    link.angle = circle_fraction * i + circle_fraction / fraction_offset
+    link.source.x = distributed_on_circumference_x(user_node, 33, link.angle)
+    link.source.y = distributed_on_circumference_y(user_node, 33, link.angle)
     return link
   })
+
   const container = d3.select('#network-graph')
+  const outer = d3.select('#network-container')
   const svg = container
-  .append('svg')
-  .attr('viewBox', [0, 0, width, height].join(','))
+    .append('svg')
+    .attr('width', outer.style('width'))
+    .attr('height', outer.style('height'))
+    .attr('preserveAspectRatio', 'xMidYMid meet')
+    .attr('viewBox', [0, 0, width, height].join(','))
 
   // -- setup the particles
   //nodes.push(user_node)
