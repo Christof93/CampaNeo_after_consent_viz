@@ -1,6 +1,7 @@
 import * as d3 from 'd3'
 import { ICONS } from './icons'
 import { COLORS, LEGEND_COLORS } from './colors'
+import { change_light_mode } from './interactivity'
 
 export const build_sidebar = () => {
   d3.select('#grid').append('div')
@@ -9,7 +10,12 @@ export const build_sidebar = () => {
 
   const sidebar = d3.select('.sidebar')
 
-  Object.keys(ICONS).forEach((value: string) => {
+  sidebar.append('div')
+    .attr('class', 'color-mode')
+    .on('click', change_light_mode)
+    .html(ICONS['lightbulb_regular'].toString())
+
+  Object.keys(ICONS).filter(i => i !== 'lightbulb_solid' && i !== 'lightbulb_regular').forEach((value: string) => {
     const element = sidebar.append('div')
       .attr('class', 'sidebar-element')
       .html(ICONS[value].toString())

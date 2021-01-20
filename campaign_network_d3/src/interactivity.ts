@@ -1,12 +1,9 @@
 import * as d3 from 'd3'
 import { COLORS, LEGEND_COLORS, ColorMode } from './colors'
+import { ICONS } from './icons'
 import * as detail_overlay from './detailed_view'
 
-export const add_dev_control_panel = () => {
-  d3.select('#light-switch-button')
-    .on('click',change_light_mode)
-}
-const change_light_mode = ():void => {
+export const change_light_mode = ():void => {
   colorMode = (colorMode === 'dark' ? 'light' : 'dark')
   console.log(`Color mode: ${colorMode}`)
   d3.select('#network-container')
@@ -17,6 +14,10 @@ const change_light_mode = ():void => {
   d3.select('#car_button > ellipse').attr('fill',COLORS.center_out[colorMode])
   d3.select('#car_button > g > path').attr('fill',COLORS.center_in[colorMode])
   d3.select('#network-container > ul').style('background-color', colorMode === 'dark'? 'rgba(0, 0, 0, 0.6)' : 'rgba(200, 200, 200, 0.6)')
+
+  colorMode === 'dark' ?
+    d3.select('.color-mode').html(ICONS['lightbulb_regular'].toString()) :
+    d3.select('.color-mode').html(ICONS['lightbulb_solid'].toString())
 }
 
 export const mouseover_campaign_node = (event:any, node:any):void => {

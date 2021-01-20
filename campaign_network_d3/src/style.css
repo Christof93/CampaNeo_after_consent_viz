@@ -97,6 +97,24 @@
   height: auto;
 }
 
+.color-mode {
+  margin: 0 auto;
+  margin-bottom: 3em;
+  border-radius: 50%;
+  width: 5vw;
+  height: 5vw;
+  background: rgb(179, 210, 236);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-mode svg {
+  width: 45%;
+  height: 45%;
+}
+
 html, body {
   height: 100%;
   min-height: 100%;

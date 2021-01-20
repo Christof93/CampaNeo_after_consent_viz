@@ -8,7 +8,6 @@ import * as detail_overlay from './detailed_view'
 import * as sidebar from './sidebar'
 import {COLORS, LEGEND_COLORS, ColorMode} from './colors'
 
-interactive.add_dev_control_panel()
 fetch('SampleCampaign.json')
   .then(res => res.json())
   .then(async data => {
@@ -185,8 +184,8 @@ const build_network = async (data:any) => {
       const point = path.node().getPointAtLength(interpolation(t))
 
       d3.select(this)
-        .attr("cx", point.x)
-        .attr("cy", point.y)
+        .attr('cx', point.x)
+        .attr('cy', point.y)
     }
   }
 
