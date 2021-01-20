@@ -5,6 +5,7 @@ import * as d3 from 'd3'
 import { getSVG } from './import_svg'
 import * as interactive from './interactivity'
 import * as detail_overlay from './detailed_view'
+import * as sidebar from './sidebar'
 import {COLORS, LEGEND_COLORS, ColorMode} from './colors'
 
 interactive.add_dev_control_panel()
@@ -17,6 +18,7 @@ fetch('SampleCampaign.json')
     const svg:any = await build_network(data)
     // construct the overlay for more detailed info
     detail_overlay.build_detailed_view()
+    sidebar.build_sidebar()
   })
 
 const build_network = async (data:any) => {

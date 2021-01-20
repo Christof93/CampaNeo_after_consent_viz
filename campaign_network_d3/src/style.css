@@ -1,14 +1,14 @@
 #grid {
   display: grid;
   grid-template-columns: 10% 90%;
-  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-rows: 100%;
   min-height: 100%;
   background-color:#032F5E;
 }
 
 #network-container {
   grid-column: 2 / span 1;
-  grid-row: 1 / span 5;
+  grid-row: 1 / span 1;
 }
 
 #network-graph {
@@ -32,7 +32,6 @@
   height: 30px;
   border-radius: 7px;
 }
-
 
 .node, line {
   pointer-events: all;
@@ -81,6 +80,20 @@
 
 .detail-overlay li + li {
   margin-top: 0.5em;
+}
+
+.sidebar {
+  grid-column: 1 / span 1;
+}
+
+.sidebar .sidebar-element {
+  padding: 0.5em
+}
+
+.sidebar svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 html, body {
