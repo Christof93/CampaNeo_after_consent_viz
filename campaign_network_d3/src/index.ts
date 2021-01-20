@@ -23,7 +23,7 @@ fetch('SampleCampaign.json')
 
 const build_network = async (data:any) => {
   const width = 500
-  const height = 350
+  const height = 280
   const timespan = 10000
   const radius = 100
   //-- constructing nodes array from data
@@ -66,16 +66,6 @@ const build_network = async (data:any) => {
       .attr('preserveAspectRatio', 'xMidYMid meet')
   }
 
-  // -- setup the particles
-  //nodes.push(user_node)
-  console.log(links)
-  console.log(nodes)
-  //-- setup the svg
-
-  //-- retrieving and adding all the svg elements
-  await add_legend_gps_symbol(svg)
-  await add_legend_fuel_symbol(svg)
-  await add_legend_speed_symbol(svg)
   await add_car_button(svg)
 
   // ----------- drawing the svg with bound data ---------------
@@ -213,60 +203,6 @@ const distributed_on_circumference_y = (center_node: any, radius: number,
   angle: number): any => {
   const y_circ = radius * Math.sin(angle) + center_node.y
   return y_circ
-}
-
-const add_legend_gps_symbol = async (outer_svg: any) => {
-  const svg_node_element = outer_svg.node() as Element
-  const documentFragment = await getSVG('gps.svg')
-  const sub_svg = documentFragment.documentElement
-    .querySelector('#place_tag_symbol') as Element
-  svg_node_element.append(sub_svg)
-  outer_svg.select('#place_tag_symbol')
-    .attr('transform','translate(340, 315) scale(0.32)')
-    .attr('fill', LEGEND_COLORS.gps[colorMode])
-    .append('text')
-    .text('GPS')
-    .attr('dx', 100)
-    .attr('dy', 44)
-    .attr('font-family', 'sans-serif')
-    .attr('font-size', '30px')
-    .attr('stroke-width', 0)
-}
-
-const add_legend_speed_symbol = async (outer_svg: any) => {
-  const svg_node_element = outer_svg.node() as Element
-  const documentFragment = await getSVG('speed.svg')
-  const sub_svg = documentFragment.documentElement
-    .querySelector('#speed_symbol') as Element
-  svg_node_element.append(sub_svg)
-  outer_svg.select('#speed_symbol')
-    .attr('transform','translate(230,315) scale(0.041)')
-    .attr('fill', LEGEND_COLORS.speed[colorMode])
-    .append('text')
-    .text('Speed')
-    .attr('dx', 800)
-    .attr('dy', 375)
-    .attr('font-family', 'sans-serif')
-    .attr('font-size', '250px')
-    .attr('stroke-width', 0)
-}
-
-const add_legend_fuel_symbol = async(outer_svg: any) => {
-  const svg_node_element = outer_svg.node() as Element
-  const documentFragment = await getSVG('fuel.svg')
-  const sub_svg = documentFragment.documentElement
-    .querySelector('#fuel_symbol') as Element
-  svg_node_element.append(sub_svg)
-  outer_svg.select('#fuel_symbol')
-    .attr('transform','translate(125,315) scale(0.041)')
-    .attr('fill', LEGEND_COLORS.fuel[colorMode])
-    .append('text')
-    .text('Fuel')
-    .attr('dx', 800)
-    .attr('dy', 375)
-    .attr('font-family', 'sans-serif')
-    .attr('font-size', '250px')
-    .attr('stroke-width', 0)
 }
 
 const add_car_button = async (outer_svg: any) => {

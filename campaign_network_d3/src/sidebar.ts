@@ -15,6 +15,18 @@ export const build_sidebar = () => {
       .html(ICONS[value].toString())
 
     element.selectChild('svg')
+      .attr('fill', LEGEND_COLORS[value][colorMode])
       .attr('preserveAspectRatio', 'xMidYMid meet')
+
+    element.append('svg')
+      .attr('viewBox', [0, 0, 60, 25].join(','))
+      .append('text')
+      .attr('fill', LEGEND_COLORS[value][colorMode])
+      .text(value.toLocaleUpperCase())
+      .attr('dx', 30)
+      .attr('dy', 15)
+      .attr('text-anchor', 'middle')
+      .attr('dominant-baseline', 'middle')
+      .attr('font-family', 'sans-serif')
   })
 }
