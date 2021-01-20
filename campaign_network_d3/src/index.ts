@@ -16,7 +16,7 @@ fetch('SampleCampaign.json')
 
     const svg:any = await build_network(data)
     // construct the overlay for more detailed info
-    detail_overlay.build_detailed_view(svg)
+    detail_overlay.build_detailed_view()
   })
 
 const build_network = async (data:any) => {
