@@ -165,9 +165,8 @@ const build_network = async (data:any) => {
           .duration(3000)
           .tween('pathTween', function(){return translate(elem)})
           .on('end', function() {
-            const cx = line_link.target.Name === 'Drive Smart' ?
-              this.cx.baseVal.value - (((dataCollectionLength - i) * 13)) :
-              this.cx.baseVal.value + (((dataCollectionLength - i) * 13))
+            const direction = this.cx.baseVal.value <= 250 ? -1 : +1;
+            const cx = this.cx.baseVal.value + direction * (((dataCollectionLength - i) * 13))
             const cy = this.cy.baseVal.value + 2
 
             d3.select(this).attr('cx', cx)
