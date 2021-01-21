@@ -8,6 +8,8 @@ import * as detail_overlay from './detailed_view'
 import * as sidebar from './sidebar'
 import {COLORS, LEGEND_COLORS, ColorMode} from './colors'
 
+interactive.setColorMode(colorMode)
+
 fetch('SampleCampaign.json')
   .then(res => res.json())
   .then(async data => {
@@ -17,7 +19,7 @@ fetch('SampleCampaign.json')
     const svg:any = await build_network(data)
     // construct the overlay for more detailed info
     detail_overlay.build_detailed_view()
-    sidebar.build_sidebar()
+    sidebar.buildSidebar()
   })
 
 const build_network = async (data:any) => {

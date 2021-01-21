@@ -8,6 +8,9 @@ export const ICONS: { [key: string]: string } = {
   gps,
   speed,
   fuel,
-  lightbulb_solid,
-  lightbulb_regular
+}
+
+export const LIGHTBULB_ICON = {
+  light: lightbulb_solid,
+  dark: lightbulb_regular,
 }

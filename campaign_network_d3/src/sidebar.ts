@@ -1,9 +1,9 @@
 import * as d3 from 'd3'
-import { ICONS } from './icons'
+import { ICONS, LIGHTBULB_ICON } from './icons'
 import { COLORS, LEGEND_COLORS } from './colors'
-import { change_light_mode } from './interactivity'
+import { changeLightMode } from './interactivity'
 
-export const build_sidebar = () => {
+export const buildSidebar = () => {
   d3.select('#grid').append('div')
     .attr('class', 'sidebar')
     .style('margin', '1em')
@@ -12,27 +12,22 @@ export const build_sidebar = () => {
 
   sidebar.append('div')
     .attr('class', 'color-mode')
-    .on('click', change_light_mode)
-    .html(ICONS['lightbulb_regular'].toString())
+    .on('click', changeLightMode)
+    .html(LIGHTBULB_ICON[colorMode])
 
-  Object.keys(ICONS).filter(i => i !== 'lightbulb_solid' && i !== 'lightbulb_regular').forEach((value: string) => {
+  Object.entries(ICONS).forEach(([key, value]) => {
     const element = sidebar.append('div')
-      .attr('class', 'sidebar-element')
-      .html(ICONS[value].toString())
+      .attr('class', `sidebar-element ${key}`)
+      .html(value.toString())
 
     element.selectChild('svg')
-      .attr('fill', LEGEND_COLORS[value][colorMode])
+      .attr('class', `icon`)
+      .attr('fill', LEGEND_COLORS[key][colorMode])
       .attr('preserveAspectRatio', 'xMidYMid meet')
 
-    element.append('svg')
-      .attr('viewBox', [0, 0, 60, 25].join(','))
-      .append('text')
-      .attr('fill', LEGEND_COLORS[value][colorMode])
-      .text(value.toLocaleUpperCase())
-      .attr('dx', 30)
-      .attr('dy', 15)
-      .attr('text-anchor', 'middle')
-      .attr('dominant-baseline', 'middle')
-      .attr('font-family', 'sans-serif')
+    element.append('div')
+      .attr('class', 'text')
+      .style('color', LEGEND_COLORS[key][colorMode])
+      .text(key.toLocaleUpperCase())
   })
 }

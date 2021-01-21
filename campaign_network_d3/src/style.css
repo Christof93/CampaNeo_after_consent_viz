@@ -3,7 +3,6 @@
   grid-template-columns: 10% 90%;
   grid-template-rows: 100%;
   min-height: 100%;
-  background-color:#032F5E;
 }
 
 #network-container {
@@ -86,15 +85,19 @@
   grid-column: 1 / span 1;
 }
 
-.sidebar .sidebar-element {
+.sidebar-element {
   padding: 2em;
   margin-bottom: 1em;
 }
 
-.sidebar-element svg {
-  display: block;
+.sidebar-element .icon {
   width: 100%;
   height: auto;
+}
+
+.sidebar-element .text {
+  margin-top: 0.5em;
+  text-align: center;
 }
 
 .color-mode {
