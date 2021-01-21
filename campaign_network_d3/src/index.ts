@@ -67,8 +67,6 @@ const build_network = async (data:any) => {
       .attr('preserveAspectRatio', 'xMidYMid meet')
   }
 
-  await add_car_button(svg)
-
   // ----------- drawing the svg with bound data ---------------
   //-- links
   const line_links = svg.append('g')
@@ -143,8 +141,12 @@ const build_network = async (data:any) => {
     .attr('stroke-width', 0)
     .text(d => d.Name)
 
+  const particleGroup = svg.append('g')
+
+  await add_car_button(svg)
+
   function showParticleAnimation() {
-    d3.selectAll('circle').remove()
+    particleGroup.selectAll('circle').remove()
 
     line_links.each(function(line_link, j) {
       const elem = d3.select(this)
@@ -153,7 +155,7 @@ const build_network = async (data:any) => {
 
       for(let i = 0; i < dataCollectionLength; i++) {
         const color = LEGEND_COLORS[dataCollection[i].type.toLowerCase()][colorMode]
-        svg.append('circle')
+        particleGroup.append('circle')
           .attr('cx', 250)
           .attr('cy', 150)
           .attr('r', 3)
