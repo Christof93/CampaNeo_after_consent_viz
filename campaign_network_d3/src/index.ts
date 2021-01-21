@@ -152,8 +152,8 @@ const build_network = async (data:any) => {
       for(let i = 0; i < dataCollectionLength; i++) {
         const color = LEGEND_COLORS[dataCollection[i].type.toLowerCase()][colorMode]
         svg.append('circle')
-          .attr('cx', 0)
-          .attr('cy', 0)
+          .attr('cx', 250)
+          .attr('cy', 150)
           .attr('r', 3)
           .attr('fill', color)
           .transition()
