@@ -154,23 +154,26 @@ const build_network = async (data:any) => {
       const dataCollectionLength = dataCollection.length
 
       for(let i = 0; i < dataCollectionLength; i++) {
-        const color = LEGEND_COLORS[dataCollection[i].type.toLowerCase()][colorMode]
-        const particle = particleGroup.append('circle')
+        particleGroup.append('circle')
           .attr('cx', 250)
           .attr('cy', 150)
           .attr('r', 3)
-          .attr('fill', color)
+          .attr('fill', LEGEND_COLORS[dataCollection[i].type.toLowerCase()][colorMode])
           .transition()
           .delay(i * 750)
           .duration(3000)
           .tween('pathTween', function(){return translate(elem)})
           .on('end', function() {
-            const direction = this.cx.baseVal.value <= 250 ? -1 : +1
+            const xDirection = this.cx.baseVal.value <= 250 ? -1 : +1
+            const yDirection = this.cy.baseVal.value <= 150 ? -1 : +1
+            const cx = this.cx.baseVal.value + xDirection * (((dataCollectionLength - i) * 13))
+            const cy = this.cy.baseVal.value + yDirection * 2
 
             d3.select(this)
               .transition()
+              .attr('cx', cx)
+              .attr('cy', cy)
               .duration(1000)
-              .attr('transform', `translate(${direction * ((dataCollectionLength - i) * 13)}, 2)`)
           })
       }
     })
