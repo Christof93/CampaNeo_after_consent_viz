@@ -1,2 +1,6 @@
-/icons
 /UI_mockups
+/assets
+/res
+paper*
+
+*/node_modules

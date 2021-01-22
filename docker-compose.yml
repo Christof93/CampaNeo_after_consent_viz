@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  campaign_network:
+    container_name: campaign_network
+    image: prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'

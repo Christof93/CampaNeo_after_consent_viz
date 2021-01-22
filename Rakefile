@@ -16,6 +16,10 @@ task dev_docker: :install do
   sh 'docker-compose', '-f', 'docker-compose.dev.yml', 'up'
 end
 
+task :docker do
+  sh 'docker-compose', 'up', '--build'
+end
+
 task :tex do
   sh 'latexmk', '-cd'
 end
