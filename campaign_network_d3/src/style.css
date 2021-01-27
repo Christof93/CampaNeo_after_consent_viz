@@ -107,7 +107,12 @@
   grid-column: 1 / span 1;
 }
 
-.sidebar-element {
+.button-container {
+  display: flex;
+  width: 270px;
+}
+
+.sidebar .sidebar-element {
   padding: 2em;
   margin-bottom: 1em;
 }

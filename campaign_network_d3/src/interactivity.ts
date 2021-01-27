@@ -49,9 +49,6 @@ export const click_campaign_node = (event:any, node:any):void => {
   console.log(node)
   d3.select('canvas').style('visibility','hidden')
   detail_overlay.show(node)
-  setTimeout(() => {
-    d3.select('#grid').on('click', click_outside)
-  }, 10)
 }
 
 export const click_link = (event:any, node:any):void => {

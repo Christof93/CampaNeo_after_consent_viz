@@ -47,8 +47,11 @@ export async function show(node_info:any): Promise<void> {
     .style('color', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
     .text((d:any) => `${d.type} (retrieved at ${d.retrievedAt})`)
 
-    d3.select('.color-mode')
-      .style('position', 'absolute')
+  d3.select('.button-container')
+    .style('position', 'absolute')
+
+  d3.select('#back_button')
+    .style('visibility', 'visible')
 
 }
 
@@ -57,6 +60,9 @@ export const hide = ():void => {
   d3.select('.detail-overlay-container').attr('class', 'detail-overlay-container hidden')
   d3.selectAll('.datapoint').remove()
 
-  d3.select('.color-mode')
+  d3.select('.button-container')
     .style('position', 'inherit')
+
+  d3.select('#back_button')
+    .style('visibility', 'hidden')
 }
