@@ -31,7 +31,13 @@ export async function show(node_info:any): Promise<void> {
     .attr('class', 'datapoint')
     .style('background-color', colorMode === 'dark'? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)')
 
-  timeline.append('span')
+  const listItemContainer = timeline.append('div')
+    .style('display', 'flex')
+    .style('justify-content', 'space-between')
+
+  const iconContainer = listItemContainer.append('div')
+
+  iconContainer.append('span')
     .attr('class', 'icon')
     .html((d: any) => ICONS[d.type.toLowerCase()].toString())
 
@@ -42,20 +48,28 @@ export async function show(node_info:any): Promise<void> {
   svg.selectChild('g')
     .attr('fill', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
 
-  timeline.append('span')
+  iconContainer.append('span')
     .attr('class', 'text detail-type')
     .style('color', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
     .text((d:any) => `${d.type}`)
 
-  timeline.append('span')
+  iconContainer.append('span')
     .attr('class', 'text detail-date')
     .style('color', '#c7c7c7')
     .text((d:any) => `retrieved on ${d.retrievedAt}  by:`)
 
-  timeline.append('span')
+  iconContainer.append('span')
     .attr('class', 'text company')
     .style('color', '#424242')
     .text((d:any) => `${d.collectedBy}`)
+
+  const collectedContainer = listItemContainer.append('div')
+
+  collectedContainer.append('span')
+    .attr('class', 'text')
+    .style('color', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
+    .text((d:any) => d.collected_by)
+
 
   d3.select('.button-container')
     .style('position', 'absolute')
