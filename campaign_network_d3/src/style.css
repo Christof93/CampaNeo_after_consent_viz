@@ -90,6 +90,15 @@
   font-size: 1.5em;
 }
 
+.detail-overlay .text {
+  margin-left: 1em;
+}
+.detail-overlay .text.company {
+  padding:0.2em 1em 0.2em 1em;
+  background-color: #B3D2EC;
+  border-radius: 40px;
+}
+
 .detail-overlay .icon {
   margin-right: 1em;
 }

@@ -6,15 +6,15 @@
 	"CollectedData":[
 		{"type":"Fuel",
 			"retrievedAt":"Thursday, 14.01.2021 - 8:01",
-			"collected_by":"Tyrolean Government"
+			"collectedBy":"Tyrolean Government"
 		},
 		{"type": "GPS",
 			"retrievedAt":"Thursday, 14.01.2021 - 8:02",
-			"collected_by":"Tyrolean Government"
+			"collectedBy":"Tyrolean Government"
 		},
 		{"type": "GPS",
 			"retrievedAt":"Thursday, 14.01.2021 - 18:31",
-			"collected_by":"Tyrolean Government"
+			"collectedBy":"Tyrolean Government"
 		}
   ],
 	"Consent":"Given",
@@ -42,19 +42,19 @@
 	"CollectedData":[
 		{"type":"Speed",
 			"retrievedAt":"Wednesday, 13.01.2021 - 9:01",
-			"collected_by":"Volkswagen"
+			"collectedBy":"Volkswagen"
 		},
 		{"type": "Speed",
 			"retrievedAt":"Thursday, 14.01.2021 - 9:02",
-			"collected_by":"Volkswagen"
+			"collectedBy":"Volkswagen"
 		},
 		{"type": "Fuel",
 			"retrievedAt":"Friday, 15.01.2021 - 18:34",
-			"collected_by":"Allianz"
+			"collectedBy":"Allianz"
 		},
 		{"type": "Fuel",
 			"retrievedAt":"Monday, 18.01.2021 - 18:31",
-			"collected_by":"Allianz"
+			"collectedBy":"Allianz"
 		}
 	],
 	"Consent":"Given",
@@ -89,23 +89,23 @@
 	"CollectedData":[
 		{"type":"GPS",
 			"retrievedAt":"Monday, 11.01.2021 - 8:48",
-			"collected_by":"Universität Innsbruck"
+			"collectedBy":"Universität Innsbruck"
 		},
 		{"type": "Speed",
 			"retrievedAt":"Monday, 11.01.2021 - 9:01",
-			"collected_by":"Volkswagen"
+			"collectedBy":"Volkswagen"
 		},
 		{"type": "Fuel",
 			"retrievedAt":"Monday, 11.01.2021 - 9:02",
-			"collected_by":"Volkswagen"
+			"collectedBy":"Volkswagen"
 		},
 		{"type":"GPS",
 			"retrievedAt":"Tuesday, 12.01.2021 - 8:35",
-			"collected_by":"Universität Innsbruck"
+			"collectedBy":"Universität Innsbruck"
 		},
 		{"type": "Fuel",
 			"retrievedAt":"Tuesday, 12.01.2021 - 9:05",
-			"collected_by":"Volkswagen"
+			"collectedBy":"Volkswagen"
 		}
 	],
 	"Consent":"Given",

@@ -43,9 +43,19 @@ export async function show(node_info:any): Promise<void> {
     .attr('fill', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
 
   timeline.append('span')
-    .attr('class', 'text')
+    .attr('class', 'text detail-type')
     .style('color', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
-    .text((d:any) => `${d.type} (retrieved at ${d.retrievedAt})`)
+    .text((d:any) => `${d.type}`)
+
+  timeline.append('span')
+    .attr('class', 'text detail-date')
+    .style('color', '#c7c7c7')
+    .text((d:any) => `retrieved on ${d.retrievedAt}  by:`)
+
+  timeline.append('span')
+    .attr('class', 'text company')
+    .style('color', '#424242')
+    .text((d:any) => `${d.collectedBy}`)
 
   d3.select('.button-container')
     .style('position', 'absolute')
