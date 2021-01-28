@@ -5,13 +5,16 @@
 	"EndDate":"20/10/2020",
 	"CollectedData":[
 		{"type":"Fuel",
-			"retrievedAt":1200
+			"retrievedAt":"Thursday, 14.01.2021 - 8:01",
+			"collected_by":"Tyrolean Government"
 		},
 		{"type": "GPS",
-			"retrievedAt":4000
+			"retrievedAt":"Thursday, 14.01.2021 - 8:02",
+			"collected_by":"Tyrolean Government"
 		},
 		{"type": "GPS",
-			"retrievedAt":7500
+			"retrievedAt":"Thursday, 14.01.2021 - 18:31",
+			"collected_by":"Tyrolean Government"
 		}
   ],
 	"Consent":"Given",
@@ -38,16 +41,20 @@
 	"EndDate":"20/10/2020",
 	"CollectedData":[
 		{"type":"Speed",
-			"retrievedAt":1300
+			"retrievedAt":"Wednesday, 13.01.2021 - 9:01",
+			"collected_by":"Volkswagen"
 		},
 		{"type": "Speed",
-			"retrievedAt":3400
+			"retrievedAt":"Thursday, 14.01.2021 - 9:02",
+			"collected_by":"Volkswagen"
 		},
 		{"type": "Fuel",
-			"retrievedAt":6500
+			"retrievedAt":"Friday, 15.01.2021 - 18:34",
+			"collected_by":"Allianz"
 		},
 		{"type": "Fuel",
-			"retrievedAt":8000
+			"retrievedAt":"Monday, 18.01.2021 - 18:31",
+			"collected_by":"Allianz"
 		}
 	],
 	"Consent":"Given",
@@ -68,7 +75,7 @@
 		"email":"peter.doe@gmail.com"}
 	],
 	"CampaignController":[
-		{"Name":"Volksawagen",
+		{"Name":"Volkswagen",
 		"City":"Hannover",
 		"Country":"Germany",
 		"PersonContact":"Jane Doe",
@@ -81,19 +88,24 @@
 	"EndDate":"20/10/2020",
 	"CollectedData":[
 		{"type":"GPS",
-			"retrievedAt":1800
+			"retrievedAt":"Monday, 11.01.2021 - 8:48",
+			"collected_by":"Universität Innsbruck"
 		},
 		{"type": "Speed",
-			"retrievedAt":2100
+			"retrievedAt":"Monday, 11.01.2021 - 9:01",
+			"collected_by":"Volkswagen"
 		},
 		{"type": "Fuel",
-			"retrievedAt":7000
+			"retrievedAt":"Monday, 11.01.2021 - 9:02",
+			"collected_by":"Volkswagen"
 		},
 		{"type":"GPS",
-			"retrievedAt":7800
+			"retrievedAt":"Tuesday, 12.01.2021 - 8:35",
+			"collected_by":"Universität Innsbruck"
 		},
 		{"type": "Fuel",
-			"retrievedAt":8600
+			"retrievedAt":"Tuesday, 12.01.2021 - 9:05",
+			"collected_by":"Volkswagen"
 		}
 	],
 	"Consent":"Given",
