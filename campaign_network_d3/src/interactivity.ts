@@ -11,15 +11,17 @@ export function setColorMode(mode: ColorMode): void {
   d3.select('#car_button > g > path').attr('fill', COLORS.center_in[colorMode])
   d3.select('#network-container > ul').style('background-color', colorMode === 'dark'? 'rgba(0, 0, 0, 0.6)' : 'rgba(200, 200, 200, 0.6)')
 
+  d3.selectAll('.datapoint')
+    .style('background-color', colorMode === 'dark' ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)')
+
+  d3.selectAll('.datapoint .text')
+    .style('color', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
+
+  d3.selectAll('.datapoint .icon svg')
+    .selectChild('g')
+    .attr('fill', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
+
   d3.select('.color-mode').html(LIGHTBULB_ICON[colorMode])
-
-  Object.entries(ICONS).forEach(([key, value]) => {
-    d3.select(`.${key} .icon`)
-      .attr('fill', LEGEND_COLORS[key][colorMode])
-
-    d3.select(`.${key} .text`)
-      .style('color', LEGEND_COLORS[key][colorMode])
-  })
 }
 
 export function changeLightMode(): void {
