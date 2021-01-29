@@ -51,24 +51,24 @@ export async function show(node_info:any): Promise<void> {
   iconContainer.append('span')
     .attr('class', 'text detail-type')
     .style('color', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
-    .text((d:any) => `${d.type}`)
+    .text((d:any) => `${d.type} (retrieved on ${d.retrievedAt})`)
 
-  iconContainer.append('span')
-    .attr('class', 'text detail-date')
-    .style('color', '#c7c7c7')
-    .text((d:any) => `retrieved on ${d.retrievedAt}  by:`)
-
-  iconContainer.append('span')
-    .attr('class', 'text company')
-    .style('color', '#424242')
-    .text((d:any) => `${d.collectedBy}`)
+  // iconContainer.append('span')
+  //   .attr('class', 'text detail-date')
+  //   .style('color', '#c7c7c7')
+  //   .text((d:any) => `retrieved on ${d.retrievedAt}  by:`)
+  //
+  // iconContainer.append('span')
+  //   .attr('class', 'text company')
+  //   .style('color', '#424242')
+  //   .text((d:any) => `${d.collectedBy}`)
 
   const collectedContainer = listItemContainer.append('div')
 
   collectedContainer.append('span')
     .attr('class', 'text')
     .style('color', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
-    .text((d:any) => d.collected_by)
+    .text((d:any) => d.collectedBy)
 
 
   d3.select('.button-container')
