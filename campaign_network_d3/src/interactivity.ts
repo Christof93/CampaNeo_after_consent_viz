@@ -10,7 +10,8 @@ export function setColorMode(mode: ColorMode): void {
   d3.select('#car_button > ellipse').attr('fill', COLORS.center_out[colorMode])
   d3.select('#car_button > g > path').attr('fill', COLORS.center_in[colorMode])
   d3.select('#network-container > ul').style('background-color', colorMode === 'dark'? 'rgba(0, 0, 0, 0.6)' : 'rgba(200, 200, 200, 0.6)')
-
+  d3.selectAll('circle.particle').attr('fill',
+    (d: any) => {return LEGEND_COLORS[d][colorMode]})
   d3.select('.color-mode').html(LIGHTBULB_ICON[colorMode])
 
   Object.entries(ICONS).forEach(([key, value]) => {

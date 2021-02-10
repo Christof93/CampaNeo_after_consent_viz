@@ -141,7 +141,7 @@ const build_network = async (data:any) => {
     .attr('stroke-width', 0)
     .text(d => d.Name)
 
-  const particleGroup = svg.append('g')
+  const particleGroup = svg.append('g').attr('class','particles')
 
   await add_car_button(svg)
 
@@ -152,13 +152,14 @@ const build_network = async (data:any) => {
       const elem = d3.select(this)
       const dataCollection = line_link.target.CollectedData
       const dataCollectionLength = dataCollection.length
-
       for(let i = 0; i < dataCollectionLength; i++) {
-        particleGroup.append('circle')
+        const particleType = dataCollection[i].type.toLowerCase()
+        particleGroup.append('circle').attr('class','particle')
           .attr('cx', 250)
           .attr('cy', 150)
           .attr('r', 3)
-          .attr('fill', LEGEND_COLORS[dataCollection[i].type.toLowerCase()][colorMode])
+          .data([particleType])
+          .attr('fill', LEGEND_COLORS[particleType][colorMode])
           .transition()
           .delay(i * 750)
           .duration(3000)
