@@ -11,29 +11,19 @@
   on data \cite{d3}. D3 fits the requirements of simple interoperability between
   data and visualisation by manipulating the DOM perfectly.
 
-  Naturally, a front end for the purpose of this application is not of much use
-  without data and therefore a database is required. Given that the
+  Given that the
   visualisation is built around a semantic knowledge graph, a graph database is
   a necessity.
-
-  A great fit in this regard is RDF4J. RDF4J, a native triple
+  % Is it necessary to describe what we didn't use and why?
+  A great fit in this regard is RDF4J \cite{rdf4j}. RDF4J, a native triple
   store, offers the ability to query the knowledge graph using SPARQL. The
-  database has also support for all mainstream RDF file formats \cite{rdf4j}.
+  database has also support for all mainstream RDF file formats.
   RDF4J is an open-source project under the umbrella of the Eclipse Foundation
   which indicates it is trusted by a big community.
 
   Another option is GraphDB \cite{graphdb}, a proprietary graph database developed by Ontotext.
   It offers multiple APIs for querying the database, including RDF4J and SPARQL,
-  among other things. Ontotext offers a free version of GraphDB, however when
-  we evaluated it for development purposes, it was not really suitable for a
-  fully automatic development experience given that the free version needs to
-  be downloaded manually while Ontotext offers pre-built Docker images for
-  their Standard and Enterprise offerings.
-
-  Since the CampaNeo project already had a pre-existing GraphDB database, we
-  still decided on using GraphDB. The main focus of this project is the
-  visualisation, so as long as we could retrieve the data from the database
-  this did not pose a problem for our purposes. The multiple APIs offered by
+  among other things. The multiple APIs offered by
   GraphDB allowed us to use a vendor-agnostic JavaScript framework for
   creating SPARQL queries.
 
@@ -73,11 +63,10 @@
   fuel consumption. The module then creates connections between the data packages
   and the third party companies receiving them.
 
-  After the visualization is created for the received data, the “Visualisation Module”
+  After the visualisation is created for the received data, the “Visualisation Module”
   updates the currently displayed graph.
 
   % TODO: Explain the “Visualisation Module” in more detail. Maybe add a second
   %       diagram showing the inner workings of the module.
 
-  …
 \end{document}
