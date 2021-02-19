@@ -14,18 +14,15 @@
   Given that the
   visualisation is built around a semantic knowledge graph, a graph database is
   a necessity.
-  % Is it necessary to describe what we didn't use and why?
-  A great fit in this regard is RDF4J \cite{rdf4j}. RDF4J, a native triple
-  store, offers the ability to query the knowledge graph using SPARQL. The
-  database has also support for all mainstream RDF file formats.
-  RDF4J is an open-source project under the umbrella of the Eclipse Foundation
-  which indicates it is trusted by a big community.
 
-  Another option is GraphDB \cite{graphdb}, a proprietary graph database developed by Ontotext.
-  It offers multiple APIs for querying the database, including RDF4J and SPARQL,
-  among other things. The multiple APIs offered by
+  For the implementation, an instance of  GraphDB \cite{graphdb}, a proprietary graph
+  database developed by Ontotext, was used. It offers multiple APIs for querying the database, 
+  including RDF4J and SPARQL, among other things. The multiple APIs offered by
   GraphDB allowed us to use a vendor-agnostic JavaScript framework for
-  creating SPARQL queries.
+  creating SPARQL queries. As the overall goal was simplicity and reusability,
+  SPARQL was used querying data, since it is widely used
+  in the semantic community and well adopted. This makes the application work with
+  basically any graph database, which supports data fetching with SPARQL.
 
   A simple use case would be a user starting the application, which initializes
   the D3 frontend web application, which in turn queries data from the database
@@ -61,12 +58,13 @@
   node for each category of data. These categories are predefined in the
   ontology and represent thing like coordinates, longitude and latitude, or
   fuel consumption. The module then creates connections between the data packages
-  and the third party companies receiving them.
+  and the third party companies receiving them. One can think of this module
+  as the pure frontend of the application.
 
   After the visualisation is created for the received data, the “Visualisation Module”
-  updates the currently displayed graph.
-
-  % TODO: Explain the “Visualisation Module” in more detail. Maybe add a second
-  %       diagram showing the inner workings of the module.
+  updates the currently displayed graph. This can easily be done with D3.js, since
+  it creates a graph context, which can be modified directly. Therefore,
+  we can add or remove nodes from the graph and directly update the visualisation
+  upon the receiving a users input.
 
 \end{document}

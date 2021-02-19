@@ -33,7 +33,7 @@
   circle with the center point
   being the user. Data processors, called campaigns in the CampaNeo environment, are
   represented by a rounded rectangle and the corresponding campaign name. The round
-  particles represent data packets flowing between user and campaign. They are
+  particles represent data packets flowing from the user to the campaign. They are
   colour-coded to give additional information on the type of data that is sent,
   e.g. fuel consumption, speed or the GPS location of the car.
   The meaning of the different colours are encoded in a legend on the bottom left
@@ -48,11 +48,15 @@
   possible to click on a specific data flow in the visualisation in order
   to get a more detailed view of the data stream. Here we rely on a time series
   visualisation and give additional information about the sensor that retrieved
-  the data and the companies that the data processor shares the data with.
+  the data and the companies, with whom the data processor shares the collected data.
 
   Clarity is of utmost importance, which is why the visualisation always starts
   with the summary view to avoid confusing the user with too much information
   at once. The more detailed information is served only upon interacting with
   the visualisation. Displaying everything on screen at the same time would
-  overload the initial rendering far too much.
+  overload the initial rendering far too much. The moving particles, representing the
+  data packets, are designed to directly draw a users attention on the center of the
+  application. Therefore, the animation of the flow is implemented as a loop, i.e.
+  after the particles have arrived at their destination, they stay there for a short
+  time before disappearing and flowing again from the center.
 \end{document}
