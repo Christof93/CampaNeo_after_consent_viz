@@ -16,7 +16,7 @@
   a necessity.
 
   For the implementation, an instance of  GraphDB \cite{graphdb}, a proprietary graph
-  database developed by Ontotext, was used. It offers multiple APIs for querying the database, 
+  database developed by Ontotext, was used. It offers multiple APIs for querying the database,
   including RDF4J and SPARQL, among other things. The multiple APIs offered by
   GraphDB allowed us to use a vendor-agnostic JavaScript framework for
   creating SPARQL queries. As the overall goal was simplicity and reusability,
@@ -25,13 +25,13 @@
   basically any graph database, which supports data fetching with SPARQL.
 
   A simple use case would be a user starting the application, which initializes
-  the D3 frontend web application, which in turn queries data from the database
-  to visualize the consent page as shown in \cref{fig:prototype}.
+  the D3 front end web application, which in turn queries data from the database
+  to visualise the consent page as shown in \cref{fig:prototype}.
 
   \subsection{Architecture}
 
   Shown in \cref{fig:architecture} is an overview of the technical architecture
-  for the implementation of the data visualization.
+  for the implementation of the data visualisation.
 
   \begin{figure}
     \centering
@@ -59,7 +59,7 @@
   ontology and represent thing like coordinates, longitude and latitude, or
   fuel consumption. The module then creates connections between the data packages
   and the third party companies receiving them. One can think of this module
-  as the pure frontend of the application.
+  as the pure front end of the application.
 
   After the visualisation is created for the received data, the “Visualisation Module”
   updates the currently displayed graph. This can easily be done with D3.js, since
