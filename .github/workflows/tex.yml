@@ -12,7 +12,7 @@ jobs:
       - name: Check Spelling
         uses: reitermarkus/aspell@master
         with:
-          files: '*.tex'
+          files: '**/*.tex'
           args: >
             --encoding UTF-8
             --lang en_GB
