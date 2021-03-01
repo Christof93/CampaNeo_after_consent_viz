@@ -1,15 +1,25 @@
 \documentclass[../paper.tex]{subfiles}
 
 \begin{document}
-  The main problem we want to solve with our work is that of fully transparent
-  visualisation of data sharing activities. We will achieve this by building a
-  tool that enables users to monitor and control the distribution of their
-  data.
 
+ \textit{Knowledge graph visualisation.} 
+ The search for easily understandable visualisations of Semantic Web data is nearly as old as the Semantic Web itself.
+ Many of the early visualisation efforts were components of Linked Open Data (LOD) browsers such as Isaviz \cite{isaviz}, RDF Gravity \cite{goyal2004rdfgravity} or Tabulator \cite{tabulator-berners-lee-2006}.  The LOD cloud is an interlinked network of openly available data sets.
+ At the moment applications for the LOD cloud are mainly used by expert users such as ontology developers.
+ A more widespread usage and adoption of Semantic Technologies would be very desirable for the usefulness of the Semantic Web itself.
+ This is why making Semantic Web data more accessible to lay-users through comprehensive visualisations is a topic of ongoing research.
+ One proposed way to achieve this are visualisation techniques which can present vast amounts of data while still getting across the semantic entities and relations.
+ Stuhr et al. \cite{lodwheel} evaluate the suitability of several JavaScript visualisation frameworks for web-based data inspection tools.     
+ 
+ Zhang et al. \cite{rdfFisheye} use a fish eye zoom feature to simplify information-dense visualisations.
+ %comparable papers on knowledge graph visualisation.
+ %Isaviz?, Open Link Data Explorer?, RDF Gravity?, Tabulator?
+ \\\\
+ \textit{Consent visualisation.}
   In recent years there have been several attempts to design applications that
-  implement such visualisations. Raschke et al.
+  implement a transparent visualisation of data sharing mechanisms. Raschke et al.
   \cite{core_privacy_dashboard_2018} built a general dashboard to visualise
-  data sharing activities and give consent approval and withdrawal mechanisms.
+  data sharing activities and give consent approval and withdrawal functionality.
   The dashboard is a single page application with a vertical timeline listing
   the different types of actions. Among these actions are sharing a first name
   or a picture as well as information about location and search history.
@@ -19,8 +29,7 @@
   The authors evaluated the tool with a set of tasks for participants to
   complete using the dashboard application. However, Raschke et al.
   \cite{core_privacy_dashboard_2018} only tested with expert users most of which 
-  were also their colleagues. The main takeaways were that data type categories
-  need to be refined more to be understandable. Generally, even the expert users
+  were their colleagues. The main takeaway was that even the expert users
   found it hard to answer questions about their data privacy based on the
   information available from the dashboard.
 
@@ -37,15 +46,18 @@
   processing that is done on it and which third party companies it will be
   shared with.
 
-  To validate their design choices, Drozd and Kirrane evaluated
-  two slightly different CoRe UI prototypes by giving tasks to participants
-  from different age groups and recording their actions. The first prototype
-  that was tested was a bit more elaborate and had more features than the
-  second one which was a simplified version. For the first test 27~participants
-  were asked to perform the specified tasks. 74\% of participants
-  seemed to be “very confused” and more than half of them found the UI “too
-  complex” and “hard to use”. The second, simplified UI was accepted better with
-  an even larger test group of 74~people. Still many would describe the layout 
+  %To validate their design choices, Drozd and Kirrane evaluated
+  %two slightly different CoRe UI prototypes by giving tasks to participants
+  %from different age groups and recording their actions. The first prototype
+  %that was tested was a bit more elaborate and had more features than the
+  %second one which was a simplified version. For the first test 27~participants
+  %were asked to perform the specified tasks. 
+  %74\% of participants
+  %seemed to be “very confused” and more than half of them found the UI “too
+  %complex” and “hard to use”. The second, simplified UI was accepted better with
+  %an even larger test group of 74~people.
+  Upon testing the second, simplified version of the interface with 74 test users, they 
+  found that despite some simplification, many would describe the layout 
   as being “confusing”, “annoying” and “complex”. The majority of participants
   claimed to be unsatisfied or neutral with the application.
   
@@ -54,5 +66,5 @@
   legal conditions of data privacy. Consequently, a good start for any attempt
   to create a transparent visualisation of data sharing processes is to simplify
   the user interface to only include the most essential components, which will
-  be determined in \Cref{sec:prototyping}.
+  be determined in \cref{sec:prototyping}.
 \end{document}

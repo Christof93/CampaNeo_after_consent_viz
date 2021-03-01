@@ -1,4 +1,4 @@
-\documentclass[notitlepage,11pt]{article}
+\documentclass{llncs}
 \linespread{1.1}
 
 \raggedbottom
@@ -29,26 +29,24 @@
   \def\sectionautorefname{Section}
 }
 
-\usepackage[
-  style   = numeric,
-  sorting = none,
-]{biblatex}
-\bibliography{paper}
 
-\title{Raising legal awareness through user-centred consent visualisation}
-\author{Christof Bless, Lukas Dötlinger, Michael Kaltschmid \& Markus Reiter}
+\title{Raising Legal Awareness Through User-Centred Consent Visualisation}
+\author{Christof Bless \and Lukas Dötlinger \and Michael Kaltschmid \and Markus Reiter \and Anelia Kurteva \and Antonio J. Roa-Valverde \and Anna Fensel }
+\institute{Institute of Computer Science, University of Innsbruck}
+
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-  Data privacy scandals in the recent past have left many people around the world
-  insecure about the implications of data sharing in everyday life. At the
-  same time advances in machine learning and data science have given us the
-  possibility to enhance the safety and the quality of life of many people. To
+  Advances in machine learning and data science have given us the
+  possibility to enhance the safety and the quality of life of many people through large scale data analysis. To
   collect data from individuals nowadays companies have to rely on mutual
-  consent and trust. New regulations such as the GDPR make sure that consumers
+  consent and trust. At the
+  same time data privacy scandals in the recent past have left many people around the world
+  insecure about the implications of data sharing in everyday life.
+  New regulations such as the GDPR make sure that consumers
   are not exploited or taken advantage of. From a legal standpoint it is
   necessary to inform customers to a full extent about what information is
   collected from them. In this paper we present a new visualisation approach
@@ -58,7 +56,10 @@
   processes in the background of their consent agreements. Finally, we show
   the results of a user study conducted to find out whether this
   visualisation leads to more legal awareness and trust.
+  We show that our approach can increase data sharing consent rates by over 20\% in different types of use cases.
 \end{abstract}
+
+\keywords{Knowledge Graph Visualisation \and GDPR \and Data Privacy}
 
 \section{Introduction}
 \label{sec:introduction}
@@ -92,6 +93,7 @@
 \label{sec:conclusion}
 \subfile{res/conclusion}
 
-\newpage
-\printbibliography
+\bibliographystyle{splncs04}
+\bibliography{paper}
+
 \end{document}
