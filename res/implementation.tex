@@ -8,15 +8,15 @@
   build a web application that is easily embeddable into a mobile application.
   For this reason we decided on going for a lean front end without too many
   unnecessary dependencies to keep it responsive. Among the key dependencies that
-  are necessary is D3.js, a JavaScript library for manipulating documents based
-  on data \cite{d3}. D3 fits the requirements of simple interoperability between
+  are necessary is D3.js\footnote{JavaScript visualisation library D3: https://d3js.org}, a JavaScript library for manipulating documents based
+  on data. D3 fits the requirements of simple interoperability between
   data and visualisation by manipulating the DOM perfectly.
 
   Given that the
   visualisation is built around a semantic knowledge graph, a graph database is
   a necessity.
 
-  For the implementation, an instance of  GraphDB \cite{graphdb}, a proprietary graph
+  For the implementation, an instance of  GraphDB\footnote{GraphDB: https://www.ontotext.com/products/graphdb/}, a proprietary graph
   database developed by Ontotext, was used. It offers multiple APIs for querying the database,
   including RDF4J and SPARQL, among other things. The multiple APIs offered by
   GraphDB allowed us to use a vendor-agnostic JavaScript framework for
