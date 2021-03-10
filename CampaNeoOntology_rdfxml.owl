@@ -1,0 +1,1303 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#"
+     xml:base="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:Consent_Sensor="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#"
+     xmlns:AnnotationVocabulary="https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/source -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#editorialNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#editorialNote"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#note -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote"/>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/adaptedFrom -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/adaptedFrom"/>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/explanatoryNote -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/explanatoryNote"/>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/synonym -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/synonym"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#CreatedCampaign -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#CreatedCampaign">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasCreatedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#ParticipatesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#ParticipatesIn">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#gaveConsentTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#gaveConsentTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasConsentBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasCapacity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasCapacity">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasConsentBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasConsentBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasContract -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasContract"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEmail -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEmail"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasProofOfAgreement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasProofOfAgreement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasProofOfConsent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasProofOfConsent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPurpose -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPurpose">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#isPartOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#isProvidedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#isProvidedFor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasCreatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasCreatedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ControlledBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ControlledBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignController"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#RequiresData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#RequiresData">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#belongsToTheArea -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#belongsToTheArea">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasAvailability -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasAvailability">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasCapacity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasCapacity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasConsent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasConsent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasContactDetails -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasContactDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasDuration -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasDuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasEndDate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasEndDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasGPScoordinates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasGPScoordinates">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasName -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasPhysicalAddress -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasPhysicalAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcess">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessDuration -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessDuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessEnd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessEnd">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessPurpose -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessPurpose">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessStart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessStart">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStartDate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStartDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStatus">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStorageLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStorageLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasValidationTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasValidationTime"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isDataSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isDataSource">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isInitiatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isInitiatedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isProvidedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isProvidedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isProvidedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isProvidedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isRequestedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isRequestedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isSecuredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isSecuredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasContractualElement -->
+
+    <owl:ObjectProperty rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasContractualElement">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasExecutionDateTimeStamp -->
+
+    <owl:ObjectProperty rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasExecutionDateTimeStamp"/>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasNonBindingTerms -->
+
+    <owl:ObjectProperty rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasNonBindingTerms"/>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/isAbout -->
+
+    <owl:ObjectProperty rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/isAbout"/>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/isMandatedBy -->
+
+    <owl:ObjectProperty rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/isMandatedBy">
+        <rdfs:domain rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.omg.org/spec/LCC/Countries/CountryRepresentation/usesAdministrativeLanguage -->
+
+    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/LCC/Countries/CountryRepresentation/usesAdministrativeLanguage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#City -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#City">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Country -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Country">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Duration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Duration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PostCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PostCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Street -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Street">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#StreetNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#StreetNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Street"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEmail -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEmail"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEndDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEndDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Duration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSData -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSData"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSLatitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSLatitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataValue"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSLongitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSLongitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataValue"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasLatitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasLatitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSData"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasLongitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasLongitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSData"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasMobilePhoneNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasMobilePhoneNumber"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasStartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasStartDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Duration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedAtTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/isAssignable -->
+
+    <owl:DatatypeProperty rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/isAssignable"/>
+    
+
+
+    <!-- https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishFullName -->
+
+    <owl:DatatypeProperty rdf:about="https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishFullName"/>
+    
+
+
+    <!-- https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishShortName -->
+
+    <owl:DatatypeProperty rdf:about="https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishShortName"/>
+    
+
+
+    <!-- https://www.omg.org/spec/LCC/Countries/CountryRepresentation/isIndependent -->
+
+    <owl:DatatypeProperty rdf:about="https://www.omg.org/spec/LCC/Countries/CountryRepresentation/isIndependent"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Company -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Company">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PrivateInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#DataProcessor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#DataProcessor">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Institution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelConsumptionData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelConsumptionData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelSensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSSensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSLatitude"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSLongitude"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GovernmentalInstitution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GovernmentalInstitution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PublicInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Institution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Institution">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignController"/>
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#NGO -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#NGO">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PublicInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PrivateInstitution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PrivateInstitution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Institution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PublicInstitution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PublicInstitution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Institution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedSensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PublicInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasConsentBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEndDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasStartDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Campaign</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignController -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignController"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Sensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isRequestedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#DataProcessor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedAtTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Sensor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#ParticipatesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#online_contract -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#online_contract">
+        <rdfs:subClassOf rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract"/>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract -->
+
+    <owl:Class rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/isAssignable"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>QName: fibo-fnd-agr-ctr:Contract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/"/>
+        <rdfs:label>Contract</rdfs:label>
+        <skos:definition>voluntary, deliberate agreement between two or more competent parties to which those parties agree to be legally bound, and to which the parties must have provided valuable consideration</skos:definition>
+        <AnnotationVocabulary:adaptedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.businessdictionary.com/definition/contract.html</AnnotationVocabulary:adaptedFrom>
+        <AnnotationVocabulary:explanatoryNote>A contractual relationship is evidenced by (1) an offer, (2) acceptance of the offer, and a (3) valid (legal and valuable) consideration. A contract is a kind of agreement, and as such it embodies the assertion that it has been negotiated, such negotiation having included the presence of some offer and the acceptance of that offer on the part of either or both of the parties.</AnnotationVocabulary:explanatoryNote>
+        <AnnotationVocabulary:explanatoryNote>Contracts are usually written but may be spoken or implied, and generally have to do with employment, sale or lease, or tenancy.</AnnotationVocabulary:explanatoryNote>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/MutualContractualAgreement -->
+
+    <owl:Class rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/MutualContractualAgreement">
+        <rdfs:subClassOf rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract"/>
+        <owl:disjointWith rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/UnilateralContract"/>
+        <rdfs:comment>QName: fibo-fnd-agr-ctr:MutualContractualAgreement</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/"/>
+        <rdfs:label>mutual contractual agreement</rdfs:label>
+        <skos:definition>contract between two or more specific named parties; the rights and obligations pertaining to either party cannot be transferred to another party without prior written permission or a change to the contract itself</skos:definition>
+        <AnnotationVocabulary:synonym>bilateral contract</AnnotationVocabulary:synonym>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/PromissoryNote -->
+
+    <owl:Class rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/PromissoryNote">
+        <rdfs:subClassOf rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/UnilateralContract"/>
+        <rdfs:subClassOf rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract"/>
+        <rdfs:comment>QName: fibo-fnd-agr-ctr:PromissoryNote</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/"/>
+        <rdfs:label>promissory note</rdfs:label>
+        <skos:definition>unconditional and unsecured promise by one party (the issuer or promisor) to another (the payee or promisee) that commits the issuer to pay a specified sum on demand, or on a fixed or a determinable date</skos:definition>
+        <AnnotationVocabulary:explanatoryNote>Promissory notes (such as bank or currency notes) are negotiable instruments.</AnnotationVocabulary:explanatoryNote>
+        <AnnotationVocabulary:explanatoryNote>Unlike a contract, a Promissory Note does not need to be signed by both parties. It is essentially a promise from one party to the holder, of some good or benefit. Promissory notes are generally fully fungible.</AnnotationVocabulary:explanatoryNote>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/TransferableContract -->
+
+    <owl:Class rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/TransferableContract">
+        <rdfs:subClassOf rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract"/>
+        <rdfs:comment>QName: fibo-fnd-agr-ctr:TransferableContract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/"/>
+        <rdfs:label>transferable contract</rdfs:label>
+        <skos:definition>contract in which the rights and obligations of one party (the holder) may be transferred to another party, which thereby takes on the same rights and obligations with respect to the other party to the contract</skos:definition>
+        <AnnotationVocabulary:explanatoryNote>Note that the ability to transfer ownership of one side of a contract, and the concept of assignability, are distinct. In one case the contract may be freely traded; in the other case, some legal transfer of rights to a third party takes place, without a change in who are the signatories of a (typically bilateral) contract.</AnnotationVocabulary:explanatoryNote>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/UnilateralContract -->
+
+    <owl:Class rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/UnilateralContract">
+        <rdfs:subClassOf rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract"/>
+        <rdfs:comment>QName: fibo-fnd-agr-ctr:UnilateralContract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/"/>
+        <rdfs:label>unilateral contract</rdfs:label>
+        <skos:definition>contract in which only one party makes an express promise, or undertakes a performance without first securing a reciprocal agreement from the other party</skos:definition>
+        <AnnotationVocabulary:explanatoryNote>In a unilateral, or one-sided, contract, one party, known as the offeror, makes a promise in exchange for an act (or abstention from acting) by another party, known as the offeree. If the offeree acts on the offeror&apos;s promise, the offeror is legally obligated to fulfill the contract, but an offeree cannot be forced to act (or not act), because no return promise has been made to the offeror. After an offeree has performed, only one enforceable promise exists, that of the offeror.
+
+A unilateral contract differs from a Bilateral Contract, in which the parties exchange mutual promises. Bilateral contracts are commonly used in business transactions; a sale of goods is a type of bilateral contract.</AnnotationVocabulary:explanatoryNote>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/VerbalContract -->
+
+    <owl:Class rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/VerbalContract">
+        <rdfs:subClassOf rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract"/>
+        <owl:disjointWith rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract"/>
+        <rdfs:comment>QName: fibo-fnd-agr-ctr:VerbalContract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/"/>
+        <rdfs:label>verbal contract</rdfs:label>
+        <skos:definition>contract that exists as a result of some verbal exchange</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract -->
+
+    <owl:Class rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract">
+        <rdfs:subClassOf rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract"/>
+        <rdfs:comment>QName: fibo-fnd-agr-ctr:WrittenContract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/"/>
+        <rdfs:label>written contract</rdfs:label>
+        <skos:definition>formal contract that is written and signed by the parties thereto</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/GConsent#Status -->
+
+    <owl:Class rdf:about="https://w3id.org/GConsent#Status">
+        <rdfs:comment xml:lang="en">
+Represents the status of consent for the data subject. This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn.
+</rdfs:comment>
+        <rdfs:label xml:lang="en">Status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Company"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Anelia_Kurteva -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Anelia_Kurteva">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
+        <Consent_Sensor:City rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Innsbruck</Consent_Sensor:City>
+        <Consent_Sensor:Country rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Austria</Consent_Sensor:Country>
+        <Consent_Sensor:PostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6020</Consent_Sensor:PostCode>
+        <Consent_Sensor:Street rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Innstrasse</Consent_Sensor:Street>
+        <Consent_Sensor:StreetNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">81</Consent_Sensor:StreetNumber>
+        <Consent_Sensor:hasEmail>anelia.kurteva@sti2.at</Consent_Sensor:hasEmail>
+        <Consent_Sensor:hasMobilePhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">07746729348</Consent_Sensor:hasMobilePhoneNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <Consent_Sensor:hasConsentBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1"/>
+        <Consent_Sensor:wasCreatedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz"/>
+        <rdfs:comment>DriveSmart is backed by an insurance company to develop customisable insurance risk models based on driver behaviour.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <Consent_Sensor:hasConsentBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1"/>
+        <Consent_Sensor:wasCreatedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck"/>
+        <Consent_Sensor:wasCreatedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
+        <rdfs:comment>GreenFuture is founded by universities and several companies to achieve less CO2 emissions by researching new technologies to save gas</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Highway_Tirol -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Highway_Tirol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <Consent_Sensor:hasConsentBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1"/>
+        <Consent_Sensor:wasCreatedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government"/>
+        <Consent_Sensor:hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-12-12T00:00:00</Consent_Sensor:hasEndDate>
+        <Consent_Sensor:hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-10T00:00:00</Consent_Sensor:hasStartDate>
+        <rdfs:comment>Highway Tirol aims to find better solutions in traffic routing and speed constraints on public highways.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#STI_Innsbruck -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#STI_Innsbruck">
+        <Consent_Sensor:isPartOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck"/>
+        <rdfs:comment>STI Innsbruck is a research group at the University of Innsbruck engaged in research and development to bring information and communication technologies of the future into today&apos;s world.</rdfs:comment>
+        <rdfs:seeAlso>UIBK</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GovernmentalInstitution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+        <rdfs:comment>The University of Innsbruck  is a public university in Innsbruck, the capital of the Austrian federal state of Tyrol, founded in 1669. It is currently the largest education facility in the Austrian Bundesland of Tirol, the third largest in Austria behind Vienna University and the University of Graz and according to The Times Higher Education Supplement 2010 World Ranking it is Austria&apos;s leading university. Significant contributions have been made in many branches, most of all in the physics department. Further, regarding the number of Web of Science-listed publications, it occupies the third rank worldwide in the area of mountain research.[1] In the Handelsblatt Ranking 2015, the business administration faculty ranks among the 15 best business administration faculties in German-speaking countries.[2]</rdfs:comment>
+        <rdfs:seeAlso>UIBK</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Company"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData"/>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
+        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.55</Consent_Sensor:hasDataValue>
+        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-13T09:01:00</Consent_Sensor:wasRetrievedAtTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData"/>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
+        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.55</Consent_Sensor:hasDataValue>
+        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T09:02:00</Consent_Sensor:wasRetrievedAtTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData"/>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz"/>
+        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.31</Consent_Sensor:hasDataValue>
+        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-15T18:31:00</Consent_Sensor:wasRetrievedAtTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData"/>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz"/>
+        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.31</Consent_Sensor:hasDataValue>
+        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-18T18:01:00</Consent_Sensor:wasRetrievedAtTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck"/>
+        <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.2734</Consent_Sensor:hasGPSLatitude>
+        <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7783203</Consent_Sensor:hasGPSLongitude>
+        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-11T08:48:00</Consent_Sensor:wasRetrievedAtTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData"/>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
+        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.5</Consent_Sensor:hasDataValue>
+        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-11T09:01:00</Consent_Sensor:wasRetrievedAtTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData"/>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
+        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.35</Consent_Sensor:hasDataValue>
+        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T09:02:00</Consent_Sensor:wasRetrievedAtTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck"/>
+        <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</Consent_Sensor:hasGPSLatitude>
+        <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.55</Consent_Sensor:hasGPSLongitude>
+        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T08:35:00</Consent_Sensor:wasRetrievedAtTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData"/>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
+        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.59</Consent_Sensor:hasDataValue>
+        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T09:05:00</Consent_Sensor:wasRetrievedAtTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government"/>
+        <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.55</Consent_Sensor:hasGPSLatitude>
+        <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</Consent_Sensor:hasGPSLongitude>
+        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T08:01:00</Consent_Sensor:wasRetrievedAtTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government"/>
+        <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.5</Consent_Sensor:hasGPSLatitude>
+        <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</Consent_Sensor:hasGPSLongitude>
+        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T08:02:00</Consent_Sensor:wasRetrievedAtTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government"/>
+        <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.5</Consent_Sensor:hasGPSLatitude>
+        <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</Consent_Sensor:hasGPSLongitude>
+        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T18:31:00</Consent_Sensor:wasRetrievedAtTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

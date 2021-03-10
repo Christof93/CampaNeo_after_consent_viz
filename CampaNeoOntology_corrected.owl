@@ -740,6 +740,7 @@ Consent_Sensor:Tyrolean_Government rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck
 Consent_Sensor:University_of_Innsbruck rdf:type owl:NamedIndividual ,
+                                                Consent_Sensor:University ,
                                                 :CampaignCreator ;
                                        rdfs:comment "The University of Innsbruck  is a public university in Innsbruck, the capital of the Austrian federal state of Tyrol, founded in 1669. It is currently the largest education facility in the Austrian Bundesland of Tirol, the third largest in Austria behind Vienna University and the University of Graz and according to The Times Higher Education Supplement 2010 World Ranking it is Austria's leading university. Significant contributions have been made in many branches, most of all in the physics department. Further, regarding the number of Web of Science-listed publications, it occupies the third rank worldwide in the area of mountain research.[1] In the Handelsblatt Ranking 2015, the business administration faculty ranks among the 15 best business administration faculties in German-speaking countries.[2]" ;
                                        rdfs:seeAlso "UIBK" .
@@ -749,64 +750,6 @@ Consent_Sensor:University_of_Innsbruck rdf:type owl:NamedIndividual ,
 Consent_Sensor:Volkswagen rdf:type owl:NamedIndividual ,
                                    Consent_Sensor:Company ,
                                    :CampaignCreator .
-
-
-###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol1
-Consent_Sensor:datapoint_highway_tirol1 rdf:type owl:NamedIndividual ,
-                                                 Consent_Sensor:GPSData ;
-                                        :isRequestedBy Consent_Sensor:Tyrolean_Government ;
-                                        Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol2
-Consent_Sensor:datapoint_highway_tirol2 rdf:type owl:NamedIndividual ,
-                                                 Consent_Sensor:GPSData ;
-                                        :isRequestedBy Consent_Sensor:Tyrolean_Government ;
-                                        Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol3
-Consent_Sensor:datapoint_highway_tirol3 rdf:type owl:NamedIndividual ,
-                                                 Consent_Sensor:GPSData ;
-                                        :isRequestedBy Consent_Sensor:Tyrolean_Government ;
-                                        Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future1
-Consent_Sensor:datapoint_green_future1 rdf:type owl:NamedIndividual ,
-                                                Consent_Sensor:GPSData ;
-                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
-                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future2
-Consent_Sensor:datapoint_green_future2 rdf:type owl:NamedIndividual ,
-                                                Consent_Sensor:GPSData ;
-                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
-                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future3
-Consent_Sensor:datapoint_green_future3 rdf:type owl:NamedIndividual ,
-                                                Consent_Sensor:GPSData ;
-                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
-                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
-
-
-
-###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future4
-Consent_Sensor:datapoint_green_future4 rdf:type owl:NamedIndividual ,
-                                                Consent_Sensor:GPSData ;
-                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
-                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
-
-
-
-###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future5
-Consent_Sensor:datapoint_green_future5 rdf:type owl:NamedIndividual ,
-                                                Consent_Sensor:GPSData ;
-                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
-                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart1
@@ -835,6 +778,62 @@ Consent_Sensor:datapoint_drive_smart4 rdf:type owl:NamedIndividual ,
                                                Consent_Sensor:GPSData ;
                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future1
+Consent_Sensor:datapoint_green_future1 rdf:type owl:NamedIndividual ,
+                                                Consent_Sensor:GPSData ;
+                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future2
+Consent_Sensor:datapoint_green_future2 rdf:type owl:NamedIndividual ,
+                                                Consent_Sensor:GPSData ;
+                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future3
+Consent_Sensor:datapoint_green_future3 rdf:type owl:NamedIndividual ,
+                                                Consent_Sensor:GPSData ;
+                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future4
+Consent_Sensor:datapoint_green_future4 rdf:type owl:NamedIndividual ,
+                                                Consent_Sensor:GPSData ;
+                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future5
+Consent_Sensor:datapoint_green_future5 rdf:type owl:NamedIndividual ,
+                                                Consent_Sensor:GPSData ;
+                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol1
+Consent_Sensor:datapoint_highway_tirol1 rdf:type owl:NamedIndividual ,
+                                                 Consent_Sensor:GPSData ;
+                                        :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                        Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol2
+Consent_Sensor:datapoint_highway_tirol2 rdf:type owl:NamedIndividual ,
+                                                 Consent_Sensor:GPSData ;
+                                        :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                        Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol3
+Consent_Sensor:datapoint_highway_tirol3 rdf:type owl:NamedIndividual ,
+                                                 Consent_Sensor:GPSData ;
+                                        :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                        Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1
