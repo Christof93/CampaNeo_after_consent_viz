@@ -1,0 +1,845 @@
+@prefix : <http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix Consent_Sensor: <http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#> .
+@prefix AnnotationVocabulary: <https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/> .
+@base <http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor> .
+
+<http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/source
+terms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#editorialNote
+skos:editorialNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/adaptedFrom
+AnnotationVocabulary:adaptedFrom rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/explanatoryNote
+AnnotationVocabulary:explanatoryNote rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/synonym
+AnnotationVocabulary:synonym rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#CreatedCampaign
+Consent_Sensor:CreatedCampaign rdf:type owl:ObjectProperty ;
+                               rdfs:domain :Campaign ,
+                                           :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#ParticipatesIn
+Consent_Sensor:ParticipatesIn rdf:type owl:ObjectProperty ;
+                              rdfs:range :Campaign ,
+                                         :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasCapacity
+Consent_Sensor:hasCapacity rdf:type owl:ObjectProperty ;
+                           rdfs:range :Campaign ,
+                                      :Data .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasConsentBy
+Consent_Sensor:hasConsentBy rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasContract
+Consent_Sensor:hasContract rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEmail
+Consent_Sensor:hasEmail rdf:type owl:ObjectProperty ;
+                        rdfs:range :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasProofOfAgreement
+Consent_Sensor:hasProofOfAgreement rdf:type owl:ObjectProperty ;
+                                   rdfs:range :Agreement .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasProofOfConsent
+Consent_Sensor:hasProofOfConsent rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPurpose
+Consent_Sensor:hasPurpose rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Campaign ;
+                          rdfs:range :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource
+Consent_Sensor:hasSource rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#isCreatedBy
+Consent_Sensor:isCreatedBy rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Campaign ;
+                           rdfs:range :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#isPartOf
+Consent_Sensor:isPartOf rdf:type owl:ObjectProperty ;
+                        rdfs:domain :User ;
+                        rdfs:range :Agreement ,
+                                   :Campaign ,
+                                   :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#isProvidedFor
+Consent_Sensor:isProvidedFor rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ControlledBy
+:ControlledBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :CampaignController ;
+              rdfs:range :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#RequiresData
+:RequiresData rdf:type owl:ObjectProperty ;
+              rdfs:range :Campaign ,
+                         :Data .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#belongsToTheArea
+:belongsToTheArea rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasAvailability
+:hasAvailability rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:range :Data .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasCapacity
+:hasCapacity rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasConsent
+:hasConsent rdf:type owl:ObjectProperty ;
+            rdfs:range :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasContactDetails
+:hasContactDetails rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:range :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasDuration
+:hasDuration rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:range :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasEndDate
+:hasEndDate rdf:type owl:ObjectProperty ;
+            rdfs:range :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasGPScoordinates
+:hasGPScoordinates rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :CarSensor .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasName
+:hasName rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:range :Campaign ,
+                    :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasPhysicalAddress
+:hasPhysicalAddress rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:range :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcess
+:hasProcess rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessDuration
+:hasProcessDuration rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:range :Campaign ,
+                               :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessEnd
+:hasProcessEnd rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessPurpose
+:hasProcessPurpose rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessStart
+:hasProcessStart rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStartDate
+:hasStartDate rdf:type owl:ObjectProperty ;
+              rdfs:range :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStatus
+:hasStatus rdf:type owl:ObjectProperty ;
+           rdfs:range :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStorageLocation
+:hasStorageLocation rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:range :Data .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasValidationTime
+:hasValidationTime rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isDataSource
+:isDataSource rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Sensor .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isInitiatedBy
+:isInitiatedBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isProvidedBy
+:isProvidedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:range :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isProvidedTo
+:isProvidedTo rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:range :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isRequestedBy
+:isRequestedBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:range :Campaign ,
+                          :Data .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isSecuredBy
+:isSecuredBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:range :Data ,
+                        :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isSignedOnline
+:isSignedOnline rdf:type owl:ObjectProperty ;
+                rdfs:domain :online_contract ;
+                rdfs:range <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isUsedFor
+:isUsedFor rdf:type owl:ObjectProperty ;
+           rdfs:range :Data .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasContractualElement
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasContractualElement> rdf:type owl:ObjectProperty ;
+                                                                                           rdfs:range :Agreement .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasExecutionDateTimeStamp
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasExecutionDateTimeStamp> rdf:type owl:ObjectProperty ;
+                                                                                               rdfs:range :Agreement .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasNonBindingTerms
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasNonBindingTerms> rdf:type owl:ObjectProperty .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/isAbout
+<https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/isAbout> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:range :Agreement ,
+                                                                                          :Campaign .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/isMandatedBy
+<https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/isMandatedBy> rdf:type owl:ObjectProperty ;
+                                                                                 rdfs:domain <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> ;
+                                                                                 rdfs:range :Agreement .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/usesAdministrativeLanguage
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/usesAdministrativeLanguage> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:range :Agreement .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#City
+Consent_Sensor:City rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf Consent_Sensor:hasPhysicalAddress .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Country
+Consent_Sensor:Country rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf Consent_Sensor:hasPhysicalAddress .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Duration
+Consent_Sensor:Duration rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PostCode
+Consent_Sensor:PostCode rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf Consent_Sensor:hasPhysicalAddress .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Street
+Consent_Sensor:Street rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf Consent_Sensor:hasPhysicalAddress .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#StreetNumber
+Consent_Sensor:StreetNumber rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf Consent_Sensor:Street .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEmail
+Consent_Sensor:hasEmail rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEndDate
+Consent_Sensor:hasEndDate rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf Consent_Sensor:Duration .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSData
+Consent_Sensor:hasGPSData rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasLatitude
+Consent_Sensor:hasLatitude rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf Consent_Sensor:hasGPSData .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasLongitude
+Consent_Sensor:hasLongitude rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf Consent_Sensor:hasGPSData .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasMobilePhoneNumber
+Consent_Sensor:hasMobilePhoneNumber rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress
+Consent_Sensor:hasPhysicalAddress rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasStartDate
+Consent_Sensor:hasStartDate rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf Consent_Sensor:Duration .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedAtTime
+Consent_Sensor:wasRetrievedAtTime rdf:type owl:DatatypeProperty .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/isAssignable
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/isAssignable> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishFullName
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishFullName> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishShortName
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishShortName> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishShortNameInCapitals
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishShortNameInCapitals> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchFullName
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchFullName> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchShortName
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchShortName> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchShortNameInCapitals
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchShortNameInCapitals> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/isIndependent
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/isIndependent> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Company
+Consent_Sensor:Company rdf:type owl:Class ;
+                       rdfs:subClassOf Consent_Sensor:PrivateInstitution .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#DataProcessor
+Consent_Sensor:DataProcessor rdf:type owl:Class ;
+                             owl:equivalentClass Consent_Sensor:Institution .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelConsumptionData
+Consent_Sensor:FuelConsumptionData rdf:type owl:Class ;
+                                   rdfs:subClassOf Consent_Sensor:FuelData .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelData
+Consent_Sensor:FuelData rdf:type owl:Class ;
+                        rdfs:subClassOf :Data ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty Consent_Sensor:hasSource ;
+                                          owl:someValuesFrom Consent_Sensor:FuelSensor
+                                        ] .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData
+Consent_Sensor:FuelGaugeData rdf:type owl:Class ;
+                             rdfs:subClassOf Consent_Sensor:FuelData .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelSensor
+Consent_Sensor:FuelSensor rdf:type owl:Class ;
+                          rdfs:subClassOf :CarSensor .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData
+Consent_Sensor:GPSData rdf:type owl:Class ;
+                       rdfs:subClassOf :Data ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty Consent_Sensor:hasSource ;
+                                         owl:someValuesFrom Consent_Sensor:GPSSensor
+                                       ] .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSSensor
+Consent_Sensor:GPSSensor rdf:type owl:Class ;
+                         rdfs:subClassOf :CarSensor .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GovernmentalInstitution
+Consent_Sensor:GovernmentalInstitution rdf:type owl:Class ;
+                                       rdfs:subClassOf Consent_Sensor:PublicInstitution .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Institution
+Consent_Sensor:Institution rdf:type owl:Class ;
+                           owl:equivalentClass :CampaignController ,
+                                               :CampaignCreator .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#NGO
+Consent_Sensor:NGO rdf:type owl:Class ;
+                   rdfs:subClassOf Consent_Sensor:PublicInstitution .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PrivateInstitution
+Consent_Sensor:PrivateInstitution rdf:type owl:Class ;
+                                  rdfs:subClassOf Consent_Sensor:Institution .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PublicInstitution
+Consent_Sensor:PublicInstitution rdf:type owl:Class ;
+                                 rdfs:subClassOf Consent_Sensor:Institution .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData
+Consent_Sensor:SpeedData rdf:type owl:Class ;
+                         rdfs:subClassOf :Data ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty Consent_Sensor:hasSource ;
+                                           owl:someValuesFrom Consent_Sensor:SpeedSensor
+                                         ] .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedSensor
+Consent_Sensor:SpeedSensor rdf:type owl:Class ;
+                           rdfs:subClassOf :CarSensor .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University
+Consent_Sensor:University rdf:type owl:Class ;
+                          rdfs:subClassOf Consent_Sensor:PublicInstitution .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement
+:Agreement rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign
+:Campaign rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty Consent_Sensor:hasConsentBy ;
+                            owl:someValuesFrom :User
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty Consent_Sensor:isCreatedBy ;
+                            owl:someValuesFrom :CampaignCreator
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty Consent_Sensor:hasEndDate ;
+                            owl:someValuesFrom xsd:dateTime
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty Consent_Sensor:hasStartDate ;
+                            owl:someValuesFrom xsd:dateTime
+                          ] ;
+          rdfs:label "Campaign" .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignController
+:CampaignController rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator
+:CampaignCreator rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor
+:CarSensor rdf:type owl:Class ;
+           rdfs:subClassOf :Sensor .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data
+:Data rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty Consent_Sensor:hasSource ;
+                        owl:someValuesFrom :Sensor
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :isRequestedBy ;
+                        owl:someValuesFrom Consent_Sensor:DataProcessor
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty Consent_Sensor:wasRetrievedAtTime ;
+                        owl:someValuesFrom xsd:dateTime
+                      ] .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Sensor
+:Sensor rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User
+:User rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty Consent_Sensor:ParticipatesIn ;
+                        owl:someValuesFrom :Campaign
+                      ] .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#online_contract
+:online_contract rdf:type owl:Class ;
+                 rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf :Agreement ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/isAssignable> ;
+                                                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onDataRange xsd:boolean
+                                                                                              ] ;
+                                                                              rdfs:comment "QName: fibo-fnd-agr-ctr:Contract" ;
+                                                                              rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                              rdfs:label "Contract" ;
+                                                                              skos:definition "voluntary, deliberate agreement between two or more competent parties to which those parties agree to be legally bound, and to which the parties must have provided valuable consideration" ;
+                                                                              AnnotationVocabulary:adaptedFrom "http://www.businessdictionary.com/definition/contract.html"^^xsd:anyURI ;
+                                                                              AnnotationVocabulary:explanatoryNote "A contractual relationship is evidenced by (1) an offer, (2) acceptance of the offer, and a (3) valid (legal and valuable) consideration. A contract is a kind of agreement, and as such it embodies the assertion that it has been negotiated, such negotiation having included the presence of some offer and the acceptance of that offer on the part of either or both of the parties." ,
+                                                                                                                   "Contracts are usually written but may be spoken or implied, and generally have to do with employment, sale or lease, or tenancy." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/MutualContractualAgreement
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/MutualContractualAgreement> rdf:type owl:Class ;
+                                                                                                rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> ;
+                                                                                                owl:disjointWith <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/UnilateralContract> ;
+                                                                                                rdfs:comment "QName: fibo-fnd-agr-ctr:MutualContractualAgreement" ;
+                                                                                                rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                                rdfs:label "mutual contractual agreement" ;
+                                                                                                skos:definition "contract between two or more specific named parties; the rights and obligations pertaining to either party cannot be transferred to another party without prior written permission or a change to the contract itself" ;
+                                                                                                AnnotationVocabulary:synonym "bilateral contract" .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/PromissoryNote
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/PromissoryNote> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/UnilateralContract> ,
+                                                                                                    <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract> ;
+                                                                                    rdfs:comment "QName: fibo-fnd-agr-ctr:PromissoryNote" ;
+                                                                                    rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                    rdfs:label "promissory note" ;
+                                                                                    skos:definition "unconditional and unsecured promise by one party (the issuer or promisor) to another (the payee or promisee) that commits the issuer to pay a specified sum on demand, or on a fixed or a determinable date" ;
+                                                                                    AnnotationVocabulary:explanatoryNote "Promissory notes (such as bank or currency notes) are negotiable instruments." ,
+                                                                                                                         "Unlike a contract, a Promissory Note does not need to be signed by both parties. It is essentially a promise from one party to the holder, of some good or benefit. Promissory notes are generally fully fungible." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/TransferableContract
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/TransferableContract> rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> ;
+                                                                                          rdfs:comment "QName: fibo-fnd-agr-ctr:TransferableContract" ;
+                                                                                          rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                          rdfs:label "transferable contract" ;
+                                                                                          skos:definition "contract in which the rights and obligations of one party (the holder) may be transferred to another party, which thereby takes on the same rights and obligations with respect to the other party to the contract" ;
+                                                                                          AnnotationVocabulary:explanatoryNote "Note that the ability to transfer ownership of one side of a contract, and the concept of assignability, are distinct. In one case the contract may be freely traded; in the other case, some legal transfer of rights to a third party takes place, without a change in who are the signatories of a (typically bilateral) contract." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/UnilateralContract
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/UnilateralContract> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> ;
+                                                                                        rdfs:comment "QName: fibo-fnd-agr-ctr:UnilateralContract" ;
+                                                                                        rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                        rdfs:label "unilateral contract" ;
+                                                                                        skos:definition "contract in which only one party makes an express promise, or undertakes a performance without first securing a reciprocal agreement from the other party" ;
+                                                                                        AnnotationVocabulary:explanatoryNote """In a unilateral, or one-sided, contract, one party, known as the offeror, makes a promise in exchange for an act (or abstention from acting) by another party, known as the offeree. If the offeree acts on the offeror's promise, the offeror is legally obligated to fulfill the contract, but an offeree cannot be forced to act (or not act), because no return promise has been made to the offeror. After an offeree has performed, only one enforceable promise exists, that of the offeror.
+
+A unilateral contract differs from a Bilateral Contract, in which the parties exchange mutual promises. Bilateral contracts are commonly used in business transactions; a sale of goods is a type of bilateral contract.""" .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/VerbalContract
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/VerbalContract> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> ;
+                                                                                    owl:disjointWith <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract> ;
+                                                                                    rdfs:comment "QName: fibo-fnd-agr-ctr:VerbalContract" ;
+                                                                                    rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                    rdfs:label "verbal contract" ;
+                                                                                    skos:definition "contract that exists as a result of some verbal exchange" .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> ;
+                                                                                     rdfs:comment "QName: fibo-fnd-agr-ctr:WrittenContract" ;
+                                                                                     rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                     rdfs:label "written contract" ;
+                                                                                     skos:definition "formal contract that is written and signed by the parties thereto" .
+
+
+###  https://w3id.org/GConsent#Status
+<https://w3id.org/GConsent#Status> rdf:type owl:Class ;
+                                   rdfs:comment """
+Represents the status of consent for the data subject. This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn.
+"""@en ;
+                                   rdfs:label "Status"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz
+Consent_Sensor:Allianz rdf:type owl:NamedIndividual ,
+                                Consent_Sensor:Company ,
+                                :CampaignCreator .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Anelia_Kurteva
+Consent_Sensor:Anelia_Kurteva rdf:type owl:NamedIndividual ,
+                                       :User ;
+                              Consent_Sensor:City "Innsbruck"^^xsd:string ;
+                              Consent_Sensor:Country "Austria"^^xsd:string ;
+                              Consent_Sensor:PostCode "6020"^^xsd:string ;
+                              Consent_Sensor:Street "Innstrasse"^^xsd:string ;
+                              Consent_Sensor:StreetNumber "81"^^xsd:string ;
+                              Consent_Sensor:hasEmail "anelia.kurteva@sti2.at" ;
+                              Consent_Sensor:hasMobilePhoneNumber 07746729348 .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart
+Consent_Sensor:Drive_Smart rdf:type owl:NamedIndividual ,
+                                    :Campaign ;
+                           rdfs:comment "DriveSmart is backed by an insurance company to develop customisable insurance risk models based on driver behaviour." .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future
+Consent_Sensor:Green_Future rdf:type owl:NamedIndividual ,
+                                     :Campaign ;
+                            rdfs:comment "GreenFuture is founded by universities and several companies to achieve less CO2 emissions by researching new technologies to save gas" .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Highway_Tirol
+Consent_Sensor:Highway_Tirol rdf:type owl:NamedIndividual ,
+                                      :Campaign ;
+                             Consent_Sensor:hasConsentBy Consent_Sensor:user1 ;
+                             Consent_Sensor:hasEndDate "2021-12-12T00:00:00"^^xsd:dateTime ;
+                             Consent_Sensor:hasStartDate "2020-10-10T00:00:00"^^xsd:dateTime ;
+                             rdfs:comment "Highway Tirol aims to find better solutions in traffic routing and speed constraints on public highways." .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#STI_Innsbruck
+Consent_Sensor:STI_Innsbruck rdf:type owl:NamedIndividual ;
+                             Consent_Sensor:isPartOf Consent_Sensor:University_of_Innsbruck ;
+                             rdfs:comment "STI Innsbruck is a research group at the University of Innsbruck engaged in research and development to bring information and communication technologies of the future into today's world." ;
+                             rdfs:seeAlso "UIBK" .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government
+Consent_Sensor:Tyrolean_Government rdf:type owl:NamedIndividual ,
+                                            Consent_Sensor:GovernmentalInstitution .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck
+Consent_Sensor:University_of_Innsbruck rdf:type owl:NamedIndividual ,
+                                                :CampaignCreator ;
+                                       rdfs:comment "The University of Innsbruck  is a public university in Innsbruck, the capital of the Austrian federal state of Tyrol, founded in 1669. It is currently the largest education facility in the Austrian Bundesland of Tirol, the third largest in Austria behind Vienna University and the University of Graz and according to The Times Higher Education Supplement 2010 World Ranking it is Austria's leading university. Significant contributions have been made in many branches, most of all in the physics department. Further, regarding the number of Web of Science-listed publications, it occupies the third rank worldwide in the area of mountain research.[1] In the Handelsblatt Ranking 2015, the business administration faculty ranks among the 15 best business administration faculties in German-speaking countries.[2]" ;
+                                       rdfs:seeAlso "UIBK" .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen
+Consent_Sensor:Volkswagen rdf:type owl:NamedIndividual ,
+                                   Consent_Sensor:Company ,
+                                   :CampaignCreator .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol1
+Consent_Sensor:datapoint_highway_tirol1 rdf:type owl:NamedIndividual ,
+                                                 Consent_Sensor:GPSData ;
+                                        :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                        Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol2
+Consent_Sensor:datapoint_highway_tirol2 rdf:type owl:NamedIndividual ,
+                                                 Consent_Sensor:GPSData ;
+                                        :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                        Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol3
+Consent_Sensor:datapoint_highway_tirol3 rdf:type owl:NamedIndividual ,
+                                                 Consent_Sensor:GPSData ;
+                                        :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                        Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future1
+Consent_Sensor:datapoint_green_future1 rdf:type owl:NamedIndividual ,
+                                                Consent_Sensor:GPSData ;
+                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future2
+Consent_Sensor:datapoint_green_future2 rdf:type owl:NamedIndividual ,
+                                                Consent_Sensor:GPSData ;
+                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future3
+Consent_Sensor:datapoint_green_future3 rdf:type owl:NamedIndividual ,
+                                                Consent_Sensor:GPSData ;
+                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future4
+Consent_Sensor:datapoint_green_future4 rdf:type owl:NamedIndividual ,
+                                                Consent_Sensor:GPSData ;
+                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future5
+Consent_Sensor:datapoint_green_future5 rdf:type owl:NamedIndividual ,
+                                                Consent_Sensor:GPSData ;
+                                       :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                       Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart1
+Consent_Sensor:datapoint_drive_smart1 rdf:type owl:NamedIndividual ,
+                                               Consent_Sensor:GPSData ;
+                                      :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                      Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart2
+Consent_Sensor:datapoint_drive_smart2 rdf:type owl:NamedIndividual ,
+                                               Consent_Sensor:GPSData ;
+                                      :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                      Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart3
+Consent_Sensor:datapoint_drive_smart3 rdf:type owl:NamedIndividual ,
+                                               Consent_Sensor:GPSData ;
+                                      :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                      Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart4
+Consent_Sensor:datapoint_drive_smart4 rdf:type owl:NamedIndividual ,
+                                               Consent_Sensor:GPSData ;
+                                      :isRequestedBy Consent_Sensor:Tyrolean_Government ;
+                                      Consent_Sensor:wasRetrievedAtTime "2021-01-14T08:01:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1
+Consent_Sensor:user1 rdf:type owl:NamedIndividual ,
+                              :User .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
