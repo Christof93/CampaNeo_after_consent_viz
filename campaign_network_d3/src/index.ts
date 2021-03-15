@@ -6,11 +6,13 @@ import { getSVG } from './import_svg'
 import * as interactive from './interactivity'
 import * as detail_overlay from './detailed_view'
 import * as sidebar from './sidebar'
+import * as graphdb from './graphdb'
 import {COLORS, LEGEND_COLORS, ColorMode} from './colors'
 
 interactive.setColorMode(colorMode)
-
-fetch('SampleCampaign.json')
+console.log('load data.')
+console.log(graphdb.getData())
+fetch('sampleCampaign.json')
   .then(res => res.json())
   .then(async data => {
     console.log('load data.')
@@ -21,6 +23,7 @@ fetch('SampleCampaign.json')
     detail_overlay.build_detailed_view()
     sidebar.buildSidebar()
   })
+
 
 const build_network = async (data:any) => {
   const width = 500
@@ -94,8 +97,6 @@ const build_network = async (data:any) => {
     .attr('y2', d => d.target.y)
     .attr('stroke-width', 4)
     .attr('stroke-opacity', 0)
-    .on('mouseover', (d,i) => interactive.mouseover_campaign_node)
-    .on('mouseout', (d,i) => interactive.mouseout_campaign_node)
     .on('click', (d,i) => interactive.click_campaign_node)
 
   //-- nodes
@@ -104,8 +105,6 @@ const build_network = async (data:any) => {
     .data(nodes)
     .enter().append('g')
     .attr('class', 'node')
-    .on('mouseover', (d,i) => interactive.mouseover_campaign_node)
-    .on('mouseout', (d,i) => interactive.mouseout_campaign_node)
     .on('click', interactive.click_campaign_node)
     //-- campaign text
 

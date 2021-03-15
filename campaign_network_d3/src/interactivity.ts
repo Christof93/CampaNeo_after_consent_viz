@@ -28,27 +28,7 @@ export function changeLightMode(): void {
   setColorMode(colorMode)
 }
 
-export const mouseover_campaign_node = (event:any, node:any):void => {
-  console.log('mouse over campaign node!')
-}
-
-export const mouseout_campaign_node = (event:any, node:any):void => {
-  console.log('mouse out campaign node!')
-}
-
-export const mouseover_link = (event:any, node:any):void => {
-  console.log('mouse over link!')
-}
-
-export const mouseout_link =(event:any, node:any):void => {
-  console.log('mouse out link!')
-}
-
 export const click_campaign_node = (event:any, node:any):void => {
-  console.log('mouse over link!')
-  console.log(event)
-  console.log(node)
-  d3.select('canvas').style('visibility','hidden')
   detail_overlay.show(node)
 }
 
