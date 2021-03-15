@@ -10,7 +10,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:Consent_Sensor="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#"
      xmlns:AnnotationVocabulary="https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor"/>
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/Consent_Sensor"/>
     
 
 
@@ -172,6 +172,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasRetrievedData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasRetrievedData">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedByCampaign"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource"/>
@@ -195,6 +205,16 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasCreatedBy">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedByCampaign -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedByCampaign">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
     </owl:ObjectProperty>
     
 
@@ -524,6 +544,16 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#StreetNumber">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Street"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Name"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -1060,6 +1090,7 @@ Represents the status of consent for the data subject. This allows persisting th
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Company"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+        <rdfs:label>Allianz</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1086,6 +1117,7 @@ Represents the status of consent for the data subject. This allows persisting th
         <Consent_Sensor:hasConsentBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1"/>
         <Consent_Sensor:wasCreatedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz"/>
         <rdfs:comment>DriveSmart is backed by an insurance company to develop customisable insurance risk models based on driver behaviour.</rdfs:comment>
+        <rdfs:label>Drive Smart</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1098,6 +1130,7 @@ Represents the status of consent for the data subject. This allows persisting th
         <Consent_Sensor:wasCreatedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck"/>
         <Consent_Sensor:wasCreatedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
         <rdfs:comment>GreenFuture is founded by universities and several companies to achieve less CO2 emissions by researching new technologies to save gas</rdfs:comment>
+        <rdfs:label>Green Future</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1111,6 +1144,7 @@ Represents the status of consent for the data subject. This allows persisting th
         <Consent_Sensor:hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-12-12T00:00:00</Consent_Sensor:hasEndDate>
         <Consent_Sensor:hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-10T00:00:00</Consent_Sensor:hasStartDate>
         <rdfs:comment>Highway Tirol aims to find better solutions in traffic routing and speed constraints on public highways.</rdfs:comment>
+        <rdfs:label>Highway Tirol</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1129,6 +1163,7 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GovernmentalInstitution"/>
+        <rdfs:label>Tyrolean Government</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1139,6 +1174,7 @@ Represents the status of consent for the data subject. This allows persisting th
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
         <rdfs:comment>The University of Innsbruck  is a public university in Innsbruck, the capital of the Austrian federal state of Tyrol, founded in 1669. It is currently the largest education facility in the Austrian Bundesland of Tirol, the third largest in Austria behind Vienna University and the University of Graz and according to The Times Higher Education Supplement 2010 World Ranking it is Austria&apos;s leading university. Significant contributions have been made in many branches, most of all in the physics department. Further, regarding the number of Web of Science-listed publications, it occupies the third rank worldwide in the area of mountain research.[1] In the Handelsblatt Ranking 2015, the business administration faculty ranks among the 15 best business administration faculties in German-speaking countries.[2]</rdfs:comment>
+        <rdfs:label>University of Innsbruck</rdfs:label>
         <rdfs:seeAlso>UIBK</rdfs:seeAlso>
     </owl:NamedIndividual>
     
@@ -1149,6 +1185,7 @@ Represents the status of consent for the data subject. This allows persisting th
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Company"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+        <rdfs:label>Volkswagen</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1157,7 +1194,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart1">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData"/>
+        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart"/>
         <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
+        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</Consent_Sensor:hasDataType>
         <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.55</Consent_Sensor:hasDataValue>
         <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-13T09:01:00</Consent_Sensor:wasRetrievedAtTime>
     </owl:NamedIndividual>
@@ -1168,7 +1207,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart2">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData"/>
+        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart"/>
         <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
+        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</Consent_Sensor:hasDataType>
         <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.55</Consent_Sensor:hasDataValue>
         <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T09:02:00</Consent_Sensor:wasRetrievedAtTime>
     </owl:NamedIndividual>
@@ -1179,7 +1220,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart3">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData"/>
+        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart"/>
         <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz"/>
+        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</Consent_Sensor:hasDataType>
         <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.31</Consent_Sensor:hasDataValue>
         <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-15T18:31:00</Consent_Sensor:wasRetrievedAtTime>
     </owl:NamedIndividual>
@@ -1190,7 +1233,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart4">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData"/>
+        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart"/>
         <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz"/>
+        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</Consent_Sensor:hasDataType>
         <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.31</Consent_Sensor:hasDataValue>
         <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-18T18:01:00</Consent_Sensor:wasRetrievedAtTime>
     </owl:NamedIndividual>
@@ -1201,7 +1246,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future1">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
+        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future"/>
         <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck"/>
+        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</Consent_Sensor:hasDataType>
         <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.2734</Consent_Sensor:hasGPSLatitude>
         <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7783203</Consent_Sensor:hasGPSLongitude>
         <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-11T08:48:00</Consent_Sensor:wasRetrievedAtTime>
@@ -1213,7 +1260,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future2">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData"/>
+        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future"/>
         <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
+        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</Consent_Sensor:hasDataType>
         <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.5</Consent_Sensor:hasDataValue>
         <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-11T09:01:00</Consent_Sensor:wasRetrievedAtTime>
     </owl:NamedIndividual>
@@ -1224,7 +1273,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future3">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData"/>
+        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future"/>
         <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
+        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</Consent_Sensor:hasDataType>
         <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.35</Consent_Sensor:hasDataValue>
         <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T09:02:00</Consent_Sensor:wasRetrievedAtTime>
     </owl:NamedIndividual>
@@ -1235,7 +1286,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future4">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
+        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future"/>
         <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck"/>
+        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</Consent_Sensor:hasDataType>
         <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</Consent_Sensor:hasGPSLatitude>
         <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.55</Consent_Sensor:hasGPSLongitude>
         <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T08:35:00</Consent_Sensor:wasRetrievedAtTime>
@@ -1247,7 +1300,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future5">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData"/>
+        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future"/>
         <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
+        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</Consent_Sensor:hasDataType>
         <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.59</Consent_Sensor:hasDataValue>
         <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T09:05:00</Consent_Sensor:wasRetrievedAtTime>
     </owl:NamedIndividual>
@@ -1258,7 +1313,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol1">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
+        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Highway_Tirol"/>
         <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government"/>
+        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</Consent_Sensor:hasDataType>
         <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.55</Consent_Sensor:hasGPSLatitude>
         <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</Consent_Sensor:hasGPSLongitude>
         <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T08:01:00</Consent_Sensor:wasRetrievedAtTime>
@@ -1270,7 +1327,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol2">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
+        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Highway_Tirol"/>
         <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government"/>
+        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</Consent_Sensor:hasDataType>
         <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.5</Consent_Sensor:hasGPSLatitude>
         <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</Consent_Sensor:hasGPSLongitude>
         <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T08:02:00</Consent_Sensor:wasRetrievedAtTime>
@@ -1282,7 +1341,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol3">
         <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
+        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Highway_Tirol"/>
         <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government"/>
+        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</Consent_Sensor:hasDataType>
         <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.5</Consent_Sensor:hasGPSLatitude>
         <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</Consent_Sensor:hasGPSLongitude>
         <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T18:31:00</Consent_Sensor:wasRetrievedAtTime>
