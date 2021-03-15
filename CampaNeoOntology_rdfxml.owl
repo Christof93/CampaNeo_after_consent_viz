@@ -8,9 +8,10 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:CampaNeo="http://www.semanticweb.org/ontologies/CampaNeo#"
      xmlns:Consent_Sensor="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#"
      xmlns:AnnotationVocabulary="https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/Consent_Sensor"/>
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#"/>
     
 
 
@@ -90,358 +91,351 @@
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#CreatedCampaign -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#ControlledBy -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#CreatedCampaign">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasCreatedBy"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#ParticipatesIn -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#ParticipatesIn">
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#gaveConsentTo -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#gaveConsentTo">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#ControlledBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasConsentBy"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#CampaignController"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasCapacity -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#CreatedCampaign -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasCapacity">
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#CreatedCampaign">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#wasCreatedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#CampaignCreator"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasConsentBy -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#ParticipatesIn -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasConsentBy">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#ParticipatesIn">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#User"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasContract -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#RequiresData -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasContract"/>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEmail -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEmail"/>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasProofOfAgreement -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasProofOfAgreement">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#RequiresData">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasProofOfConsent -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#belongsToTheArea -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasProofOfConsent"/>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPurpose -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPurpose">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasRetrievedData -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasRetrievedData">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedByCampaign"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource"/>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#isPartOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#isPartOf"/>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#isProvidedFor -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#isProvidedFor"/>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasCreatedBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasCreatedBy">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedByCampaign -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedByCampaign">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ControlledBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ControlledBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignController"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#RequiresData -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#RequiresData">
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#belongsToTheArea -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#belongsToTheArea">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#belongsToTheArea">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasAvailability -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#gaveConsentTo -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasAvailability">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#gaveConsentTo">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasConsentBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasCapacity -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasAvailability -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasCapacity">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasAvailability">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasConsent -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasCapacity -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasConsent">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasContactDetails -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasContactDetails">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasCapacity">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasDuration -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasConsent -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasDuration">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasConsent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasEndDate -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasConsentBy -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasEndDate">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasConsentBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#User"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasGPScoordinates -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasContactDetails -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasGPScoordinates">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasName -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasName">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasContactDetails">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasPhysicalAddress -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasContract -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasPhysicalAddress">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasContract"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasDuration -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasDuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasEmail -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasEmail"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasEndDate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasEndDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasGPScoordinates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasGPScoordinates">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#CarSensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasName -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasName">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcess -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcess">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessDuration -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasProcess -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessDuration">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasProcess">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessEnd -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasProcessDuration -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessEnd">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasProcessDuration">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessPurpose -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasProcessEnd -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessPurpose">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasProcessEnd">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessStart -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasProcessPurpose -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessStart">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasProcessPurpose">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStartDate -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasProcessStart -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStartDate">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStatus -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStatus">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStorageLocation -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStorageLocation">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasValidationTime -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasValidationTime"/>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isDataSource -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isDataSource">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Sensor"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isInitiatedBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isInitiatedBy">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasProcessStart">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isProvidedBy -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasProofOfAgreement -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isProvidedBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasProofOfAgreement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Agreement"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isProvidedTo -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasProofOfConsent -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isProvidedTo">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasProofOfConsent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasPurpose -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasPurpose">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasRetrievedData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasRetrievedData">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#wasRetrievedByCampaign"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasSource"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasStartDate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasStartDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasStatus">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasStorageLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasStorageLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasValidationTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasValidationTime"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#isDataSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#isDataSource">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#isInitiatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#isInitiatedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isRequestedBy -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#isPartOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isRequestedBy">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#isPartOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#isProvidedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#isProvidedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#User"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isSecuredBy -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#isProvidedFor -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isSecuredBy">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#isProvidedFor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#isProvidedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#isProvidedTo">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#isRequestedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#isRequestedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#isSecuredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#isSecuredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#wasCreatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#wasCreatedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#CampaignCreator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#wasRetrievedByCampaign -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#wasRetrievedByCampaign">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
     </owl:ObjectProperty>
     
 
@@ -449,7 +443,7 @@
     <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasContractualElement -->
 
     <owl:ObjectProperty rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasContractualElement">
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Agreement"/>
     </owl:ObjectProperty>
     
 
@@ -476,7 +470,7 @@
 
     <owl:ObjectProperty rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/isMandatedBy">
         <rdfs:domain rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Agreement"/>
     </owl:ObjectProperty>
     
 
@@ -484,7 +478,7 @@
     <!-- https://www.omg.org/spec/LCC/Countries/CountryRepresentation/usesAdministrativeLanguage -->
 
     <owl:ObjectProperty rdf:about="https://www.omg.org/spec/LCC/Countries/CountryRepresentation/usesAdministrativeLanguage">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Agreement"/>
     </owl:ObjectProperty>
     
 
@@ -500,148 +494,148 @@
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#City -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#City -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#City">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#City">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Country -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Country -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Country">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Country">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Duration -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Duration -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Duration">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Duration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PostCode -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#PostCode -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PostCode">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#PostCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Street -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Street -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Street">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Street">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#StreetNumber -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#StreetNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#StreetNumber">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Street"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#StreetNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Street"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataType -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasDataType -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataType">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasDataType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Name"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataValue -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasDataValue -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataValue">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasDataValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEmail -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasEmail -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEmail"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasEmail"/>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEndDate -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasEndDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEndDate">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Duration"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasEndDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Duration"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSData -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasGPSData -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSData"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasGPSData"/>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSLatitude -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasGPSLatitude -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSLatitude">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataValue"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasGPSLatitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasDataValue"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSLongitude -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasGPSLongitude -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSLongitude">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataValue"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasGPSLongitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasDataValue"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasLatitude -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasLatitude -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasLatitude">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSData"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasLatitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasGPSData"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasLongitude -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasLongitude -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasLongitude">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSData"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasLongitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasGPSData"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasMobilePhoneNumber -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasMobilePhoneNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasMobilePhoneNumber"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasMobilePhoneNumber"/>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasPhysicalAddress"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasStartDate -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasStartDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasStartDate">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Duration"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasStartDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Duration"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedAtTime -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#wasRetrievedAtTime -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedAtTime">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#wasRetrievedAtTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
     </owl:DatatypeProperty>
@@ -683,201 +677,30 @@
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Company -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Agreement -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Company">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PrivateInstitution"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Agreement"/>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#DataProcessor -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Campaign -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#DataProcessor">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Institution"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelConsumptionData -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelConsumptionData">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelData"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelData -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelData">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Campaign">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelSensor"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasConsentBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#User"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataValue"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelData"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelSensor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSSensor"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSLatitude"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasGPSLongitude"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSSensor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GovernmentalInstitution -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GovernmentalInstitution">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PublicInstitution"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Institution -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Institution">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignController"/>
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#NGO -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#NGO">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PublicInstitution"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PrivateInstitution -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PrivateInstitution">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Institution"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PublicInstitution -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PublicInstitution">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Institution"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedSensor"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasDataValue"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedSensor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#PublicInstitution"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement"/>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasConsentBy"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasEndDate"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasEndDate"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasStartDate"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasStartDate"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -886,44 +709,56 @@
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignController -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#CampaignController -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignController"/>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
-    
-
-
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Sensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#CampaignController">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Institution"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#CampaignCreator -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data">
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#CampaignCreator">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Institution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#CarSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#CarSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Company -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Company">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#PrivateInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Data -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Data">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasSource"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Sensor"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasSource"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Sensor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isRequestedBy"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#DataProcessor"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#isRequestedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#DataProcessor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#wasRetrievedAtTime"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#wasRetrievedAtTime"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -931,29 +766,189 @@
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Sensor -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#DataProcessor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Sensor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#DataProcessor">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Institution"/>
+    </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#FuelConsumptionData -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#FuelConsumptionData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#FuelData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#FuelData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#FuelData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#ParticipatesIn"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasSource"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#FuelSensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasDataValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#online_contract -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#FuelGaugeData -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#online_contract">
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#FuelGaugeData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#FuelData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#FuelSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#FuelSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#CarSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#GPSData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#GPSData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasSource"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#GPSSensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasGPSLatitude"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasGPSLongitude"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#GPSSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#GPSSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#CarSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#GovernmentalInstitution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#GovernmentalInstitution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#PublicInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Institution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Institution"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#NGO -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#NGO">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#PublicInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#PrivateInstitution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#PrivateInstitution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Institution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#PublicInstitution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#PublicInstitution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Institution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Sensor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#SpeedData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#SpeedData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasSource"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#SpeedSensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasDataValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#SpeedSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#SpeedSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#CarSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#University -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#University">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#PublicInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#User">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#ParticipatesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#online_contract -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#online_contract">
         <rdfs:subClassOf rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract"/>
     </owl:Class>
     
@@ -962,7 +957,7 @@
     <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract -->
 
     <owl:Class rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Agreement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/isAssignable"/>
@@ -1085,94 +1080,94 @@ Represents the status of consent for the data subject. This allows persisting th
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Allianz -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Company"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Allianz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#CampaignCreator"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Company"/>
         <rdfs:label>Allianz</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Anelia_Kurteva -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Anelia_Kurteva -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Anelia_Kurteva">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
-        <Consent_Sensor:City rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Innsbruck</Consent_Sensor:City>
-        <Consent_Sensor:Country rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Austria</Consent_Sensor:Country>
-        <Consent_Sensor:PostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6020</Consent_Sensor:PostCode>
-        <Consent_Sensor:Street rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Innstrasse</Consent_Sensor:Street>
-        <Consent_Sensor:StreetNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">81</Consent_Sensor:StreetNumber>
-        <Consent_Sensor:hasEmail>anelia.kurteva@sti2.at</Consent_Sensor:hasEmail>
-        <Consent_Sensor:hasMobilePhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">07746729348</Consent_Sensor:hasMobilePhoneNumber>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Anelia_Kurteva">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#User"/>
+        <CampaNeo:City rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Innsbruck</CampaNeo:City>
+        <CampaNeo:Country rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Austria</CampaNeo:Country>
+        <CampaNeo:PostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6020</CampaNeo:PostCode>
+        <CampaNeo:Street rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Innstrasse</CampaNeo:Street>
+        <CampaNeo:StreetNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">81</CampaNeo:StreetNumber>
+        <CampaNeo:hasEmail xml:lang="sti2.at">anelia.kurteva</CampaNeo:hasEmail>
+        <CampaNeo:hasMobilePhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">07746729348</CampaNeo:hasMobilePhoneNumber>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-        <Consent_Sensor:hasConsentBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1"/>
-        <Consent_Sensor:wasCreatedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+        <CampaNeo:hasConsentBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#user1"/>
+        <CampaNeo:wasCreatedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Allianz"/>
         <rdfs:comment>DriveSmart is backed by an insurance company to develop customisable insurance risk models based on driver behaviour.</rdfs:comment>
         <rdfs:label>Drive Smart</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Green_Future -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-        <Consent_Sensor:hasConsentBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1"/>
-        <Consent_Sensor:wasCreatedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck"/>
-        <Consent_Sensor:wasCreatedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+        <CampaNeo:hasConsentBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#user1"/>
+        <CampaNeo:wasCreatedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck"/>
+        <CampaNeo:wasCreatedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
         <rdfs:comment>GreenFuture is founded by universities and several companies to achieve less CO2 emissions by researching new technologies to save gas</rdfs:comment>
         <rdfs:label>Green Future</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Highway_Tirol -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Highway_Tirol -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Highway_Tirol">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign"/>
-        <Consent_Sensor:hasConsentBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1"/>
-        <Consent_Sensor:wasCreatedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government"/>
-        <Consent_Sensor:hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-12-12T00:00:00</Consent_Sensor:hasEndDate>
-        <Consent_Sensor:hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-10T00:00:00</Consent_Sensor:hasStartDate>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Highway_Tirol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+        <CampaNeo:hasConsentBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#user1"/>
+        <CampaNeo:wasCreatedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government"/>
+        <CampaNeo:hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-12-12T00:00:00</CampaNeo:hasEndDate>
+        <CampaNeo:hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-10T00:00:00</CampaNeo:hasStartDate>
         <rdfs:comment>Highway Tirol aims to find better solutions in traffic routing and speed constraints on public highways.</rdfs:comment>
         <rdfs:label>Highway Tirol</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#STI_Innsbruck -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#STI_Innsbruck -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#STI_Innsbruck">
-        <Consent_Sensor:isPartOf rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#STI_Innsbruck">
+        <CampaNeo:isPartOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck"/>
         <rdfs:comment>STI Innsbruck is a research group at the University of Innsbruck engaged in research and development to bring information and communication technologies of the future into today&apos;s world.</rdfs:comment>
         <rdfs:seeAlso>UIBK</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GovernmentalInstitution"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#GovernmentalInstitution"/>
         <rdfs:label>Tyrolean Government</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#CampaignCreator"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University"/>
         <rdfs:comment>The University of Innsbruck  is a public university in Innsbruck, the capital of the Austrian federal state of Tyrol, founded in 1669. It is currently the largest education facility in the Austrian Bundesland of Tirol, the third largest in Austria behind Vienna University and the University of Graz and according to The Times Higher Education Supplement 2010 World Ranking it is Austria&apos;s leading university. Significant contributions have been made in many branches, most of all in the physics department. Further, regarding the number of Web of Science-listed publications, it occupies the third rank worldwide in the area of mountain research.[1] In the Handelsblatt Ranking 2015, the business administration faculty ranks among the 15 best business administration faculties in German-speaking countries.[2]</rdfs:comment>
         <rdfs:label>University of Innsbruck</rdfs:label>
         <rdfs:seeAlso>UIBK</rdfs:seeAlso>
@@ -1180,181 +1175,181 @@ Represents the status of consent for the data subject. This allows persisting th
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Company"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#CampaignCreator"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Company"/>
         <rdfs:label>Volkswagen</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart1 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#datapoint_drive_smart1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData"/>
-        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart"/>
-        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
-        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</Consent_Sensor:hasDataType>
-        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.55</Consent_Sensor:hasDataValue>
-        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-13T09:01:00</Consent_Sensor:wasRetrievedAtTime>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_drive_smart1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#SpeedData"/>
+        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
+        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart"/>
+        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</CampaNeo:hasDataType>
+        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.55</CampaNeo:hasDataValue>
+        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-13T09:01:00</CampaNeo:wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart2 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#datapoint_drive_smart2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData"/>
-        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart"/>
-        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
-        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</Consent_Sensor:hasDataType>
-        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.55</Consent_Sensor:hasDataValue>
-        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T09:02:00</Consent_Sensor:wasRetrievedAtTime>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_drive_smart2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#SpeedData"/>
+        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
+        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart"/>
+        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</CampaNeo:hasDataType>
+        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.55</CampaNeo:hasDataValue>
+        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T09:02:00</CampaNeo:wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart3 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#datapoint_drive_smart3 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart3">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData"/>
-        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart"/>
-        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz"/>
-        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</Consent_Sensor:hasDataType>
-        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.31</Consent_Sensor:hasDataValue>
-        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-15T18:31:00</Consent_Sensor:wasRetrievedAtTime>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_drive_smart3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#FuelGaugeData"/>
+        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Allianz"/>
+        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart"/>
+        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</CampaNeo:hasDataType>
+        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.31</CampaNeo:hasDataValue>
+        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-15T18:31:00</CampaNeo:wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart4 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#datapoint_drive_smart4 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_drive_smart4">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData"/>
-        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Drive_Smart"/>
-        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Allianz"/>
-        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</Consent_Sensor:hasDataType>
-        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.31</Consent_Sensor:hasDataValue>
-        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-18T18:01:00</Consent_Sensor:wasRetrievedAtTime>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_drive_smart4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#FuelGaugeData"/>
+        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Allianz"/>
+        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart"/>
+        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</CampaNeo:hasDataType>
+        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.31</CampaNeo:hasDataValue>
+        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-18T18:01:00</CampaNeo:wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future1 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
-        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future"/>
-        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck"/>
-        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</Consent_Sensor:hasDataType>
-        <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.2734</Consent_Sensor:hasGPSLatitude>
-        <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7783203</Consent_Sensor:hasGPSLongitude>
-        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-11T08:48:00</Consent_Sensor:wasRetrievedAtTime>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#GPSData"/>
+        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck"/>
+        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
+        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</CampaNeo:hasDataType>
+        <CampaNeo:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.2734</CampaNeo:hasGPSLatitude>
+        <CampaNeo:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7783203</CampaNeo:hasGPSLongitude>
+        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-11T08:48:00</CampaNeo:wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future2 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#SpeedData"/>
-        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future"/>
-        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
-        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</Consent_Sensor:hasDataType>
-        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.5</Consent_Sensor:hasDataValue>
-        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-11T09:01:00</Consent_Sensor:wasRetrievedAtTime>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#SpeedData"/>
+        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
+        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
+        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</CampaNeo:hasDataType>
+        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.5</CampaNeo:hasDataValue>
+        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-11T09:01:00</CampaNeo:wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future3 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future3 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future3">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData"/>
-        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future"/>
-        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
-        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</Consent_Sensor:hasDataType>
-        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.35</Consent_Sensor:hasDataValue>
-        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T09:02:00</Consent_Sensor:wasRetrievedAtTime>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#FuelGaugeData"/>
+        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
+        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
+        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</CampaNeo:hasDataType>
+        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.35</CampaNeo:hasDataValue>
+        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T09:02:00</CampaNeo:wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future4 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future4 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future4">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
-        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future"/>
-        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#University_of_Innsbruck"/>
-        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</Consent_Sensor:hasDataType>
-        <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</Consent_Sensor:hasGPSLatitude>
-        <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.55</Consent_Sensor:hasGPSLongitude>
-        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T08:35:00</Consent_Sensor:wasRetrievedAtTime>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#GPSData"/>
+        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck"/>
+        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
+        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</CampaNeo:hasDataType>
+        <CampaNeo:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</CampaNeo:hasGPSLatitude>
+        <CampaNeo:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.55</CampaNeo:hasGPSLongitude>
+        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T08:35:00</CampaNeo:wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future5 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future5 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_green_future5">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#FuelGaugeData"/>
-        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Green_Future"/>
-        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Volkswagen"/>
-        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</Consent_Sensor:hasDataType>
-        <Consent_Sensor:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.59</Consent_Sensor:hasDataValue>
-        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T09:05:00</Consent_Sensor:wasRetrievedAtTime>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#FuelGaugeData"/>
+        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
+        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
+        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</CampaNeo:hasDataType>
+        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.59</CampaNeo:hasDataValue>
+        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T09:05:00</CampaNeo:wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol1 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#datapoint_highway_tirol1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
-        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Highway_Tirol"/>
-        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government"/>
-        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</Consent_Sensor:hasDataType>
-        <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.55</Consent_Sensor:hasGPSLatitude>
-        <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</Consent_Sensor:hasGPSLongitude>
-        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T08:01:00</Consent_Sensor:wasRetrievedAtTime>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_highway_tirol1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#GPSData"/>
+        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government"/>
+        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Highway_Tirol"/>
+        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</CampaNeo:hasDataType>
+        <CampaNeo:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.55</CampaNeo:hasGPSLatitude>
+        <CampaNeo:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</CampaNeo:hasGPSLongitude>
+        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T08:01:00</CampaNeo:wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol2 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#datapoint_highway_tirol2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
-        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Highway_Tirol"/>
-        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government"/>
-        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</Consent_Sensor:hasDataType>
-        <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.5</Consent_Sensor:hasGPSLatitude>
-        <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</Consent_Sensor:hasGPSLongitude>
-        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T08:02:00</Consent_Sensor:wasRetrievedAtTime>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_highway_tirol2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#GPSData"/>
+        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government"/>
+        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Highway_Tirol"/>
+        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</CampaNeo:hasDataType>
+        <CampaNeo:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.5</CampaNeo:hasGPSLatitude>
+        <CampaNeo:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</CampaNeo:hasGPSLongitude>
+        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T08:02:00</CampaNeo:wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol3 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#datapoint_highway_tirol3 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#datapoint_highway_tirol3">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#GPSData"/>
-        <Consent_Sensor:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Highway_Tirol"/>
-        <isRequestedBy rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Tyrolean_Government"/>
-        <Consent_Sensor:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</Consent_Sensor:hasDataType>
-        <Consent_Sensor:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.5</Consent_Sensor:hasGPSLatitude>
-        <Consent_Sensor:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</Consent_Sensor:hasGPSLongitude>
-        <Consent_Sensor:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T18:31:00</Consent_Sensor:wasRetrievedAtTime>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_highway_tirol3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#GPSData"/>
+        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government"/>
+        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Highway_Tirol"/>
+        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</CampaNeo:hasDataType>
+        <CampaNeo:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.5</CampaNeo:hasGPSLatitude>
+        <CampaNeo:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</CampaNeo:hasGPSLongitude>
+        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T18:31:00</CampaNeo:wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1 -->
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#user1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#user1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#user1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#User"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
