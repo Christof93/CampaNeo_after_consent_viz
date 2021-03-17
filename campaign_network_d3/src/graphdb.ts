@@ -1,5 +1,5 @@
 
-const DB_URL = 'https://smashhitactool.sti2.at/repositories/CampaNeoKG'
+const DB_URL = 'https://graphdb.sti2.at/repositories/ConsentKG'
 const dataQuery = `
   PREFIX : <http://www.semanticweb.org/ontologies/CampaNeo#>
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

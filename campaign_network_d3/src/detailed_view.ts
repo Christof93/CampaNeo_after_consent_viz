@@ -21,12 +21,12 @@ export async function show(node_info:any): Promise<void> {
     .attr('class', 'detail-overlay-container visible')
 
   d3.select('.detail-overlay-title')
-    .html(node_info.Name)
+    .html(node_info.name)
 
   const timeline = d3.select('.detail-overlay')
     .attr('class','detail-overlay visible')
     .selectAll('.datapoint')
-    .data(node_info.CollectedData)
+    .data(node_info.collectedData)
     .enter().append('li')
     .attr('class', 'datapoint')
     .style('background-color', colorMode === 'dark'? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)')
@@ -39,19 +39,19 @@ export async function show(node_info:any): Promise<void> {
 
   iconContainer.append('span')
     .attr('class', 'icon')
-    .html((d: any) => ICONS[d.type.toLowerCase()].toString())
+    .html((d: any) => ICONS[d.datatype.toLowerCase()].toString())
 
   const svg = timeline.select('.icon > svg')
     .attr('height', null)
     .attr('width', null)
 
   svg.selectChild('g')
-    .attr('fill', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
+    .attr('fill', (d: any) => LEGEND_COLORS[d.datatype.toLowerCase()][colorMode])
 
   iconContainer.append('span')
     .attr('class', 'text detail-type')
-    .style('color', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
-    .text((d:any) => `${d.type} (retrieved on ${d.retrievedAt})`)
+    .style('color', (d: any) => LEGEND_COLORS[d.datatype.toLowerCase()][colorMode])
+    .text((d:any) => `${d.datatype} (retrieved on ${d.retrievaltime})`)
 
   // iconContainer.append('span')
   //   .attr('class', 'text detail-date')
@@ -67,8 +67,8 @@ export async function show(node_info:any): Promise<void> {
 
   collectedContainer.append('span')
     .attr('class', 'text')
-    .style('color', (d: any) => LEGEND_COLORS[d.type.toLowerCase()][colorMode])
-    .text((d:any) => d.collectedBy)
+    .style('color', (d: any) => LEGEND_COLORS[d.datatype.toLowerCase()][colorMode])
+    .text((d:any) => d.institution_name)
 
 
   d3.select('.button-container')

@@ -39,15 +39,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@comunica/actor-init-sparql": "^1.19.2",
     "bootstrap": "^4.6.0",
-    "d3": "^6.3.1",
-    "stream-browserify": "^3.0.0",
-    "util": "^0.12.3"
-  },
-  "browser": {
-    "crypto": false,
-    "stream": false,
-    "buffer": false
+    "d3": "^6.3.1"
   }
 }

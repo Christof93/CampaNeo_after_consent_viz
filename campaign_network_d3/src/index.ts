@@ -10,14 +10,36 @@ import * as graphdb from './graphdb'
 import {COLORS, LEGEND_COLORS, ColorMode} from './colors'
 
 interactive.setColorMode(colorMode)
-console.log('load data.')
-console.log(graphdb.getData())
-fetch('sampleCampaign.json')
-  .then(res => res.json())
-  .then(async data => {
+graphdb.getData()
+  .then(res => {
+    if (!res.ok)
+      throw new Error('Network response not ok!')
+    return res.text()
+  })
+  .then(async raw_data => {
+    const lines = raw_data.replace(/\r/g, '').split(/\n+/).slice(0,-1)
+    const headers = lines[0].split(',')
+    const data_array = lines.slice(1).map(line => {return line.split(',')})
+    const campaigns:any = {}
+    for (let i=0;i<data_array.length;i++) {
+      const datapoint:any = {} 
+      for (let j=0;j<headers.length;j++) {
+        datapoint[headers[j]]=data_array[i][j]
+      }
+      if (!campaigns[data_array[i][0]] ) campaigns[data_array[i][0]] = []
+      campaigns[data_array[i][0]].push(datapoint)
+    }
+    const data:any = {
+      'campaigns': 
+        Object.values(campaigns).map((d:any) => {
+          return {
+            name:d[0].campaign_name,
+            collectedData:d
+          }
+        })
+    }
     console.log('load data.')
     console.log(data)
-
     const svg:any = await build_network(data)
     // construct the overlay for more detailed info
     detail_overlay.build_detailed_view()
@@ -31,11 +53,11 @@ const build_network = async (data:any) => {
   const timespan = 10000
   const radius = 100
   //-- constructing nodes array from data
-  const nodes:any[] = data.Campaigns
+  const nodes:any[] = data.campaigns
   const circle_fraction = Math.PI * 2 / nodes.length
   const fraction_offset = (nodes.length % 2) == 0 ? 2 : 3
   //-- add a node as center node center
-  const user_node = { Name: '', id: 'user', x: 250, y: 150 }
+  const user_node = { name: '', id: 'user', x: 250, y: 150 }
 
   nodes.forEach((item, i) => {
     const angle = circle_fraction * i + circle_fraction / fraction_offset
@@ -138,7 +160,7 @@ const build_network = async (data:any) => {
     .attr('font-size', '12.5px')
     .attr('fill', 'black')
     .attr('stroke-width', 0)
-    .text(d => d.Name)
+    .text(d => d.name)
 
   const particleGroup = svg.append('g').attr('class','particles')
 
@@ -149,10 +171,10 @@ const build_network = async (data:any) => {
 
     line_links.each(function(line_link, j) {
       const elem = d3.select(this)
-      const dataCollection = line_link.target.CollectedData
+      const dataCollection = line_link.target.collectedData
       const dataCollectionLength = dataCollection.length
       for(let i = 0; i < dataCollectionLength; i++) {
-        const particleType = dataCollection[i].type.toLowerCase()
+        const particleType = dataCollection[i].datatype.toLowerCase()
         particleGroup.append('circle').attr('class','particle')
           .attr('cx', 250)
           .attr('cy', 150)
